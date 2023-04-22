@@ -8,6 +8,8 @@ async function scan_directory(archive_path) {
 	  
 	     <archive_path>/<collection>/<set>/*.json
 
+  	 assumes json exported with the EcoCivicsImportExportMod
+
 	 Returns: [
 	 	{
 			name: "collection1",
@@ -61,6 +63,7 @@ async function read_civics_directory(directory_path) {
 		const civics_txt = await fs.promises.readFile(entry_path)
 		const civics_obj = JSON.parse(civics_txt)
 
+		civics_obj['filename'] = entry_path
 		const type = civics_obj.type.split('.').pop()
 		if (!(type in output)) {
 			output[type] = []
