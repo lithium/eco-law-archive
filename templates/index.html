@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ page_title }}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  </head>
+  <body>
+  <section class="section">
+    <div class="container">
+      <h1 class="title">
+        Eco Law Archive
+      </h1>
+      <h1 class="subtitle">
+      	An archive of implemented <a target="_blank" href="https://play.eco">ECO</a> civics: Constitution, Laws, Election Process, Titles and Demographics
+      </h1>
+
+      <ul>
+      {{#each collections}}
+      	<li><a href="collections/{{name}}.html">{{name}}</a></li>
+      {{/each}}
+	  </ul>
+
+    </div>
+  </section>
+  </body>
+</html>
