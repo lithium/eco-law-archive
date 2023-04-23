@@ -5,7 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ page_title }}</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+      .reference {
+        color: rgb(115,225,113);
+        font-weight: bold;
+      }
+
+      .eco-form {
+        /*background-color: rgb(186,147,92);
+        color: white;*/
+      }
+            .card-list .card {
+          margin-bottom: 1em;
+      }
+    </style>
   </head>
+
   <body>
   <section class="section">
     <div class="container">
@@ -13,14 +30,41 @@
         Eco Law Archive
       </h1>
       <h1 class="subtitle">
-      	An archive of implemented <a target="_blank" href="https://play.eco">ECO</a> civics: Constitution, Laws, Election Process, Titles and Demographics
+        An archive of implemented <a target="_blank" href="https://play.eco">ECO</a> civics: Constitution, Laws, Election Process, Titles and Demographics
       </h1>
 
-      <ul>
-      {{#each collections}}
-      	<li><a href="collections/{{name}}.html">{{name}}</a></li>
-      {{/each}}
-	  </ul>
+
+      <div class="tabs is-toggle">
+        <ul>
+          <li class="is-active"><a href="/">Collections</a></li>
+          <li><a href="/constitutions.html">Constitutions</a></li>
+          <li><a href="/electionprocesses.html">Election Processes</a></li>
+          <li><a href="/titles.html">Titles</a></li>
+          <li><a href="/demographics.html">Demographics</a></li>
+          <li><a href="/laws.html">Laws</a></li>
+        </ul>
+      </div>
+
+
+      <div class="card-list">
+
+        {{#each collections}}
+          <div class="card">
+            <div class="card-content">
+              <div class="content">
+                <p class="title is-4">{{name}}</p>
+                <ul>
+                  {{#each sets}}
+                  <li><a href="/collections/{{../name}}/{{name}}">{{name}}</a></li>
+                  {{/each}}
+                </ul>
+              </div>
+            </div>
+          </div>
+        {{/each}}
+  
+      </div>
+
 
     </div>
   </section>

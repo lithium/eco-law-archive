@@ -5,6 +5,7 @@ const path = require('path')
 
 
 const Collections = require('./collections.js')
+const TemplateEngine = require('./template-engine.js')
 
 
 	/* Sitemap
@@ -12,7 +13,7 @@ const Collections = require('./collections.js')
 			"mockups/collections.html"
 			list of all collections and their sets
 
- 		/collections/{collection.name}/{set.name}.html
+ 		/collections/{collection.name}/{set.name}/index.html
  			"mockups/set-detail.html"
  			list of all definitions in a set
 
@@ -32,7 +33,7 @@ const Collections = require('./collections.js')
 
 async function main() {
 	const archive_path = "archive"
-	const output_path = "build"
+	const output_dir = "build"
 	const template_dir = "templates"
 
 	const site_title = "Eco Law Archive"
@@ -41,33 +42,32 @@ async function main() {
 
 	console.log("collections",collections)
 
+	const templates = new TemplateEngine({
+		template_dir,
+		output_dir,
+	})
 
-	await render_template(
-		path.join(template_dir, 'index.html'),
-		path.join(output_path, 'index.html'), 
-		{
-			page_title: `Collections | ${site_title}`,
-			collections: collections,
-		}
-	)
+	templates.render('index.html', 'index.html', {
+		page_title: `${site_title}`,
+		collections: collections,
+	})
 
-	await render_template(
-		path.join(template_dir, 'electedtitle-list.html'),
-		path.join(output_path, 'electedtitles.html'), 
-		{
-			page_title: `Elected Titles | ${site_title}`,
-			collections: collections,
-		}
-	)
+
+/*
+	templates.render('titles.html', 'titles.html', {
+		page_title: `Titles | ${site_title}`,
+		collections: collections,
+	})
+*/
+
 
 	collections.forEach(async (collection) => {
 		collection.sets.forEach(async (set) => {
 
-
 	 		// /collections/{collection.name}/{set.name}.html
-			await render_template(
-				path.join(template_dir, 'set-detail.html'),
-				path.join(output_path, 'collections', collection.name, set.name+'.html'), 
+			templates.render(
+				'set-detail.html',
+				path.join('collections', collection.name, set.name, 'index.html'), 
 				{
 					page_title: `${set.name} - ${collection.name} | ${site_title}`,
 					collection,
@@ -75,12 +75,13 @@ async function main() {
 				}
 			)
 
+
+			/*
 			set.ElectedTitle.forEach(async (title) => {
 		 		// /collections/{collection.name}/{set.name}/electedtitle-16826530.json.html
-				await render_template(
-					path.join(template_dir, 'electedtitle-detail.html'),
-					path.join(output_path, 
-						'collections', collection.name, set.name, set.filename+'.html'), 
+				templates.render(
+					'electedtitle-detail.html',
+					path.join('collections', collection.name, set.name, set.filename+'.html'),
 					{
 						page_title: `${title.name} - ${set.name} | ${site_title}`,
 						collection,
@@ -89,22 +90,12 @@ async function main() {
 					}
 				)
 			})
+			*/
 
 
 		})
 
 	})
-}
-
-async function render_template(template_path, output_path, context) {
-	const template_txt = (await fs.promises.readFile(template_path)).toString()
-
-	const template = await Handlebars.compile(template_txt)
-	const rendered = template(context)
-
-	console.log("Writing output", output_path)
-	await fs.ensureDir(path.dirname(output_path))
-	await fs.promises.writeFile(output_path, rendered.toString())
 }
 
 (async () => {

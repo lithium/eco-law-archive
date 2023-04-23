@@ -63,7 +63,7 @@ async function read_civics_directory(directory_path) {
 		const civics_txt = await fs.promises.readFile(entry_path)
 		const civics_obj = JSON.parse(civics_txt)
 
-		civics_obj['filename'] = entry_path
+		civics_obj['filename'] = entry.name
 		const type = civics_obj.type.split('.').pop()
 		if (!(type in output)) {
 			output[type] = []
