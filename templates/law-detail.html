@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ page_title }}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+      .reference {
+        color: rgb(115,225,113);
+        font-weight: bold;
+      }
+
+      .card-list .card {
+          margin-bottom: 1em;
+      }
+    </style>
+  </head>
+
+  <body>
+  <section class="section">
+    <div class="container">
+      <h1 class="title">
+        Eco Law Archive
+      </h1>
+      <h1 class="subtitle">
+        An archive of implemented <a target="_blank" href="https://play.eco">ECO</a> civics: Constitution, Laws, Election Process, Titles and Demographics
+      </h1>
+
+
+      <div class="tabs is-toggle">
+        <ul>
+          <li><a href="/">Collections</a></li>
+          <li><a href="/constitutions.html">Constitutions</a></li>
+          <li><a href="/electionprocesses.html">Election Processes</a></li>
+          <li><a href="/titles.html">Titles</a></li>
+          <li><a href="/demographics.html">Demographics</a></li>
+          <li class="is-active"><a href="/laws.html">Laws</a></li>
+        </ul>
+      </div>
+
+      <div class="content">
+        <h1 class="title is-1">Law</h1>
+        <h1 class="title is-2">{{law.name}} <span class="tag">{{collection.name}}/{{set.name}}</span></h1>
+        <h2 class="subtitle is-5">Description: {{law.description}}</h2>
+
+
+      <div class="card-list">
+        {{#each law.properties.Sections}}
+        <div class="card">
+          <div class="card-content">
+            <p class="title is-5">Section {{index1 @index}}: {{properties.Title}}</p>
+            <p class="subtitle is-6">{{properties.UserDescription}}
+
+            <div class="columns">
+              <div class="column is-one-third card-list content">
+                <p class="title is-5">Triggers</p>
+                {{#each properties.Triggers}}
+                <div class="card">
+                  <div class="card-content">
+                    <code><pre>{{json this}}</pre></code>
+                  </div>
+                </div>
+                {{/each}}
+              </div>
+
+              <div class="column is-one-third card-list content">
+                <p class="title is-5">If</p>
+                <div class="card-content card-list">
+
+                  {{#each properties.IfThenBlocks}}
+                    {{#each properties.If.properties.List}}
+                    <div class="card">
+                      <div class="card-content">
+                        <pre><code>{{json this}}</code></pre>
+                      </div>
+                    </div>
+                    {{/each}}
+                  {{/each}}
+                </div>
+              </div>
+
+
+              <div class="column is-one-third card-list content">
+                <p class="title is-5">Then</p>
+                <div class="card-content card-list">
+
+                  {{#each properties.IfThenBlocks}}
+                    {{#each properties.Then}}
+                    <div class="card">
+                      <div class="card-content">
+                        <pre><code>{{json this}}</code></pre>
+                      </div>
+                    </div>
+                    {{/each}}
+                  {{/each}}
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+        {{/each}}
+      </div>
+
+
+      </div>
+
+      <div class="content">
+        <p class="title is-4">JSON</p>
+        <pre><code>{{{json law}}}</pre></code>
+      </div>
+
+
+    </div>
+  </section>
+  </body>
+</html>

@@ -107,6 +107,21 @@ async function main() {
 			})
 
 
+			set.Law.forEach(async (law) => {
+		 		// /collections/{collection.name}/{set.name}/law-16826530.json.html
+				templates.render(
+					'law-detail.html',
+					path.join('collections', collection.name, set.name, law.filename+'.html'),
+					{
+						page_title: `${law.name} - ${set.name} | ${site_title}`,
+						collection,
+						set,
+						law,
+					}
+				)
+			})
+
+
 		})
 
 	})
@@ -135,6 +150,8 @@ Handlebars.registerHelper('checkbox', (is_checked) => {
     `</span>`
 
 });
+
+Handlebars.registerHelper('index1', (idx) => idx+1 );
 
 (async () => {
 	const result = await main()
