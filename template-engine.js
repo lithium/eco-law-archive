@@ -9,21 +9,21 @@ class TemplateEngine {
 		this.output_dir = options.output_dir;
 	}
 
-	async render(template_name, context) {
+	render(template_name, context) {
 		const template_path = path.join(this.template_dir, template_name)
-		const template_txt = (await fs.promises.readFile(template_path)).toString()
+		const template_txt = (fs.readFileSync(template_path)).toString()
 
-		const template = await Handlebars.compile(template_txt)
+		const template = Handlebars.compile(template_txt)
 		const rendered = template(context)
 		return rendered
 	}	
-	async render_to(template_name, output_name, context) {
-		const rendered = await this.render(template_name, context)
+	render_to(template_name, output_name, context) {
+		const rendered = this.render(template_name, context)
 
 		const output_path = path.join(this.output_dir, output_name)
 		console.log("Writing output", output_path)
-		await fs.ensureDir(path.dirname(output_path))
-		await fs.promises.writeFile(output_path, rendered.toString())
+		fs.ensureDirSync(path.dirname(output_path))
+		fs.writeFileSync(output_path, rendered.toString())
 	}
 
 }

@@ -49,59 +49,50 @@
 
       <div class="card-list">
         {{#each law.properties.Sections}}
-        <div class="card">
-          <div class="card-content">
+        <div class="content">
             <p class="title is-5">Section {{index1 @index}}: {{properties.Title}}</p>
             <p class="subtitle is-6">{{properties.UserDescription}}
 
             <div class="columns">
-              <div class="column is-one-third card-list content">
+              <div class="column is-one-third card-list">
                 <p class="title is-5">Triggers</p>
                 {{#each properties.Triggers}}
                 <div class="card">
-                  <div class="card-content">
                     {{ecotrigger this}}
-                  </div>
                 </div>
                 {{/each}}
               </div>
 
-              <div class="column is-one-third card-list content">
+              <div class="column is-one-third card-list">
                 <p class="title is-5">If</p>
-                <div class="card-content card-list">
 
-                  {{#each properties.IfThenBlocks}}
-                    {{#each properties.If.properties.List}}
-                    <div class="card">
-                      <div class="card-content">
-                        <pre><code>{{json this}}</code></pre>
-                      </div>
+                {{#each properties.IfThenBlocks}}
+                  {{#each properties.If.properties.List}}
+                  <div class="card">
+                    <div class="card-content">
+                      <pre><code>{{json this}}</code></pre>
                     </div>
-                    {{/each}}
+                  </div>
                   {{/each}}
-                </div>
+                {{/each}}
               </div>
 
 
-              <div class="column is-one-third card-list content">
+              <div class="column is-one-third card-list">
                 <p class="title is-5">Then</p>
-                <div class="card-content card-list">
-
-                  {{#each properties.IfThenBlocks}}
-                    {{#each properties.Then}}
-                    <div class="card">
-                      <div class="card-content">
-                        <pre><code>{{json this}}</code></pre>
-                      </div>
+                {{#each properties.IfThenBlocks}}
+                  {{#each properties.Then}}
+                  <div class="card">
+                    <div class="card-content">
+                      <pre><code>{{json this}}</code></pre>
                     </div>
-                    {{/each}}
+                  </div>
                   {{/each}}
-                </div>
+                {{/each}}
               </div>
 
 
             </div>
-          </div>
         </div>
         {{/each}}
       </div>

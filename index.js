@@ -135,16 +135,18 @@ async function main() {
 
 
 const ecoref_icons = {
-	'Eco.Gameplay.Civics.Titles.ElectedTitle': "fa-person-burst"
+	'Eco.Gameplay.Civics.Titles.ElectedTitle': "fa-person-burst",
+	'Eco.Gameplay.Civics.Demographics.Demographic': "fa-people-line"
 }
 function helper_ecoref(context) {
 	const icon = ecoref_icons[context.type];
+	const refname = context.type.split('.').pop()
 	const val =  
-	`<span class="icon-text">`+
+	`<span>${refname}:</span> <span class="icon-text">`+
   		`<span class="icon"><i class="fas ${icon}"></i></span>`+
         `<span class="reference">${context.name}</span>`+
     `</span>`
-    return val
+    return new Handlebars.SafeString(val)
 }
 Handlebars.registerHelper('ecoref', helper_ecoref);
 
@@ -158,23 +160,20 @@ Handlebars.registerHelper('checkbox', (is_checked) => {
 });
 
 Handlebars.registerHelper('index1', (idx) => idx+1 );
+Handlebars.registerHelper('lastdot', (s) => s.split('.').pop() );
 
 
-Handlebars.registerHelper('ecotrigger', async (context) => {
+Handlebars.registerHelper('ecotrigger', (context) => {
 
-	//context.properties.Trigger.value
 	const template_name = path.join('triggers', `${context.properties.Trigger.value}.html`)
 	try {
-
-		const foo = await templates.render(template_name, {
+		const rendered = templates.render(template_name, {
 			trigger: context
 		})
-		console.log("got foo", foo)
-
-		return foo
+		return new Handlebars.SafeString(rendered)
 	} catch (err) {
-		console.log("wha?", err)
-		return `<pre><code>${JSON.stringify(context,undefined,2)}}</code></pre>`
+		console.log("ecotrigger template missing:", err)
+		return new Handlebars.SafeString(`<pre><code>${JSON.stringify(context,undefined,2)}}</code></pre>`)
 	}
 });
 
