@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ page_title }}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+      .reference {
+        color: rgb(115,225,113);
+        font-weight: bold;
+      }
+
+    </style>
+  </head>
+
+  <body>
+  <section class="section">
+    <div class="container">
+      <h1 class="title">
+        Eco Law Archive
+      </h1>
+      <h1 class="subtitle">
+        An archive of implemented <a target="_blank" href="https://play.eco">ECO</a> civics: Constitution, Laws, Election Process, Titles and Demographics
+      </h1>
+
+
+      <div class="tabs is-toggle">
+        <ul>
+          <li><a href="/">Collections</a></li>
+          <li><a href="/constitutions.html">Constitutions</a></li>
+          <li class="is-active"><a href="/electionprocesses.html">Election Processes</a></li>
+          <li><a href="/titles.html">Titles</a></li>
+          <li><a href="/demographics.html">Demographics</a></li>
+          <li><a href="/laws.html">Laws</a></li>
+        </ul>
+      </div>
+
+      <div class="content">
+        <h1 class="title is-1">Election Process</h1>
+        <h1 class="title is-2">{{electionprocess.name}}</h1>
+        <h2 class="subtitle is-5">Description: {{electionprocess.description}}</h2>
+
+            <table >
+              <tbody>
+                <tr>
+                  <th>Voters</th>
+                  <td>
+                    {{{ecoref electionprocess.properties.Voters}}}
+                  </td>
+                </tr>
+
+                <tr>
+                  <th>Vetoers</th>
+                  <td>
+                    {{{ecoref electionprocess.properties.Vetoers}}}
+                  </td>
+                </tr>
+
+                <tr>
+                  <th>How to Proceed if Elections End In A Tie</th>
+                  <td>
+                    {{electionprocess.properties.HowToProceedIfElectionsEndInATie}}
+                  </td>
+                </tr>
+
+
+                <tr>
+                  <th>Maximum Election Hours</th>
+                  <td>
+                    {{electionprocess.properties.MaximumElectionHours}}h
+                  </td>
+                </tr>
+
+
+                <tr>
+                  <th>Minimum Percent of Eligible Voters Required</th>
+                  <td>
+                    {{electionprocess.properties.MinimumPercentOfEligibleVotersRequired}}%
+                  </td>
+                </tr>
+
+                <tr>
+                  <th>Percent of All Voters to Instant Win</th>
+                  <td>
+                    {{electionprocess.properties.PercentOfAllVotersToInstantWin}}%
+                  </td>
+                </tr>
+
+                <tr>
+                  <th>Percent of All Voters to Instant Lose</th>
+                  <td>
+                    {{electionprocess.properties.PercentOfAllVotersToInstantLose}}%
+                  </td>
+                </tr>
+
+                <tr>
+                  <th>End Election Early When This Percent Have Voted</th>
+                  <td>
+                    {{electionprocess.properties.EndElectionEarlyWhenThisPercentHaveVoted}}%
+                  </td>
+                </tr>
+
+                <tr>
+                  <th>Minimum Days Between Elections Of This Type</th>
+                  <td>
+                    {{electionprocess.properties.MinimumDaysBetweenElectionsOfThisType}}
+                  </td>
+                </tr>
+
+                <tr>
+                  <th>Anonymous Voting</th>
+                  <td>
+                    {{{checkbox electionprocess.properties.AnonymousVoting}}}
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+      </div>
+
+      <div class="content">
+        <p class="title is-4">JSON</p>
+        <pre><code>{{{json electionprocess}}}</pre></code>
+      </div>
+
+
+    </div>
+  </section>
+  </body>
+</html>

@@ -7,6 +7,7 @@ const path = require('path')
 const Collections = require('./collections.js')
 const TemplateEngine = require('./template-engine.js')
 
+Handlebars.registerHelper('json', x => JSON.stringify(x, undefined, 2));
 
 	/* Sitemap
 		/index.html  
@@ -40,7 +41,6 @@ async function main() {
 
 	const collections = await Collections.scan_directory(archive_path)
 
-	console.log("collections",collections)
 
 	const templates = new TemplateEngine({
 		template_dir,
@@ -92,11 +92,49 @@ async function main() {
 			})
 			*/
 
+			set.ElectionProcess.forEach(async (electionprocess) => {
+		 		// /collections/{collection.name}/{set.name}/electionprocess-16826530.json.html
+				templates.render(
+					'electionprocess-detail.html',
+					path.join('collections', collection.name, set.name, electionprocess.filename+'.html'),
+					{
+						page_title: `${electionprocess.name} - ${set.name} | ${site_title}`,
+						collection,
+						set,
+						electionprocess,
+					}
+				)
+			})
+
 
 		})
 
 	})
 }
+
+
+const ecoref_icons = {
+	'Eco.Gameplay.Civics.Titles.ElectedTitle': "fa-person-burst"
+}
+function helper_ecoref(context) {
+	const icon = ecoref_icons[context.type];
+	const val =  
+	`<span class="icon-text">`+
+  		`<span class="icon"><i class="fas ${icon}"></i></span>`+
+        `<span class="reference">${context.name}</span>`+
+    `</span>`
+    return val
+}
+Handlebars.registerHelper('ecoref', helper_ecoref);
+
+
+Handlebars.registerHelper('checkbox', (is_checked) => {
+	const icon = is_checked ? 'fa-square-check' : 'fa-square-full'
+	return `<span class="icon-text">`+
+  		`<span class="icon"><i class="fa-regular ${icon}"></i></span>`+
+    `</span>`
+
+});
 
 (async () => {
 	const result = await main()
