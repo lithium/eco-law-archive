@@ -7,7 +7,20 @@ const path = require('path')
 const Collections = require('./collections.js')
 const TemplateEngine = require('./template-engine.js')
 
+const site_title = "Eco Law Archive"
+
+
+const archive_path = "archive"
+const output_dir = "build"
+const template_dir = "templates"
+const templates = new TemplateEngine({
+	template_dir,
+	output_dir,
+})
+
+
 Handlebars.registerHelper('json', x => JSON.stringify(x, undefined, 2));
+Handlebars.registerHelper('index1', (idx) => idx+1 );
 
 	/* Sitemap
 		/index.html  
@@ -32,29 +45,22 @@ Handlebars.registerHelper('json', x => JSON.stringify(x, undefined, 2));
 	*/
 
 
-async function main() {
-	const archive_path = "archive"
-	const output_dir = "build"
-	const template_dir = "templates"
 
-	const site_title = "Eco Law Archive"
+async function main() {
+
 
 	const collections = await Collections.scan_directory(archive_path)
 
 
-	const templates = new TemplateEngine({
-		template_dir,
-		output_dir,
-	})
 
-	templates.render('index.html', 'index.html', {
+	templates.render_to('index.html', 'index.html', {
 		page_title: `${site_title}`,
 		collections: collections,
 	})
 
 
 /*
-	templates.render('titles.html', 'titles.html', {
+	templates.render_to('titles.html', 'titles.html', {
 		page_title: `Titles | ${site_title}`,
 		collections: collections,
 	})
@@ -65,7 +71,7 @@ async function main() {
 		collection.sets.forEach(async (set) => {
 
 	 		// /collections/{collection.name}/{set.name}.html
-			templates.render(
+			templates.render_to(
 				'set-detail.html',
 				path.join('collections', collection.name, set.name, 'index.html'), 
 				{
@@ -79,7 +85,7 @@ async function main() {
 			/*
 			set.ElectedTitle.forEach(async (title) => {
 		 		// /collections/{collection.name}/{set.name}/electedtitle-16826530.json.html
-				templates.render(
+				templates.render_to(
 					'electedtitle-detail.html',
 					path.join('collections', collection.name, set.name, set.filename+'.html'),
 					{
@@ -94,7 +100,7 @@ async function main() {
 
 			set.ElectionProcess.forEach(async (electionprocess) => {
 		 		// /collections/{collection.name}/{set.name}/electionprocess-16826530.json.html
-				templates.render(
+				templates.render_to(
 					'electionprocess-detail.html',
 					path.join('collections', collection.name, set.name, electionprocess.filename+'.html'),
 					{
@@ -109,7 +115,7 @@ async function main() {
 
 			set.Law.forEach(async (law) => {
 		 		// /collections/{collection.name}/{set.name}/law-16826530.json.html
-				templates.render(
+				templates.render_to(
 					'law-detail.html',
 					path.join('collections', collection.name, set.name, law.filename+'.html'),
 					{
@@ -152,6 +158,25 @@ Handlebars.registerHelper('checkbox', (is_checked) => {
 });
 
 Handlebars.registerHelper('index1', (idx) => idx+1 );
+
+
+Handlebars.registerHelper('ecotrigger', async (context) => {
+
+	//context.properties.Trigger.value
+	const template_name = path.join('triggers', `${context.properties.Trigger.value}.html`)
+	try {
+
+		const foo = await templates.render(template_name, {
+			trigger: context
+		})
+		console.log("got foo", foo)
+
+		return foo
+	} catch (err) {
+		console.log("wha?", err)
+		return `<pre><code>${JSON.stringify(context,undefined,2)}}</code></pre>`
+	}
+});
 
 (async () => {
 	const result = await main()
