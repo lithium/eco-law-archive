@@ -164,7 +164,13 @@ Handlebars.registerHelper('checkbox', (is_checked) => {
 
 });
 
-const lastdot = (s) => s.split('.').pop();
+const lastdot = (s) => {
+	const ret = s.split('.').pop();
+	if (/\+.*Species$/.test(ret)) {
+		return ret.replace(/\+.*/,'')
+	}
+	return ret
+}
 Handlebars.registerHelper('index1', (idx) => idx+1 );
 Handlebars.registerHelper('lastdot',  lastdot);
 

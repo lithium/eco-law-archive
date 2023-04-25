@@ -6,8 +6,9 @@
 			{{/unless}}
 
 			{{#if properties.List.entries}}
+				{{properties.List.entries.length}} Species: 
 				{{#each properties.List.entries}}
-					<div>{{ecoref this}}</div>
+					<span>{{ecoref this}}</span>{{#unless @last}},{{/unless}}
 				{{/each}}
 			{{/if}}
 

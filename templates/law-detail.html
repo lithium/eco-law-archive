@@ -24,9 +24,38 @@
       }
 
       .if-then-block {
-        padding: 0.5em;
-        border: 1px solid blue;
+        padding: 12px;
+        border: 2px solid rgb(50,166,240);
       }
+      .if-then-block + .if-then-block {
+        margin-top: 1em;
+
+      }
+
+      .trigger-column {
+        border: 2px solid rgb(96,240,137);
+      }
+      .trigger-column > p.title {
+        background: rgb(96,240,137);
+        color: white;
+        padding: 0.5em;
+        font-weight: bolder;
+        text-align: center;
+      }
+
+      .ifthen-column {
+        padding: 0;
+        margin-left: 1em;
+      }
+      .ifthen-column .title {
+        background: rgb(50,166,240);
+        color: white;
+        padding: 0.5em;
+        font-weight: bolder;
+        text-align: center;
+
+      }
+
     </style>
 
     <script>
@@ -73,7 +102,7 @@
             <p class="subtitle is-6">{{properties.UserDescription}}
 
             <div class="columns">
-              <div class="column is-one-third card-list">
+              <div class="column is-one-third card-list trigger-column">
                 <p class="title is-5">Triggers</p>
                 {{#each properties.Triggers}}
                 <div class="card">
@@ -96,7 +125,7 @@
                 {{/each}}
               </div>
 
-              <div class="column is-two-thirds card-list">
+              <div class="column is-two-thirds card-list ifthen-column">
 
                 {{#each properties.IfThenBlocks}}
                 <div class="if-then-block"> 
@@ -107,7 +136,6 @@
                       {{#each properties.If.properties.List}}
                       <div class="card">
                         {{partial this}}
-
                       </div>
                       {{/each}}
                     </div>
@@ -116,9 +144,7 @@
                       <p class="title is-5">Then</p>
                       {{#each properties.Then}}
                       <div class="card">
-                        <div class="card-content">
-                          <pre><code>{{json this}}</code></pre>
-                        </div>
+                        {{partial this}}
                       </div>
                       {{/each}}
                     </div>
@@ -143,8 +169,7 @@
       </div>
 
       <div class="content">
-        <p class="title is-4">JSON</p>
-        <pre><code>{{{json law}}}</pre></code>
+        Full {{json_toggle law "toplevel" "law" 0}}
       </div>
 
 

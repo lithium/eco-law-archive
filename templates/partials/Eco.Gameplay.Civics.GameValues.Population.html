@@ -1,5 +1,8 @@
 
     <strong>Species Population</strong>
-        {{#each properties.SpeciesTypes.entries}}
-            <div>{{ecoref this}}</div>
-        {{/each}}
+    of {{properties.SpeciesTypes.entries.length}} Species: 
+
+    {{#each properties.SpeciesTypes.entries}}
+        <span>{{ecoref this}}</span>{{#unless @last}},{{/unless}}
+    {{/each}}
+

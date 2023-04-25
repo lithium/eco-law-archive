@@ -1,1 +1,8 @@
-Number: {{value}}
+
+
+{{#if value.type}}
+	{{ecoref value}}
+{{/if}}
+{{#unless value.type}}
+	Number: {{value}}
+{{/unless}}
