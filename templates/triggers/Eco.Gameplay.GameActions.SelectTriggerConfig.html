@@ -1,0 +1,16 @@
+	<tr class="indented">
+		<th>{{propDisplayName}}</th>
+		<td>
+			{{#unless properties.List.entries}}
+				{{properties.List.internalDescription}}
+			{{/unless}}
+
+			{{#if properties.List.entries}}
+				{{#each properties.List.entries}}
+					<div>{{ecoref this}}</div>
+				{{/each}}
+			{{/if}}
+
+		</td>
+	</tr>
+

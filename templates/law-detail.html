@@ -16,7 +16,18 @@
       .card-list .card {
           margin-bottom: 1em;
       }
+      .json-preview {
+        font-size: 10pt;
+      }
     </style>
+
+    <script>
+      function json_toggle(evt) {
+        const targetId = evt.target.getAttribute("data-targetid")
+        const el = document.getElementById(targetId)
+        el.style.display = el.style.display == "block" ? "none" : "block";
+      }
+    </script>
   </head>
 
   <body>
@@ -58,7 +69,23 @@
                 <p class="title is-5">Triggers</p>
                 {{#each properties.Triggers}}
                 <div class="card">
-                    {{ecotrigger this}}
+                    <table class="table">
+                      <tr>
+                        <th>Trigger</th>
+                        <td>{{lastdot properties.Trigger.value}}</td>
+                      </tr>
+
+                      {{#each properties.Configs}}
+                        {{ecotrigger this}}
+                      {{/each}}
+
+                    </table>
+
+                    <div>
+                    {{json_toggle this "trigger" ../properties.Title @index }}
+                    </div>
+                 
+
                 </div>
                 {{/each}}
               </div>

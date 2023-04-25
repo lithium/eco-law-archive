@@ -136,9 +136,14 @@ async function main() {
 
 const ecoref_icons = {
 	'Eco.Gameplay.Civics.Titles.ElectedTitle': "fa-person-burst",
-	'Eco.Gameplay.Civics.Demographics.Demographic': "fa-people-line"
+	'Eco.Gameplay.Civics.Demographics.Demographic': "fa-people-line",
+	'Eco.Gameplay.Economy.Currency': "fa-coins",
 }
 function helper_ecoref(context) {
+	if (context.type === 'Type') {
+		return lastdot(context.value);
+	}
+
 	const icon = ecoref_icons[context.type];
 	const refname = context.type.split('.').pop()
 	const val =  
@@ -159,22 +164,33 @@ Handlebars.registerHelper('checkbox', (is_checked) => {
 
 });
 
+const lastdot = (s) => s.split('.').pop();
 Handlebars.registerHelper('index1', (idx) => idx+1 );
-Handlebars.registerHelper('lastdot', (s) => s.split('.').pop() );
+Handlebars.registerHelper('lastdot',  lastdot);
 
 
 Handlebars.registerHelper('ecotrigger', (context) => {
+	const type = context.type;
 
-	const template_name = path.join('triggers', `${context.properties.Trigger.value}.html`)
+	const template_name = path.join('triggers', `${type}.html`)
 	try {
-		const rendered = templates.render(template_name, {
-			trigger: context
-		})
+		const rendered = templates.render(template_name, context)
 		return new Handlebars.SafeString(rendered)
 	} catch (err) {
-		console.log("ecotrigger template missing:", err)
+		console.log("ecotrigger template missing:", template_name, err)
 		return new Handlebars.SafeString(`<pre><code>${JSON.stringify(context,undefined,2)}}</code></pre>`)
 	}
+});
+
+Handlebars.registerHelper('json_toggle', (obj, obj_type, ident, idx) => {
+
+	const scrubbed = ident.replace(/[^a-zA-Z0-9_]/g,'')
+	const id = `${obj_type}-${scrubbed}-${idx}`
+	return new Handlebars.SafeString(
+		`<a class="button is-text is-small" data-targetId="${id}" onclick="return json_toggle(event)">JSON</a>`+
+		`<pre class="json-preview" id="${id}" style="display: none"><code>${JSON.stringify(obj, undefined, 2)}</code></pre>`
+	);
+
 });
 
 (async () => {
