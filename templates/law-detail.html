@@ -22,6 +22,11 @@
       tr.indented th {
         padding-left: 2em;
       }
+
+      .if-then-block {
+        padding: 0.5em;
+        border: 1px solid blue;
+      }
     </style>
 
     <script>
@@ -91,35 +96,41 @@
                 {{/each}}
               </div>
 
-              <div class="column is-one-third card-list">
+              <div class="column is-two-thirds card-list">
 
                 {{#each properties.IfThenBlocks}}
-                  <p class="title is-5">If  <span class="tag">{{properties.If.properties.Comparison}}</span></p>
-                  {{#each properties.If.properties.List}}
-                  <div class="card">
-                    {{partial this}}
+                <div class="if-then-block"> 
+
+                  <div class="columns">
+                    <div class="column is-one-half">
+                      <p class="title is-5">If  <span class="tag">{{properties.If.properties.Comparison}}</span></p>
+                      {{#each properties.If.properties.List}}
+                      <div class="card">
+                        {{partial this}}
+
+                      </div>
+                      {{/each}}
+                    </div>
+
+                    <div class="column is-one-half">
+                      <p class="title is-5">Then</p>
+                      {{#each properties.Then}}
+                      <div class="card">
+                        <div class="card-content">
+                          <pre><code>{{json this}}</code></pre>
+                        </div>
+                      </div>
+                      {{/each}}
+                    </div>
 
                   </div>
-                  {{/each}}
-
-                    <div>
-                    {{json_toggle this "if" ../properties.Title @index }}
-                    </div>
-                {{/each}}
-              </div>
-
-
-              <div class="column is-one-third card-list">
-                <p class="title is-5">Then</p>
-                {{#each properties.IfThenBlocks}}
-                  {{#each properties.Then}}
-                  <div class="card">
-                    <div class="card-content">
-                      <pre><code>{{json this}}</code></pre>
-                    </div>
+                  <div>
+                  {{json_toggle this "if" ../properties.Title @index }}
                   </div>
-                  {{/each}}
+                </div>
                 {{/each}}
+
+
               </div>
 
 
