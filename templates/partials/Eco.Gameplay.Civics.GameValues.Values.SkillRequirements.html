@@ -1,0 +1,30 @@
+
+ <table class="table">
+  <tr>
+    <th colspan=2>Skill Requirements</th>
+  </tr>
+  <tr class="indented">
+  	<th>Citizen</th>
+  	<td>{{properties.Citizen._name}} - {{properties.Citizen.contextDescription}}</td>
+  </tr>
+
+  <tr class="indented">
+  	<th>Skills</th>
+  	<td>
+      {{#each properties.Skills.entries}}
+      <div>{{ecoref this}}</div>
+      {{/each}}
+    </td>
+  </tr>
+
+  <tr class="indented">
+    <th>Requirements</th>
+    <td>{{properties.Requirements}}</td>
+  </tr>
+
+  <tr class="indented">
+  	<th>Required Level</th>
+  	<td>{{partial properties.RequiredLevel}}</td>
+  </tr>
+
+</table>

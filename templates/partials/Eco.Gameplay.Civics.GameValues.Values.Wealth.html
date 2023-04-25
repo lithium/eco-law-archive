@@ -1,0 +1,26 @@
+
+<table class="table">
+  <tr>
+    <th colspan=2>Wealth</th>
+  </tr>
+
+  <tr class="indented">
+    <th>{{properties.Citizen._name}}</th>
+    <td>{{properties.Citizen.contextDescription}}</td>
+  </tr>
+
+  <tr class="indented">
+    <th>Currency</th>
+    <td>
+      {{#if properties.Currency.value}}
+        {{ecoref properties.Currency.value}}
+      {{/if}}
+      {{#unless properties.Currency.value}}
+        {{properties.Currency.contextDescription}}    
+      {{/unless}}
+
+    </td>
+  </tr>
+
+</table>
+

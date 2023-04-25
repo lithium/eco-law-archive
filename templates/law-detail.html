@@ -19,6 +19,9 @@
       .json-preview {
         font-size: 10pt;
       }
+      tr.indented th {
+        padding-left: 2em;
+      }
     </style>
 
     <script>
@@ -76,7 +79,7 @@
                       </tr>
 
                       {{#each properties.Configs}}
-                        {{ecotrigger this}}
+                        {{partial this}}
                       {{/each}}
 
                     </table>
@@ -84,23 +87,24 @@
                     <div>
                     {{json_toggle this "trigger" ../properties.Title @index }}
                     </div>
-                 
-
                 </div>
                 {{/each}}
               </div>
 
               <div class="column is-one-third card-list">
-                <p class="title is-5">If</p>
 
                 {{#each properties.IfThenBlocks}}
+                  <p class="title is-5">If  <span class="tag">{{properties.If.properties.Comparison}}</span></p>
                   {{#each properties.If.properties.List}}
                   <div class="card">
-                    <div class="card-content">
-                      <pre><code>{{json this}}</code></pre>
-                    </div>
+                    {{partial this}}
+
                   </div>
                   {{/each}}
+
+                    <div>
+                    {{json_toggle this "if" ../properties.Title @index }}
+                    </div>
                 {{/each}}
               </div>
 

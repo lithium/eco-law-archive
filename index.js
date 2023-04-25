@@ -169,16 +169,22 @@ Handlebars.registerHelper('index1', (idx) => idx+1 );
 Handlebars.registerHelper('lastdot',  lastdot);
 
 
-Handlebars.registerHelper('ecotrigger', (context) => {
+Handlebars.registerHelper('partial', (context) => {
 	const type = context.type;
 
-	const template_name = path.join('triggers', `${type}.html`)
+	const template_name = path.join('partials', `${type}.html`)
 	try {
 		const rendered = templates.render(template_name, context)
 		return new Handlebars.SafeString(rendered)
 	} catch (err) {
-		console.log("ecotrigger template missing:", template_name, err)
-		return new Handlebars.SafeString(`<pre><code>${JSON.stringify(context,undefined,2)}}</code></pre>`)
+		if (err.code == 'ENOENT') {
+			console.log("  partial template missing:", template_name)
+			return new Handlebars.SafeString(`<pre><code>${JSON.stringify(context,undefined,2)}}</code></pre>`)
+		} else {
+			console.log("Error processing partial: ", template_name)
+			console.log(err)
+			process.exit(1);
+		}
 	}
 });
 
