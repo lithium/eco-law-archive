@@ -1,0 +1,23 @@
+
+{{#if properties.Currency}}
+<table>
+	<tr>
+		<th colspan="2">Recurring Transfer</th>
+	</tr>
+	<tr>
+		<th>Currency</th>
+		<td>{{partial properties.Currency}}</td>
+	</tr>
+	<tr>
+		<th>Amount Per Hour</th>
+		<td>{{partial properties.AmountPerHour}}</td>
+	</tr>
+	<tr>
+		<th>Payment Type</th>
+		<td>{{properties.PaymentType}}</td>
+	</tr>
+</table>
+{{/if}}
+{{#unless properties.Currency}}
+None
+{{/unless}}

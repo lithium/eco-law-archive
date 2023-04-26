@@ -83,9 +83,15 @@ async function main() {
 	})
 
 	templates.render_to('all-electionprocesses.html', 'electionprocesses.html', {
-		page_title: `Election Process | ${site_title}`,
+		page_title: `Election Processes | ${site_title}`,
 		collections,
 		electionprocesses: index_of_type(collections, 'ElectionProcess')
+	})
+
+	templates.render_to('all-demographics.html', 'demographics.html', {
+		page_title: `Demographics | ${site_title}`,
+		collections,
+		demographics: index_of_type(collections, 'Demographic')
 	})
 
 	templates.render_to('all-laws.html', 'laws.html', {
@@ -110,6 +116,21 @@ async function main() {
 			)
 
 
+
+			set.ElectionProcess.forEach(async (electionprocess) => {
+		 		// /collections/{collection.name}/{set.name}/electionprocess-16826530.json.html
+				templates.render_to(
+					'electionprocess-detail.html',
+					path.join('collections', collection.name, set.name, electionprocess.filename+'.html'),
+					{
+						page_title: `${electionprocess.name} - ${set.name} | ${site_title}`,
+						collection,
+						set,
+						electionprocess,
+					}
+				)
+			})
+
 			set.ElectedTitle.forEach(async (title) => {
 		 		// /collections/{collection.name}/{set.name}/electedtitle-16826530.json.html
 				templates.render_to(
@@ -125,16 +146,18 @@ async function main() {
 				)
 			})
 
-			set.ElectionProcess.forEach(async (electionprocess) => {
-		 		// /collections/{collection.name}/{set.name}/electionprocess-16826530.json.html
+
+			set.Demographic.forEach(async (demographic) => {
+		 		// /collections/{collection.name}/{set.name}/demographic-16826530.json.html
 				templates.render_to(
-					'electionprocess-detail.html',
-					path.join('collections', collection.name, set.name, electionprocess.filename+'.html'),
+					'demographic-detail.html',
+					path.join('collections', collection.name, set.name, demographic.filename+'.html'),
 					{
-						page_title: `${electionprocess.name} - ${set.name} | ${site_title}`,
+						page_title: `${demographic.name} - ${set.name} | ${site_title}`,
+						collections: active_set(collections, set),
 						collection,
 						set,
-						electionprocess,
+						demographic,
 					}
 				)
 			})
@@ -219,7 +242,11 @@ Handlebars.registerHelper('include', (template_name, context) => {
 	}
 })
 
-Handlebars.registerHelper('partial', (context) => {
+Handlebars.registerHelper('partial', (context, label) => {
+	if (!context) {
+		return ""
+	}
+
 	let template_name;
 	let type;
 	
@@ -227,7 +254,7 @@ Handlebars.registerHelper('partial', (context) => {
 		type = context.type;
 		template_name = path.join('partials', `${type}.html`)
 	} catch (err) {
-		console.log("missing type!", context)
+		console.log("missing type!", context, label, err)
 		process.exit(1);
 	}
 

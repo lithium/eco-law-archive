@@ -18,6 +18,7 @@ class TemplateEngine {
 		return rendered
 	}	
 	render_to(template_name, output_name, context) {
+		console.log("\nRendering", template_name, "->", output_name)
 		const rendered = this.render(template_name, context)
 
 		const output_path = path.join(this.output_dir, output_name)
