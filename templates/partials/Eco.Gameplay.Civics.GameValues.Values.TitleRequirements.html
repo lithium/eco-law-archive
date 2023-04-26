@@ -1,0 +1,22 @@
+
+<table>
+	<tr>
+		<th colspan="2">Title Requirements</th>
+	</tr>
+	<tr>
+		<th>Citizen</th>
+		<td>{{partial properties.Citizen}}</td>
+	</tr>
+	<tr>
+		<th>Requirements</th>
+		<td>{{properties.Requirements}}</td>
+	</tr>
+	<tr>
+		<th>Titles</th>
+		<td>
+		{{#each properties.Titles.entries}}
+		<div>{{ecoref this}}</div>
+		{{/each}}
+		</td>
+	</tr>
+</table>

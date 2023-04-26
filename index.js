@@ -176,16 +176,24 @@ Handlebars.registerHelper('lastdot',  lastdot);
 
 
 Handlebars.registerHelper('partial', (context) => {
-	const type = context.type;
+	let template_name;
+	let type;
+	
+	try {
+		type = context.type;
+		template_name = path.join('partials', `${type}.html`)
+	} catch (err) {
+		console.log("missing type!", context)
+		process.exit(1);
+	}
 
-	const template_name = path.join('partials', `${type}.html`)
 	try {
 		const rendered = templates.render(template_name, context)
 		return new Handlebars.SafeString(rendered)
 	} catch (err) {
 		if (err.code == 'ENOENT') {
 			console.log("  partial template missing:", template_name)
-			return new Handlebars.SafeString(`<pre><code>${JSON.stringify(context,undefined,2)}}</code></pre>`)
+			return new Handlebars.SafeString(`<pre class="json-preview">${JSON.stringify(context,undefined,2)}}</pre>`)
 		} else {
 			console.log("Error processing partial: ", template_name)
 			console.log(err)

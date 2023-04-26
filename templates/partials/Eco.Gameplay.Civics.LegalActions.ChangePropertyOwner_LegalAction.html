@@ -1,0 +1,21 @@
+
+<table>
+    <tr>
+        <th colspan="2">Change Property Owner</th>
+    </tr>
+    <tr class="indented">
+        <th>Property</th>
+        <td>
+        {{partial properties.Property}}
+        </td>
+    </tr>
+    <tr class="indented">
+        <th>New Owner</th>
+        <td>{{properties.NewOwner}} 
+        {{#unless properties.NewOwner}}Unowned{{/unless}}</td>
+    </tr>
+    <tr class="indented">
+        <th>Infobox On Success</th>
+        <td>{{partial properties.InfoboxOnSuccess}}</td>
+    </tr>
+</table>

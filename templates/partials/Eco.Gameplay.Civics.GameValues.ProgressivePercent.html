@@ -1,0 +1,28 @@
+
+<table>
+    <tr>
+        <th colspan="2">Progressive Percentage</th>
+    </tr>
+    <tr class="indented">
+        <th>Number</th>
+        <td>
+        {{partial properties.Number}}
+        </td>
+    </tr>
+
+    <tr class="indented">
+        <th>Thresholds</th>
+        <td>
+
+            <table>
+            {{#each properties.Thresholds}}
+                <tr>
+                    <th>{{properties.Threshold.value}}:</th>
+                    <td>{{properties.Percent.value}}%</td>
+                </tr>
+            {{/each}}
+            </table>
+
+        </td>
+    </tr>
+</table>
