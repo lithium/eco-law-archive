@@ -138,7 +138,6 @@ async function main() {
 					path.join('collections', collection.name, set.name, title.filename+'.html'),
 					{
 						page_title: `${title.name} - ${set.name} | ${site_title}`,
-						collections: active_set(collections, set),
 						collection,
 						set,
 						title,
@@ -154,7 +153,6 @@ async function main() {
 					path.join('collections', collection.name, set.name, demographic.filename+'.html'),
 					{
 						page_title: `${demographic.name} - ${set.name} | ${site_title}`,
-						collections: active_set(collections, set),
 						collection,
 						set,
 						demographic,

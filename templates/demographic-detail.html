@@ -24,41 +24,12 @@
         </ul>
       </div>
 
-      <div class="columns">
-        <div class="column is-one-quarter">
-
-          <aside class="menu">
-            <p class="menu-label">
-              Collections
-            </p>
-            <ul class="menu-list">
-              {{#each collections}}
-                <li><a>{{name}}</a>
-                  <ul>
-                    {{#each sets}}
-                    <li><a 
-                      href="/collections/{{../name}}/{{name}}" 
-                      class="{{#if is_active}}is-active{{/if}}">{{name}}</a></li>
-                    {{/each}}
-                  </ul>
-                </li>
-              {{/each}}
-
-            </ul>
-
-          </aside>
-
-        </div>
-
 
       <div class="content">
         <h1 class="title is-1">Demographic</h1>
         <h1 class="title is-2">{{demographic.name}} <span class="tag">{{collection.name}}/{{set.name}}</span></h1>
         <h2 class="subtitle is-5">Description: {{demographic.description}}</h2>
 
-
-        <div class="card-list">
-        </div>
 
         {{#with demographic.properties}}
         <div>
