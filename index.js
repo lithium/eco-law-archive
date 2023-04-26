@@ -45,19 +45,29 @@ Handlebars.registerHelper('index1', (idx) => idx+1 );
 	*/
 
 
+function active_set(collections, set) {
+	collections.forEach(c => {
+		c.sets.forEach(s => {
+			if (s.name == set.name) {
+				s.is_active = true;
+			}
+			else {
+				s.is_active = false;
+			}
+		})
+	})
+	return collections;
+}
 
 async function main() {
 
 
 	const collections = await Collections.scan_directory(archive_path)
 
-
-
 	templates.render_to('index.html', 'index.html', {
 		page_title: `${site_title}`,
 		collections: collections,
 	})
-
 
 /*
 	templates.render_to('titles.html', 'titles.html', {
@@ -83,6 +93,7 @@ async function main() {
 				path.join('collections', collection.name, set.name, 'index.html'), 
 				{
 					page_title: `${set.name} - ${collection.name} | ${site_title}`,
+					collections: active_set(collections, set),
 					collection,
 					set,
 				}
@@ -147,6 +158,10 @@ const ecoref_icons = {
 	'Eco.Gameplay.Economy.Currency': "fa-coins",
 }
 function helper_ecoref(context) {
+	if (!context) {
+		return context
+	}
+
 	if (context.type === 'Type') {
 		return lastdot(context.value);
 	}

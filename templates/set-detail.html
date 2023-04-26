@@ -42,7 +42,7 @@
           <li><a>Election Processes</a></li>
           <li><a href="/titles.html">Titles</a></li>
           <li><a>Demographics</a></li>
-          <li><a>Laws</a></li>
+          <li><a href="/laws.html">Laws</a></li>
         </ul>
       </div>
 
@@ -55,18 +55,18 @@
               Collections
             </p>
             <ul class="menu-list">
-              <li><a>Giant Panda</a>
-              <ul>
-                <li><a class="is-active">Cycle50</a></li>
-                <li><a>Cycle49</a></li>
-              </ul>
-              </li>
-              <li><a>Democracies</a>
-                <ul>
-                  <li><a>The Peoples' Government</a></li>
-                </ul>
-              </ul>
-              </li>
+              {{#each collections}}
+                <li><a>{{name}}</a>
+                  <ul>
+                    {{#each sets}}
+                    <li><a 
+                      href="/collections/{{../name}}/{{name}}" 
+                      class="{{#if is_active}}is-active{{/if}}">{{name}}</a></li>
+                    {{/each}}
+                  </ul>
+                </li>
+              {{/each}}
+
             </ul>
 
           </aside>
@@ -74,6 +74,8 @@
         </div>
 
         <div class="column card-list">
+
+          <p class="title is-2">{{collection.name}} / {{set.name}}</p>
 
             <div class="card">
               <div class="card-content">
@@ -162,12 +164,6 @@
 
     </div>
   </section>
-
-  <code><pre>
-{{# each set}}
-  {{@key}}: {{this}}
-{{/each}}
-</pre></code>
 
   </body>
 </html>

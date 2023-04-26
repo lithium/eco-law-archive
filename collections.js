@@ -73,6 +73,7 @@ async function read_civics_directory(directory_path, collection_name, set_name) 
 
 		output[type].push(civics_obj)
 	}
+	output['collection'] = collection_name
 	return output;
 }
 
