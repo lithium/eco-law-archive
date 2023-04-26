@@ -4,28 +4,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ page_title }}</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <style>
-      .reference {
-        color: rgb(115,225,113);
-        font-weight: bold;
-      }
-
-    </style>
+    {{include "head"}}
+    
   </head>
 
   <body>
   <section class="section">
     <div class="container">
-      <h1 class="title">
-        Eco Law Archive
-      </h1>
-      <h1 class="subtitle">
-        An archive of implemented <a target="_blank" href="https://play.eco">ECO</a> civics: Constitution, Laws, Election Process, Titles and Demographics
-      </h1>
-
+      {{include "nav"}}
 
       <div class="tabs is-toggle">
         <ul>
@@ -123,11 +110,7 @@
 
       </div>
 
-      <div class="content">
-        <p class="title is-4">JSON</p>
-        <pre><code>{{{json electionprocess}}}</pre></code>
-      </div>
-
+      {{json_toggle electionprocess}}
 
     </div>
   </section>

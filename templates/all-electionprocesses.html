@@ -15,34 +15,27 @@
 
       <div class="tabs is-toggle">
         <ul>
-          <li class="is-active"><a href="/">Collections</a></li>
+          <li><a href="/">Collections</a></li>
           <li><a href="/constitutions.html">Constitutions</a></li>
-          <li><a href="/electionprocesses.html">Election Processes</a></li>
+          <li class="is-active"><a href="/electionprocesses.html">Election Processes</a></li>
           <li><a href="/titles.html">Titles</a></li>
           <li><a href="/demographics.html">Demographics</a></li>
           <li><a href="/laws.html">Laws</a></li>
         </ul>
       </div>
 
-      <div class="card-list">
+      <div class="content">
+        <p class="title is-3">All Election Processes</p>
 
-        {{#each collections}}
-          <div class="card">
-            <div class="card-content">
-              <div class="content">
-                <p class="title is-4">{{name}}</p>
-                <ul>
-                  {{#each sets}}
-                  <li><a href="/collections/{{../name}}/{{name}}">{{name}}</a></li>
-                  {{/each}}
-                </ul>
-              </div>
-            </div>
-          </div>
-        {{/each}}
-  
+        <ul>
+          {{#each electionprocesses}}
+          <li>
+            <a href="/collections/{{collection}}/{{set}}/{{filename}}.html">{{name}}</a>
+            <a href="/collections/{{collection}}/{{set}}"><span class="tag">{{collection}}/{{set}}</span></a>
+          </li>
+          {{/each}}
+        </ul>
       </div>
-
 
     </div>
   </section>

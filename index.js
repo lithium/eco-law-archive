@@ -75,6 +75,13 @@ async function main() {
 		collections: collections,
 	})
 */
+	const all_electionprocess = collections.map(c => c.sets.map(s => s.ElectionProcess)).flat(2)
+	all_electionprocess.sort((a,b) => a.name.localeCompare(b.name))
+	templates.render_to('all-electionprocesses.html', 'electionprocesses.html', {
+		page_title: `Election Process | ${site_title}`,
+		collections,
+		electionprocesses: all_electionprocess,
+	})
 
 	const all_laws = collections.map(c => c.sets.map(s => s.Law)).flat(2)
 	all_laws.sort((a,b) => a.name.localeCompare(b.name))
@@ -197,6 +204,19 @@ Handlebars.registerHelper('index1', (idx) => idx+1 );
 Handlebars.registerHelper('lastdot',  lastdot);
 
 
+Handlebars.registerHelper('include', (template_name, context) => {
+	template_name = path.join('includes', `${template_name}.html`)
+
+	try {
+		const rendered = templates.render(template_name, context)
+		return new Handlebars.SafeString(rendered)
+	} catch (err) {
+		console.log("Error processing include: ", template_name)
+		console.log(err)
+		process.exit(1);
+	}
+})
+
 Handlebars.registerHelper('partial', (context) => {
 	let template_name;
 	let type;
@@ -234,6 +254,8 @@ Handlebars.registerHelper('json_toggle', (obj, obj_type, ident, idx) => {
 	);
 
 });
+
+
 
 (async () => {
 	const result = await main()
