@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ page_title }}</title>
+
+    {{include "head"}}
+  </head>
+
+  <body>
+  <section class="section">
+    <div class="container">
+      {{include "nav"}}
+
+      <div class="tabs is-toggle">
+        <ul>
+          <li><a href="/">Collections</a></li>
+          <li><a href="/constitutions.html">Constitutions</a></li>
+          <li><a href="/electionprocesses.html">Election Processes</a></li>
+          <li class="is-active"><a href="/titles.html">Titles</a></li>
+          <li><a href="/demographics.html">Demographics</a></li>
+          <li><a href="/laws.html">Laws</a></li>
+        </ul>
+      </div>
+
+      <div class="columns">
+        <div class="column is-one-quarter">
+
+          <aside class="menu">
+            <p class="menu-label">
+              Collections
+            </p>
+            <ul class="menu-list">
+              {{#each collections}}
+                <li><a>{{name}}</a>
+                  <ul>
+                    {{#each sets}}
+                    <li><a 
+                      href="/collections/{{../name}}/{{name}}" 
+                      class="{{#if is_active}}is-active{{/if}}">{{name}}</a></li>
+                    {{/each}}
+                  </ul>
+                </li>
+              {{/each}}
+
+            </ul>
+
+          </aside>
+
+        </div>
+
+
+      <div class="content">
+        <h1 class="title is-1">Elected Title</h1>
+        <h1 class="title is-2">{{title.name}} <span class="tag">{{collection.name}}/{{set.name}}</span></h1>
+        <h2 class="subtitle is-5">Description: {{title.description}}</h2>
+
+
+        <div class="card-list">
+        </div>
+
+        {{#with title.properties}}
+        <div>
+          <table>
+            <tr>
+              <th>Election Process</th>
+              <td>{{ecoref ElectionProcess}}</td>
+            </tr>
+
+            <tr>
+              <th>Eligible Candidates</th>
+              <td>{{ecoref EligibleCandidates}}</td>
+            </tr>
+
+            <tr>
+              <th>RequiredOfCandidates</th>
+              <td>{{ecoref RequiredOfCandidates}}</td>
+            </tr>
+
+            <tr>
+              <th>MaxOccupants</th>
+              <td>{{MaxOccupants}}</td>
+            </tr>
+
+            <tr>
+              <th>Successor</th>
+              <td>{{ecoref Successor}}</td>
+            </tr>
+
+            <tr>
+              <th>WhoCanRemoveFromOffice</th>
+              <td>{{ecoref WhoCanRemoveFromOffice}}</td>
+            </tr>
+
+            <tr>
+              <th>TermLimitDays</th>
+              <td>{{TermLimitDays}}</td>
+            </tr>
+
+            <tr>
+              <th>TotalTermsAllowed</th>
+              <td>{{TotalTermsAllowed}}</td>
+            </tr>
+
+            <tr>
+              <th>ConsecutiveTermsAllowed</th>
+              <td>{{ConsecutiveTermsAllowed}}</td>
+            </tr>
+            <tr>
+              <th>CanElectionsBeProposedDuringTerm</th>
+              <td>{{{checkbox CanElectionsBeProposedDuringTerm}}}</td>
+            </tr>
+            <tr>
+              <th>CanSetGlobalMarkers</th>
+              <td>{{{checkbox CanSetGlobalMarkers}}}</td>
+            </tr>
+            <tr>
+              <th>CanSetGlobalObjective</th>
+              <td>{{{checkbox CanSetGlobalObjective}}}</td>
+            </tr>
+            <tr>
+              <th>CanSetTreasuryTaxes</th>
+              <td>{{{checkbox CanSetTreasuryTaxes}}}</td>
+            </tr>
+            <tr>
+              <th>CanUseTreasuryBankAccount</th>
+              <td>{{{checkbox CanUseTreasuryBankAccount}}}</td>
+            </tr>
+            <tr>
+              <th>HasGovernmentBankingPrivileges</th>
+              <td>{{{checkbox HasGovernmentBankingPrivileges}}}</td>
+            </tr>
+            <tr>
+              <th>RequiredOfOfficeHolders</th>
+              <td>{{ecoref RequiredOfOfficeHolders}}</td>
+            </tr>
+            <tr>
+              <th>BackupOwner</th>
+              <td>{{ecoref BackupOwner}}</td>
+            </tr>
+            <tr>
+              <th>Wages</th>
+              <td>{{partial Wages}}</td>
+            </tr>
+            <tr>
+              <th>WagesSourceBankAccount</th>
+              <td>{{ecoref WagesSourceBankAccount}}</td>
+            </tr>
+          </table>
+        </div>
+        {{/with}}
+
+
+        <div>
+        {{json_toggle title }}
+        </div>
+      </div>
+
+
+
+
+    </div>
+  </section>
+
+  </body>
+</html>

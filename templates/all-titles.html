@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ page_title }}</title>
+
+    {{include "head"}}
+  </head>
+
+  <body>
+  <section class="section">
+    <div class="container">
+      {{include "nav"}}
+
+      <div class="tabs is-toggle">
+        <ul>
+          <li><a href="/">Collections</a></li>
+          <li><a href="/constitutions.html">Constitutions</a></li>
+          <li><a href="/electionprocesses.html">Election Processes</a></li>
+          <li class="is-active"><a href="/titles.html">Titles</a></li>
+          <li><a href="/demographics.html">Demographics</a></li>
+          <li><a href="/laws.html">Laws</a></li>
+        </ul>
+      </div>
+
+      <div class="content">
+        <p class="title is-3">All Elected Titles</p>
+        <ul>
+          {{#each elected_titles}}
+          <li>
+            <a href="/collections/{{collection}}/{{set}}/{{filename}}.html">{{name}}</a>
+            <a href="/collections/{{collection}}/{{set}}"><span class="tag">{{collection}}/{{set}}</span></a>
+          </li>
+          {{/each}}
+        </ul>
+      </div>
+
+      {{#if appointed_titles.length}}
+      <div class="content">
+        <p class="title is-3">All Appointed Titles</p>
+
+        <ul>
+          {{#each appointed_titles}}
+          <li>
+            <a href="/collections/{{collection}}/{{set}}/{{filename}}.html">{{name}}</a>
+            <a href="/collections/{{collection}}/{{set}}"><span class="tag">{{collection}}/{{set}}</span></a>
+          </li>
+          {{/each}}
+        </ul>
+      </div>
+      {{/if}}
+
+    </div>
+
+  </section>
+  </body>
+</html>

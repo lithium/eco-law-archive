@@ -120,24 +120,27 @@
                   <p class="title is-6">Elected</p>
                   <ul>
                     {{# each set.ElectedTitle}}
-                      <li><a href="{{filename}}">{{name}}</a></li>
+                      <li><a href="{{filename}}.html">{{name}}</a></li>
                     {{/each}}
                   </ul>
 
+                  {{#if set.AppointedTitle.length}}
                   <p class="title is-6">Appointed</p>
                   <ul>
                     {{# each set.AppointedTitle}}
-                      <li><a href="{{filename}}">{{name}}</a></li>
+                      <li><a href="{{filename}}.html">{{name}}</a></li>
                     {{/each}}
                   </ul>
+                  {{/if}}
+
                 </div>
               </div>
             </div>
 
 
         </div>
-      </div>
 
+      </div>
 
     </div>
   </section>

@@ -59,6 +59,12 @@ function active_set(collections, set) {
 	return collections;
 }
 
+function index_of_type(collections, key_name) {
+	const ret = collections.map(c => c.sets.map(s => s[key_name])).flat(2).filter(x => x)
+	ret.sort((a,b) => a.name.localeCompare(b.name))
+	return ret
+}
+
 async function main() {
 
 
@@ -69,26 +75,23 @@ async function main() {
 		collections: collections,
 	})
 
-/*
-	templates.render_to('titles.html', 'titles.html', {
+	templates.render_to('all-titles.html', 'titles.html', {
 		page_title: `Titles | ${site_title}`,
 		collections: collections,
+		elected_titles: index_of_type(collections, 'ElectedTitle'),
+		appointed_titles: index_of_type(collections, 'AppointedTitle')
 	})
-*/
-	const all_electionprocess = collections.map(c => c.sets.map(s => s.ElectionProcess)).flat(2)
-	all_electionprocess.sort((a,b) => a.name.localeCompare(b.name))
+
 	templates.render_to('all-electionprocesses.html', 'electionprocesses.html', {
 		page_title: `Election Process | ${site_title}`,
 		collections,
-		electionprocesses: all_electionprocess,
+		electionprocesses: index_of_type(collections, 'ElectionProcess')
 	})
 
-	const all_laws = collections.map(c => c.sets.map(s => s.Law)).flat(2)
-	all_laws.sort((a,b) => a.name.localeCompare(b.name))
 	templates.render_to('all-laws.html', 'laws.html', {
 		page_title: `Laws | ${site_title}`,
 		collections,
-		laws: all_laws,
+		laws: index_of_type(collections, 'Law')
 	})
 
 	collections.forEach(async (collection) => {
@@ -107,21 +110,20 @@ async function main() {
 			)
 
 
-			/*
 			set.ElectedTitle.forEach(async (title) => {
 		 		// /collections/{collection.name}/{set.name}/electedtitle-16826530.json.html
 				templates.render_to(
 					'electedtitle-detail.html',
-					path.join('collections', collection.name, set.name, set.filename+'.html'),
+					path.join('collections', collection.name, set.name, title.filename+'.html'),
 					{
 						page_title: `${title.name} - ${set.name} | ${site_title}`,
+						collections: active_set(collections, set),
 						collection,
 						set,
 						title,
 					}
 				)
 			})
-			*/
 
 			set.ElectionProcess.forEach(async (electionprocess) => {
 		 		// /collections/{collection.name}/{set.name}/electionprocess-16826530.json.html
