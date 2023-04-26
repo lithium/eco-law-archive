@@ -41,7 +41,7 @@ async function scan_directory(archive_path) {
 			const set_path = path.join(collection_path, set_entry.name)
 			console.log("Scanning set", set_path)
 
-			const set = await read_civics_directory(set_path)
+			const set = await read_civics_directory(set_path, collection.name, set_entry.name)
 			set.name = set_entry.name
 			set.collection_name = collection.name
 			collection.sets.push(set)
@@ -52,7 +52,7 @@ async function scan_directory(archive_path) {
 	return output
 }
 
-async function read_civics_directory(directory_path) {
+async function read_civics_directory(directory_path, collection_name, set_name) {
 	const output = {}
 	const dir = await fs.promises.opendir(directory_path)
 
@@ -64,6 +64,8 @@ async function read_civics_directory(directory_path) {
 		const civics_obj = JSON.parse(civics_txt)
 
 		civics_obj['filename'] = entry.name
+		civics_obj['collection'] = collection_name
+		civics_obj['set'] = set_name
 		const type = civics_obj.type.split('.').pop()
 		if (!(type in output)) {
 			output[type] = []

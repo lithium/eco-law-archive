@@ -66,6 +66,13 @@ async function main() {
 	})
 */
 
+	const all_laws = collections.map(c => c.sets.map(s => s.Law)).flat(2)
+	all_laws.sort((a,b) => a.name.localeCompare(b.name))
+	templates.render_to('all-laws.html', 'laws.html', {
+		page_title: `Laws | ${site_title}`,
+		collections,
+		laws: all_laws,
+	})
 
 	collections.forEach(async (collection) => {
 		collection.sets.forEach(async (set) => {
@@ -204,7 +211,7 @@ Handlebars.registerHelper('partial', (context) => {
 
 Handlebars.registerHelper('json_toggle', (obj, obj_type, ident, idx) => {
 
-	const scrubbed = ident.replace(/[^a-zA-Z0-9_]/g,'')
+	const scrubbed = (ident || "default").replace(/[^a-zA-Z0-9_]/g,'')
 	const id = `${obj_type}-${scrubbed}-${idx}`
 	return new Handlebars.SafeString(
 		`<a class="button is-text is-small" data-targetId="${id}" onclick="return json_toggle(event)">JSON</a>`+
