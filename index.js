@@ -75,17 +75,26 @@ async function main() {
 		collections: collections,
 	})
 
-	templates.render_to('all-titles.html', 'titles.html', {
-		page_title: `Titles | ${site_title}`,
-		collections: collections,
-		elected_titles: index_of_type(collections, 'ElectedTitle'),
-		appointed_titles: index_of_type(collections, 'AppointedTitle')
+/*
+	templates.render_to('all-constitutions.html', 'constitutions.html', {
+		page_title: `Constitutions | ${site_title}`,
+		collections,
+		constitutions: index_of_type(collections, 'Constitution')
+		amendments: index_of_type(collections, 'ConstitutionalAmendment')
 	})
+	*/
 
 	templates.render_to('all-electionprocesses.html', 'electionprocesses.html', {
 		page_title: `Election Processes | ${site_title}`,
 		collections,
 		electionprocesses: index_of_type(collections, 'ElectionProcess')
+	})
+
+	templates.render_to('all-titles.html', 'titles.html', {
+		page_title: `Titles | ${site_title}`,
+		collections: collections,
+		elected_titles: index_of_type(collections, 'ElectedTitle'),
+		appointed_titles: index_of_type(collections, 'AppointedTitle')
 	})
 
 	templates.render_to('all-demographics.html', 'demographics.html', {
@@ -99,6 +108,7 @@ async function main() {
 		collections,
 		laws: index_of_type(collections, 'Law')
 	})
+
 
 	collections.forEach(async (collection) => {
 		collection.sets.forEach(async (set) => {
@@ -115,7 +125,21 @@ async function main() {
 				}
 			)
 
-
+			// /collections/{{collection.name}}/{set.name}/constitution.html
+			if (set.Constitution) {
+				templates.render_to(
+					'constitution-detail.html',
+					path.join('collections', collection.name, set.name, 'constitution.html'),
+					{
+						page_title: `${set.Constitution[0].name} - ${set.name} | ${site_title}`,
+						collection,
+						set,
+						constitution: set.Constitution[0],
+						constitutions: set.Constitution,
+						amendments: set.ConstitutionalAmendment
+					}
+				)
+			}
 
 			set.ElectionProcess.forEach(async (electionprocess) => {
 		 		// /collections/{collection.name}/{set.name}/electionprocess-16826530.json.html
@@ -131,34 +155,38 @@ async function main() {
 				)
 			})
 
-			set.ElectedTitle.forEach(async (title) => {
-		 		// /collections/{collection.name}/{set.name}/electedtitle-16826530.json.html
-				templates.render_to(
-					'electedtitle-detail.html',
-					path.join('collections', collection.name, set.name, title.filename+'.html'),
-					{
-						page_title: `${title.name} - ${set.name} | ${site_title}`,
-						collection,
-						set,
-						title,
-					}
-				)
-			})
+			if (set.ElectedTitle) {
+				set.ElectedTitle.forEach(async (title) => {
+			 		// /collections/{collection.name}/{set.name}/electedtitle-16826530.json.html
+					templates.render_to(
+						'electedtitle-detail.html',
+						path.join('collections', collection.name, set.name, title.filename+'.html'),
+						{
+							page_title: `${title.name} - ${set.name} | ${site_title}`,
+							collection,
+							set,
+							title,
+						}
+					)
+				})
+			}
 
 
-			set.Demographic.forEach(async (demographic) => {
-		 		// /collections/{collection.name}/{set.name}/demographic-16826530.json.html
-				templates.render_to(
-					'demographic-detail.html',
-					path.join('collections', collection.name, set.name, demographic.filename+'.html'),
-					{
-						page_title: `${demographic.name} - ${set.name} | ${site_title}`,
-						collection,
-						set,
-						demographic,
-					}
-				)
-			})
+			if (set.Demographic) {
+				set.Demographic.forEach(async (demographic) => {
+			 		// /collections/{collection.name}/{set.name}/demographic-16826530.json.html
+					templates.render_to(
+						'demographic-detail.html',
+						path.join('collections', collection.name, set.name, demographic.filename+'.html'),
+						{
+							page_title: `${demographic.name} - ${set.name} | ${site_title}`,
+							collection,
+							set,
+							demographic,
+						}
+					)
+				})
+			}
 
 
 			set.Law.forEach(async (law) => {
@@ -217,6 +245,8 @@ Handlebars.registerHelper('checkbox', (is_checked) => {
 });
 
 const lastdot = (s) => {
+	if (!s) return s;
+
 	const ret = s.split('.').pop();
 	if (/\+.*Species$/.test(ret)) {
 		return ret.replace(/\+.*/,'')

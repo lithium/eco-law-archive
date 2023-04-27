@@ -1,0 +1,50 @@
+
+
+<table>
+	<tr>
+		<th>
+			Applies To
+		</th>
+		<td>
+			{{partial properties.AppliesTo}}
+		</td>
+	</tr>
+
+
+	<tr>
+		<th>
+			Proposers	
+		</th>
+		<td>
+			{{#each properties.Proposers.entries}}
+			<div>{{ecoref this}}</div>
+			{{/each}}
+		</td>
+	</tr>
+
+	<tr>
+		<th>
+			Executors	
+		</th>
+		<td>
+			{{#each properties.Executors.entries}}
+			<div>{{ecoref this}}</div>
+			{{/each}}
+		</td>
+	</tr>
+
+	<tr>
+		<th>
+			Election Process	
+		</th>
+		<td>
+			{{ecoref properties.ElectionProcess}}
+		</td>
+	</tr>
+
+	<tr>
+		<th>Priority</th>
+		<td>{{properties.Priority}}</td>
+	</tr>
+
+</table>
