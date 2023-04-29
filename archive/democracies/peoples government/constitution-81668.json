@@ -1,0 +1,59 @@
+{
+  "version": [
+    1,
+    0
+  ],
+  "type": "Eco.Gameplay.Civics.Constitution",
+  "name": "The Peoples' Government",
+  "reference": false,
+  "description": null,
+  "properties": {
+    "Articles": [
+      {
+        "type": "Eco.Gameplay.Civics.CivicArticle",
+        "name": "Everyone can propose a Basic Election to do anything",
+        "reference": false,
+        "description": null,
+        "properties": {
+          "AppliesTo": {
+            "type": "Eco.Gameplay.Civics.Constitutional.CivicConditionAllOtherCivicAbilities",
+            "reference": false,
+            "properties": {}
+          },
+          "Proposers": {
+            "type": "GamePickerList",
+            "mustDeriveType": {
+              "type": "Type",
+              "value": "Eco.Gameplay.Aliases.IAlias"
+            },
+            "requiredTag": null,
+            "internalDescription": "<link=\"view:595:137\"><icon name=\"Demographic\"><style=\"Government\">Everyone</style></icon></link>",
+            "entries": [
+              {
+                "type": "Eco.Gameplay.Civics.Demographics.Demographic",
+                "name": "Everyone",
+                "reference": true
+              }
+            ]
+          },
+          "Executors": {
+            "type": "GamePickerList",
+            "mustDeriveType": {
+              "type": "Type",
+              "value": "Eco.Gameplay.Aliases.IAlias"
+            },
+            "requiredTag": null,
+            "internalDescription": "<style=\"ErrorLight\">None</style>",
+            "entries": []
+          },
+          "ElectionProcess": {
+            "type": "Eco.Gameplay.Civics.ElectionProcess",
+            "name": "Basic Election",
+            "reference": true
+          },
+          "Priority": 0.0
+        }
+      }
+    ]
+  }
+}

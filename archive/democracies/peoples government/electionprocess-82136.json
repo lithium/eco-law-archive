@@ -1,0 +1,26 @@
+{
+  "version": [
+    1,
+    0
+  ],
+  "type": "Eco.Gameplay.Civics.ElectionProcess",
+  "name": "Active Election",
+  "reference": false,
+  "description": null,
+  "properties": {
+    "Voters": {
+      "type": "Eco.Gameplay.Civics.Demographics.Demographic",
+      "name": "Active",
+      "reference": true
+    },
+    "Vetoers": null,
+    "HowToProceedIfElectionsEndInATie": "IncumbentPriority",
+    "MaximumElectionHours": 18.0,
+    "MinimumPercentOfEligibleVotersRequired": 5.0,
+    "PercentOfAllVotersToInstantWin": 10.0,
+    "PercentOfAllVotersToInstantLose": 10.0,
+    "EndElectionEarlyWhenThisPercentHaveVoted": 20.0,
+    "MinimumDaysBetweenElectionsOfThisType": 0.0,
+    "AnonymousVoting": false
+  }
+}
