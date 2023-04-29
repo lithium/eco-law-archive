@@ -74,6 +74,7 @@
             </div>
 
 
+            {{#if set.Demographic.length }}
             <div class="card">
               <div class="card-content">
                 <div class="content">
@@ -86,21 +87,25 @@
                 </div>
               </div>
             </div>
+            {{/if}}
 
+            {{#if set.ElectionProcess.length }}
             <div class="card">
               <div class="card-content">
                 <div class="content">
                   <p class="title is-4">Election Processes</p>
                   <ul>
-                    {{# each set.ElectionProcess}}
+                    {{#each set.ElectionProcess}}
                       <li><a href="{{filename}}.html">{{name}}</a></li>
                     {{/each}}
                   </ul>
                 </div>
               </div>
             </div>
+            {{/if}}
 
 
+            {{#if set.Law.length }}
             <div class="card">
               <div class="card-content">
                 <div class="content">
@@ -113,9 +118,11 @@
                 </div>
               </div>
             </div>
+            {{/if}}
 
 
 
+            {{#if set.ElectedTitle.length }}
             <div class="card">
               <div class="card-content">
                 <div class="content">
@@ -139,6 +146,7 @@
                 </div>
               </div>
             </div>
+            {{/if}}
 
 
         </div>

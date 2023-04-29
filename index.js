@@ -75,14 +75,12 @@ async function main() {
 		collections: collections,
 	})
 
-/*
 	templates.render_to('all-constitutions.html', 'constitutions.html', {
 		page_title: `Constitutions | ${site_title}`,
 		collections,
-		constitutions: index_of_type(collections, 'Constitution')
+		constitutions: index_of_type(collections, 'Constitution'),
 		amendments: index_of_type(collections, 'ConstitutionalAmendment')
 	})
-	*/
 
 	templates.render_to('all-electionprocesses.html', 'electionprocesses.html', {
 		page_title: `Election Processes | ${site_title}`,
@@ -214,6 +212,8 @@ const ecoref_icons = {
 	'Eco.Gameplay.Civics.Titles.ElectedTitle': "fa-person-burst",
 	'Eco.Gameplay.Civics.Demographics.Demographic': "fa-people-line",
 	'Eco.Gameplay.Economy.Currency': "fa-coins",
+	'Eco.Gameplay.Civics.ElectionProcess': "fa-check-to-slot",
+	'Eco.Gameplay.LegislationSystem.District': "fa-map",
 }
 function helper_ecoref(context) {
 	if (!context) {
@@ -227,7 +227,7 @@ function helper_ecoref(context) {
 	const icon = ecoref_icons[context.type];
 	const refname = context.type.split('.').pop()
 	const val =  
-	`<span>${refname}:</span> <span class="icon-text">`+
+	`<span title="${refname}: ${context.name}" class="icon-text">`+
   		`<span class="icon"><i class="fas ${icon}"></i></span>`+
         `<span class="reference">${context.name}</span>`+
     `</span>`

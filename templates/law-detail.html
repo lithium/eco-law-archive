@@ -28,8 +28,8 @@
 
       <div class="content">
         <h1 class="title is-1">Law</h1>
-        <h1 class="title is-2">{{law.name}} <span class="tag">{{collection.name}}/{{set.name}}</span></h1>
-        <h2 class="subtitle is-5">Description: {{law.description}}</h2>
+        <h1 class="title is-2">{{law.name}} <a href="/collections/{{collection.name}}/{{set.name}}"><span class="tag">{{collection.name}}/{{set.name}}</span></a></h1>
+        <h2 class="subtitle is-5">{{law.description}}</h2>
 
       <div class="card-list">
         {{#each law.properties.Sections}}
