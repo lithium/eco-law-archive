@@ -1,0 +1,121 @@
+{
+  "type": "Eco.Gameplay.Civics.Laws.LawSection",
+  "reference": false,
+  "properties": {
+    "Title": "Protect Endangered {{name}}",
+    "UserDescription": "Protects {{name}} from extinction",
+    "Triggers": [
+      {
+        "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+        "reference": false,
+        "properties": {
+          "Trigger": {
+            "type": "Type",
+            "value": "Eco.Gameplay.GameActions.HarvestOrHunt"
+          },
+          "Configs": [
+            {
+              "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+              "typeToConfig": "Eco.Gameplay.GameActions.HarvestOrHunt",
+              "propNameBacker": "Species",
+              "propDisplayName": "Species",
+              "properties": {
+                "List": {
+                  "type": "GamePickerList",
+                  "mustDeriveType": {
+                    "type": "Type",
+                    "value": "Eco.Simulation.Types.Species"
+                  },
+                  "requiredTag": null,
+                  "internalDescription": "<link=\"view:{{icon}}:-1\"><icon name=\"{{name}}Species\"><color=#60FFFFFF>{{name}} Species</color></icon></link>",
+                  "entries": [
+                    {
+                      "type": "Type",
+                      "value": "{{species}}"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+              "typeToConfig": "Eco.Gameplay.GameActions.HarvestOrHunt",
+              "propNameBacker": "ToolUsed",
+              "propDisplayName": "Tool Used",
+              "properties": {
+                "List": {
+                  "type": "GamePickerList",
+                  "mustDeriveType": {
+                    "type": "Type",
+                    "value": "Eco.Gameplay.Items.Item"
+                  },
+                  "requiredTag": "Harvester",
+                  "internalDescription": "Any",
+                  "entries": []
+                }
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "IfThenBlocks": [
+      {
+        "type": "Eco.Gameplay.Civics.IfThenBlock",
+        "reference": false,
+        "properties": {
+          "If": {
+            "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+            "properties": {
+              "List": [
+                {
+                  "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                  "properties": {
+                    "Left": {
+                      "type": "Eco.Gameplay.Civics.GameValues.Population",
+                      "properties": {
+                        "SpeciesTypes": {
+                          "type": "GamePickerList",
+                          "mustDeriveType": {
+                            "type": "Type",
+                            "value": "Eco.Simulation.Types.Species"
+                          },
+                          "requiredTag": null,
+                          "internalDescription": "<link=\"view:{{icon}}:-1\"><icon name=\"{{name}}Species\"><color=#60FFFFFF>{{name}} Species</color></icon></link>",
+                          "entries": [
+                            {
+                              "type": "Type",
+                              "value": "{{species}}"
+                            }
+                          ]
+                        }
+                      }
+                    },
+                    "Comparison": "LessThanOrEqualTo",
+                    "Right": {
+                      "type": "GameValueWrapper",
+                      "value": {{min}}
+                    }
+                  }
+                }
+              ],
+              "Comparison": "All"
+            }
+          },
+          "Then": [
+            {
+              "type": "Eco.Gameplay.Civics.LegalActions.Prevent_LegalAction",
+              "reference": false,
+              "properties": {
+                "InfoboxOnSuccess": {
+                  "type": "Eco.Gameplay.Civics.GameValues.No",
+                  "properties": {}
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

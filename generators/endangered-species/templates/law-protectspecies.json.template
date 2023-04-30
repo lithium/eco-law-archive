@@ -1,0 +1,15 @@
+{
+  "version": [
+    1,
+    0
+  ],
+  "type": "Eco.Gameplay.Civics.Laws.Law",
+  "name": "Species Protection Act",
+  "reference": false,
+  "description": "A law that protects all species from overharvesting",
+  "properties": {
+    "Sections": [
+    	{{{sections}}}
+    ]
+  }
+}
