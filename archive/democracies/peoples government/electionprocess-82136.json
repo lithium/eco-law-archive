@@ -16,10 +16,10 @@
     "Vetoers": null,
     "HowToProceedIfElectionsEndInATie": "IncumbentPriority",
     "MaximumElectionHours": 18.0,
-    "MinimumPercentOfEligibleVotersRequired": 5.0,
-    "PercentOfAllVotersToInstantWin": 10.0,
-    "PercentOfAllVotersToInstantLose": 10.0,
-    "EndElectionEarlyWhenThisPercentHaveVoted": 20.0,
+    "MinimumPercentOfEligibleVotersRequired": 10.0,
+    "PercentOfAllVotersToInstantWin": 15.0,
+    "PercentOfAllVotersToInstantLose": 15.0,
+    "EndElectionEarlyWhenThisPercentHaveVoted": 25.0,
     "MinimumDaysBetweenElectionsOfThisType": 0.0,
     "AnonymousVoting": false
   }
