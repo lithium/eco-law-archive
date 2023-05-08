@@ -63,12 +63,14 @@
                       <li><a href="constitution.html">{{name}}</a></li>
                     {{/each}}
                   </ul>
+                  {{#if set.ConstitutionalAmendment.length}}
                   <p class="title is-6">Amendments</p>
                   <ul>
                     {{# each set.ConstitutionalAmendment}}
                       <li><a href="constitution.html">{{name}}</a></li>
                     {{/each}}
                   </ul>
+                  {{/if}}
                 </div>
               </div>
             </div>

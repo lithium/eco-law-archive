@@ -4,7 +4,7 @@
     0
   ],
   "type": "Eco.Gameplay.Civics.Laws.Law",
-  "name": "Public Works",
+  "name": "Public Works Act",
   "reference": false,
   "description": "Laws to incentivize clear right of ways for shared roads and infrastructure",
   "properties": {

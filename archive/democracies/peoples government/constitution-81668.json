@@ -11,7 +11,7 @@
     "Articles": [
       {
         "type": "Eco.Gameplay.Civics.CivicArticle",
-        "name": "Everyone can propose a Basic Election to do anything",
+        "name": "Anyone in Active can propose an Active Election to do anything",
         "reference": false,
         "description": null,
         "properties": {
@@ -27,11 +27,11 @@
               "value": "Eco.Gameplay.Aliases.IAlias"
             },
             "requiredTag": null,
-            "internalDescription": "<link=\"view:595:137\"><icon name=\"Demographic\"><style=\"Government\">Everyone</style></icon></link>",
+            "internalDescription": "<link=\"view:595:1472\"><icon name=\"Demographic\"><style=\"Government\">Active</style></icon></link>",
             "entries": [
               {
                 "type": "Eco.Gameplay.Civics.Demographics.Demographic",
-                "name": "Everyone",
+                "name": "Active",
                 "reference": true
               }
             ]
@@ -48,12 +48,13 @@
           },
           "ElectionProcess": {
             "type": "Eco.Gameplay.Civics.ElectionProcess",
-            "name": "Basic Election",
+            "name": "Active Election",
             "reference": true
           },
           "Priority": 0.0
         }
       }
+      
     ]
   }
 }
