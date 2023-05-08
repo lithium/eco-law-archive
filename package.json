@@ -4,7 +4,7 @@
   "description": "Provide a way to document the specific configuration, but still provide a human readable version, of civics: Laws, Elections, Demographics, etc.  This will enable players to be able to accurately recreate them on other Eco servers.",
   "main": "index.js",
   "scripts": {
-    "build": "node index.js",
+    "build": "npm install && node index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npx http-server -p 8080 build",
     "mockups": "npx http-server -p 9000 mockups"
