@@ -1,0 +1,30 @@
+{
+  "version": [
+    1,
+    0
+  ],
+  "type": "Eco.Gameplay.Civics.ElectionProcess",
+  "name": "Deputee fast election",
+  "reference": false,
+  "description": "An election type for the 3 deputees to help fix laws and district changes",
+  "properties": {
+    "Voters": {
+      "type": "Eco.Gameplay.Civics.Titles.ElectedTitle",
+      "name": "Volunteer Deputy",
+      "reference": true
+    },
+    "Vetoers": {
+      "type": "Eco.Gameplay.Civics.Titles.ElectedTitle",
+      "name": "Volunteer President",
+      "reference": true
+    },
+    "HowToProceedIfElectionsEndInATie": "RandomCandidate",
+    "MaximumElectionHours": 12.0,
+    "MinimumPercentOfEligibleVotersRequired": 10.0,
+    "PercentOfAllVotersToInstantWin": 51.0,
+    "PercentOfAllVotersToInstantLose": 51.0,
+    "EndElectionEarlyWhenThisPercentHaveVoted": 95.0,
+    "MinimumDaysBetweenElectionsOfThisType": 0.0,
+    "AnonymousVoting": false
+  }
+}

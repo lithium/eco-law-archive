@@ -1,0 +1,23 @@
+{
+  "version": [
+    1,
+    0
+  ],
+  "type": "Eco.Gameplay.Economy.ContractEscrowBankAccount",
+  "name": "Contract Escrow Bank Account",
+  "reference": false,
+  "description": null,
+  "managers": [],
+  "users": [],
+  "properties": {},
+  "holdings": [
+    {
+      "currency": {
+        "type": "Eco.Gameplay.Economy.Currency",
+        "name": "Panda",
+        "reference": true
+      },
+      "amount": 10.84
+    }
+  ]
+}

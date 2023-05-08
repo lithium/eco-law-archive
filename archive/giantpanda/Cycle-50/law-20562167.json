@@ -1,0 +1,819 @@
+{
+  "version": [
+    1,
+    0
+  ],
+  "type": "Eco.Gameplay.Civics.Laws.Law",
+  "name": "Finance law Revision v1.5",
+  "reference": false,
+  "description": "Fixing finance law to correctly tax everyone, not just active adding 2 steps to the wealth check to stagger the tax more, and make it more fair for everyone. If this doesnt work we will try flat tax. Maintaining the treasury during community meteor funding is imperative.",
+  "properties": {
+    "Sections": [
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Server First Login Welcome",
+          "UserDescription": "This provides 1st login allocation of Global Currency Pandas when logging into the server.Allocation amount reduced from 50 to 30 Pandas.",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.FirstLogin"
+                },
+                "Configs": []
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.Pay_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "SourceBankAccount": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Economy.TreasuryBankAccount",
+                          "name": "Treasury Bank Account",
+                          "reference": true
+                        }
+                      },
+                      "TargetBankAccount": {
+                        "type": "Eco.Gameplay.Civics.GameValues.PersonalBankAccount_GameValue",
+                        "properties": {
+                          "User": {
+                            "type": "GameValueContext",
+                            "_name": "Citizen",
+                            "markedUpName": "<icon name=\"User\">Citizen</icon>",
+                            "contextDescription": "The citizen who performed the interaction."
+                          }
+                        }
+                      },
+                      "Target": {
+                        "type": "GameValueContext",
+                        "_name": "Citizen",
+                        "markedUpName": "<icon name=\"User\">Citizen</icon>",
+                        "contextDescription": "The citizen who performed the interaction."
+                      },
+                      "Currency": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Economy.Currency",
+                          "name": "Panda",
+                          "reference": true
+                        }
+                      },
+                      "Amount": {
+                        "type": "GameValueWrapper",
+                        "value": 30.0
+                      },
+                      "PreventIfUnableToPay": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Wealth tax",
+          "UserDescription": "Every 12 hours, try to tax money on wealthy citizen.\n\u000b400 3% tax\n750 5% tax\n1500 10% tax\n> 3000 15% tax",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.CitizenTimer"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.CitizenTimerTriggerConfig",
+                    "typeToConfig": null,
+                    "propNameBacker": null,
+                    "propDisplayName": null,
+                    "properties": {
+                      "RepeatForEachUser": {
+                        "type": "Eco.Gameplay.Civics.Demographics.Demographic",
+                        "name": "Everyone",
+                        "reference": true
+                      },
+                      "HoursBetweenExecutions": 12.0
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                        "properties": {
+                          "Left": {
+                            "type": "Eco.Gameplay.Civics.GameValues.Values.Wealth",
+                            "properties": {
+                              "Currency": {
+                                "type": "GameValueWrapper",
+                                "value": {
+                                  "type": "Eco.Gameplay.Economy.Currency",
+                                  "name": "Panda",
+                                  "reference": true
+                                }
+                              },
+                              "Citizen": {
+                                "type": "GameValueContext",
+                                "_name": "Citizen",
+                                "markedUpName": "<icon name=\"User\">Citizen</icon>",
+                                "contextDescription": "The citizen currently being processed for the timer event."
+                              }
+                            }
+                          },
+                          "Comparison": "GreaterThan",
+                          "Right": {
+                            "type": "GameValueWrapper",
+                            "value": 400.0
+                          }
+                        }
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.Tax_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "TargetBankAccount": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Economy.TreasuryBankAccount",
+                          "name": "Treasury Bank Account",
+                          "reference": true
+                        }
+                      },
+                      "Target": {
+                        "type": "GameValueContext",
+                        "_name": "Citizen",
+                        "markedUpName": "<icon name=\"User\">Citizen</icon>",
+                        "contextDescription": "The citizen currently being processed for the timer event."
+                      },
+                      "Currency": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Economy.Currency",
+                          "name": "Panda",
+                          "reference": true
+                        }
+                      },
+                      "Amount": {
+                        "type": "Eco.Gameplay.Civics.GameValues.ProgressivePercent",
+                        "properties": {
+                          "Number": {
+                            "type": "Eco.Gameplay.Civics.GameValues.Values.Wealth",
+                            "properties": {
+                              "Currency": {
+                                "type": "GameValueWrapper",
+                                "value": {
+                                  "type": "Eco.Gameplay.Economy.Currency",
+                                  "name": "Panda",
+                                  "reference": true
+                                }
+                              },
+                              "Citizen": {
+                                "type": "GameValueContext",
+                                "_name": "Citizen",
+                                "markedUpName": "<icon name=\"User\">Citizen</icon>",
+                                "contextDescription": "The citizen currently being processed for the timer event."
+                              }
+                            }
+                          },
+                          "Thresholds": [
+                            {
+                              "type": "Eco.Gameplay.Civics.GameValues.ThresholdMileStone",
+                              "reference": false,
+                              "properties": {
+                                "Threshold": {
+                                  "type": "GameValueWrapper",
+                                  "value": 0.0
+                                },
+                                "Percent": {
+                                  "type": "GameValueWrapper",
+                                  "value": 0.0
+                                }
+                              }
+                            },
+                            {
+                              "type": "Eco.Gameplay.Civics.GameValues.ThresholdMileStone",
+                              "reference": false,
+                              "properties": {
+                                "Threshold": {
+                                  "type": "GameValueWrapper",
+                                  "value": 400.0
+                                },
+                                "Percent": {
+                                  "type": "GameValueWrapper",
+                                  "value": 2.5
+                                }
+                              }
+                            },
+                            {
+                              "type": "Eco.Gameplay.Civics.GameValues.ThresholdMileStone",
+                              "reference": false,
+                              "properties": {
+                                "Threshold": {
+                                  "type": "GameValueWrapper",
+                                  "value": 750.0
+                                },
+                                "Percent": {
+                                  "type": "GameValueWrapper",
+                                  "value": 5.0
+                                }
+                              }
+                            },
+                            {
+                              "type": "Eco.Gameplay.Civics.GameValues.ThresholdMileStone",
+                              "reference": false,
+                              "properties": {
+                                "Threshold": {
+                                  "type": "GameValueWrapper",
+                                  "value": 1500.0
+                                },
+                                "Percent": {
+                                  "type": "GameValueWrapper",
+                                  "value": 10.0
+                                }
+                              }
+                            },
+                            {
+                              "type": "Eco.Gameplay.Civics.GameValues.ThresholdMileStone",
+                              "reference": false,
+                              "properties": {
+                                "Threshold": {
+                                  "type": "GameValueWrapper",
+                                  "value": 3000.0
+                                },
+                                "Percent": {
+                                  "type": "GameValueWrapper",
+                                  "value": 15.0
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      "PreventIfUnableToPay": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Abandonment Law",
+          "UserDescription": "This returns abandoned property items into the void and wealth of the Citizen  in Abandoned demographic to the Govt.",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.DemographicChange"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.DemographicChange",
+                    "propNameBacker": "Demographic",
+                    "propDisplayName": "Demographic",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Civics.Demographics.Demographic"
+                        },
+                        "requiredTag": null,
+                        "internalDescription": "<link=\"view:714:1274\"><icon name=\"Demographic\"><style=\"Government\">Abandoned</style></icon></link>",
+                        "entries": [
+                          {
+                            "type": "Eco.Gameplay.Civics.Demographics.Demographic",
+                            "name": "Abandoned",
+                            "reference": true
+                          }
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                        "properties": {
+                          "Left": {
+                            "type": "Eco.Gameplay.Civics.GameValues.Values.HoursPlayed",
+                            "properties": {
+                              "Citizen": {
+                                "type": "GameValueContext",
+                                "_name": "Citizen",
+                                "markedUpName": "<icon name=\"User\">Citizen</icon>",
+                                "contextDescription": "The citizen who changed demographics."
+                              },
+                              "WithinLastNumberOfDays": {
+                                "type": "GameValueWrapper",
+                                "value": 1.0
+                              }
+                            }
+                          },
+                          "Comparison": "EqualTo",
+                          "Right": {
+                            "type": "GameValueWrapper",
+                            "value": 0.0
+                          }
+                        }
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.DemographicRequirements",
+                        "properties": {
+                          "Demographics": {
+                            "type": "GamePickerList",
+                            "mustDeriveType": {
+                              "type": "Type",
+                              "value": "Eco.Gameplay.Civics.Demographics.Demographic"
+                            },
+                            "requiredTag": null,
+                            "internalDescription": "<link=\"view:714:1274\"><icon name=\"Demographic\"><style=\"Government\">Abandoned</style></icon></link>",
+                            "entries": [
+                              {
+                                "type": "Eco.Gameplay.Civics.Demographics.Demographic",
+                                "name": "Abandoned",
+                                "reference": true
+                              }
+                            ]
+                          },
+                          "Citizen": {
+                            "type": "GameValueContext",
+                            "_name": "Citizen",
+                            "markedUpName": "<icon name=\"User\">Citizen</icon>",
+                            "contextDescription": "The citizen who changed demographics."
+                          },
+                          "Requirements": "HasAll"
+                        }
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.Tax_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "TargetBankAccount": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Economy.TreasuryBankAccount",
+                          "name": "Treasury Bank Account",
+                          "reference": true
+                        }
+                      },
+                      "Target": {
+                        "type": "GameValueContext",
+                        "_name": "Citizen",
+                        "markedUpName": "<icon name=\"User\">Citizen</icon>",
+                        "contextDescription": "The citizen who changed demographics."
+                      },
+                      "Currency": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Economy.Currency",
+                          "name": "Panda",
+                          "reference": true
+                        }
+                      },
+                      "Amount": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.Wealth",
+                        "properties": {
+                          "Currency": {
+                            "type": "GameValueWrapper",
+                            "value": {
+                              "type": "Eco.Gameplay.Economy.Currency",
+                              "name": "Panda",
+                              "reference": true
+                            }
+                          },
+                          "Citizen": {
+                            "type": "GameValueContext",
+                            "_name": "Citizen",
+                            "markedUpName": "<icon name=\"User\">Citizen</icon>",
+                            "contextDescription": "The citizen who changed demographics."
+                          }
+                        }
+                      },
+                      "PreventIfUnableToPay": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.ChangePropertyOwner_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "Property": {
+                        "type": "Eco.Gameplay.Civics.GameValues.PropertyValues.AllProperty",
+                        "reference": false,
+                        "properties": {
+                          "CurrentlyOwnedByCitizen": {
+                            "type": "GameValueContext",
+                            "_name": "Citizen",
+                            "markedUpName": "<icon name=\"User\">Citizen</icon>",
+                            "contextDescription": "The citizen who changed demographics."
+                          },
+                          "IgnorePropertyWithMulitpleOwners": true
+                        }
+                      },
+                      "NewOwner": null,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Prevent Illegal Minting of Pandas",
+          "UserDescription": "This is to prevent counterfeit coins from entering the market",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.MintCurrency"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.MintCurrency",
+                    "propNameBacker": "Currency",
+                    "propDisplayName": "Currency Created",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Economy.Currency"
+                        },
+                        "requiredTag": null,
+                        "internalDescription": "<link=\"view:3942:3368805\"><icon name=\"CurrencySymbol\"><style=\"Currency\">Panda</style></icon></link>",
+                        "entries": [
+                          {
+                            "type": "Eco.Gameplay.Economy.Currency",
+                            "name": "Panda",
+                            "reference": true
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.MintCurrency",
+                    "propNameBacker": "BankAccount",
+                    "propDisplayName": "Target Account",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Economy.BankAccount"
+                        },
+                        "requiredTag": null,
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.MintCurrency",
+                    "propNameBacker": "ItemUsed",
+                    "propDisplayName": "Item Used",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Currency",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.TitleRequirements",
+                        "properties": {
+                          "Titles": {
+                            "type": "GamePickerList",
+                            "mustDeriveType": {
+                              "type": "Type",
+                              "value": "Eco.Gameplay.Civics.Titles.Title"
+                            },
+                            "requiredTag": null,
+                            "internalDescription": "<link=\"view:2433:16826902\"><icon name=\"ElectedTitle\"><style=\"Government\">Volunteer President</style></icon></link>",
+                            "entries": [
+                              {
+                                "type": "Eco.Gameplay.Civics.Titles.ElectedTitle",
+                                "name": "Volunteer President",
+                                "reference": true
+                              }
+                            ]
+                          },
+                          "Citizen": {
+                            "type": "GameValueContext",
+                            "_name": "Citizen",
+                            "markedUpName": "<icon name=\"User\">Citizen</icon>",
+                            "contextDescription": "The citizen who performed the interaction."
+                          },
+                          "Requirements": "HasNone"
+                        }
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.Prevent_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Targetted Universal Basic Income",
+          "UserDescription": "This section provides for a targeted universal basic income to provide basic financial aid to Citizens regardless of their specialization and hours spend on Giant Panda  ( Current Poverty Line is set at 400 and triggers every 3 hours)",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.CitizenTimer"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.CitizenTimerTriggerConfig",
+                    "typeToConfig": null,
+                    "propNameBacker": null,
+                    "propDisplayName": null,
+                    "properties": {
+                      "RepeatForEachUser": {
+                        "type": "Eco.Gameplay.Civics.Demographics.Demographic",
+                        "name": "Active",
+                        "reference": true
+                      },
+                      "HoursBetweenExecutions": 4.0
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                        "properties": {
+                          "Left": {
+                            "type": "Eco.Gameplay.Civics.GameValues.Values.Wealth",
+                            "properties": {
+                              "Currency": {
+                                "type": "GameValueWrapper",
+                                "value": {
+                                  "type": "Eco.Gameplay.Economy.Currency",
+                                  "name": "Panda",
+                                  "reference": true
+                                }
+                              },
+                              "Citizen": {
+                                "type": "GameValueContext",
+                                "_name": "Citizen",
+                                "markedUpName": "<icon name=\"User\">Citizen</icon>",
+                                "contextDescription": "The citizen currently being processed for the timer event."
+                              }
+                            }
+                          },
+                          "Comparison": "LessThan",
+                          "Right": {
+                            "type": "GameValueWrapper",
+                            "value": 400.0
+                          }
+                        }
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                        "properties": {
+                          "Left": {
+                            "type": "Eco.Gameplay.Civics.GameValues.Values.CurrencyInCirculation",
+                            "properties": {
+                              "Currency": {
+                                "type": "GameValueWrapper",
+                                "value": {
+                                  "type": "Eco.Gameplay.Economy.Currency",
+                                  "name": "Panda",
+                                  "reference": true
+                                }
+                              }
+                            }
+                          },
+                          "Comparison": "GreaterThan",
+                          "Right": {
+                            "type": "GameValueWrapper",
+                            "value": 0.0
+                          }
+                        }
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.Pay_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "SourceBankAccount": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Economy.TreasuryBankAccount",
+                          "name": "Treasury Bank Account",
+                          "reference": true
+                        }
+                      },
+                      "TargetBankAccount": {
+                        "type": "Eco.Gameplay.Civics.GameValues.PersonalBankAccount_GameValue",
+                        "properties": {
+                          "User": {
+                            "type": "GameValueContext",
+                            "_name": "Citizen",
+                            "markedUpName": "<icon name=\"User\">Citizen</icon>",
+                            "contextDescription": "The citizen currently being processed for the timer event."
+                          }
+                        }
+                      },
+                      "Target": {
+                        "type": "GameValueContext",
+                        "_name": "Citizen",
+                        "markedUpName": "<icon name=\"User\">Citizen</icon>",
+                        "contextDescription": "The citizen currently being processed for the timer event."
+                      },
+                      "Currency": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Economy.Currency",
+                          "name": "Panda",
+                          "reference": true
+                        }
+                      },
+                      "Amount": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Arithmetic",
+                        "properties": {
+                          "LeftNumber": {
+                            "type": "Eco.Gameplay.Civics.GameValues.Values.WorldAgeInDays",
+                            "properties": {}
+                          },
+                          "Operation": "AtMost",
+                          "RightNumber": {
+                            "type": "GameValueWrapper",
+                            "value": 25.0
+                          }
+                        }
+                      },
+                      "PreventIfUnableToPay": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

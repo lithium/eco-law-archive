@@ -1,0 +1,116 @@
+{
+  "version": [
+    1,
+    0
+  ],
+  "type": "Eco.Gameplay.Civics.Constitutional.ConstitutionalAmendment",
+  "name": "Vote by Deputies",
+  "reference": false,
+  "description": null,
+  "properties": {
+    "RemoveExistingArticles": [],
+    "NewArticles": [
+      {
+        "type": "Eco.Gameplay.Civics.CivicArticle",
+        "name": "Fast Track Civic Actions",
+        "reference": false,
+        "description": "This amendment allows elected Deputees to fast track all Civic actions except the Constitutional Amendments - this should be used with descretion and wisdom.",
+        "properties": {
+          "AppliesTo": {
+            "type": "Eco.Gameplay.Civics.Constitutional.CivicCondition",
+            "reference": false,
+            "properties": {
+              "PerformingCivicActions": {
+                "type": "GamePickerList",
+                "mustDeriveType": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.Civics.CivicAction"
+                },
+                "requiredTag": null,
+                "internalDescription": "<link=\"view:2419:-1\"><icon name=\"CivicAction_PerformExecutiveAction\"><color=#60FFFFFF>Executive Action</color></icon></link>",
+                "entries": [
+                  {
+                    "type": "Type",
+                    "value": "Eco.Gameplay.Civics.Laws.ExecutiveActions.CivicAction_PerformExecutiveAction"
+                  }
+                ]
+              },
+              "ChangingCivicObjects": {
+                "type": "GamePickerList",
+                "mustDeriveType": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.Civics.Misc.IProposable"
+                },
+                "requiredTag": null,
+                "internalDescription": "<foldout><linktext><u>6 Civic Objects</u></linktext><title>6 Civic Objects</title><link=\"view:714:-1\"><icon name=\"Demographic\"><color=#60FFFFFF>Demographic</color></icon></link>\r\n<link=\"view:2491:-1\"><icon name=\"District\"><color=#60FFFFFF>District</color></icon></link>\r\n<link=\"view:3707:-1\"><icon name=\"DistrictMap\"><color=#60FFFFFF>District Map</color></icon></link>\r\n<link=\"view:2433:-1\"><icon name=\"ElectedTitle\"><color=#60FFFFFF>Elected Title</color></icon></link>\r\n<link=\"view:1587:-1\"><icon name=\"ElectionProcess\"><color=#60FFFFFF>Election Process</color></icon></link>\r\n<link=\"view:3059:-1\"><icon name=\"Law\"><color=#60FFFFFF>Law</color></icon></link></foldout>",
+                "entries": [
+                  {
+                    "type": "Type",
+                    "value": "Eco.Gameplay.LegislationSystem.District"
+                  },
+                  {
+                    "type": "Type",
+                    "value": "Eco.Gameplay.Civics.Demographics.Demographic"
+                  },
+                  {
+                    "type": "Type",
+                    "value": "Eco.Gameplay.Civics.Titles.ElectedTitle"
+                  },
+                  {
+                    "type": "Type",
+                    "value": "Eco.Gameplay.Civics.Laws.Law"
+                  },
+                  {
+                    "type": "Type",
+                    "value": "Eco.Gameplay.Civics.ElectionProcess"
+                  },
+                  {
+                    "type": "Type",
+                    "value": "Eco.Gameplay.Civics.Districts.DistrictMap"
+                  }
+                ]
+              }
+            }
+          },
+          "Proposers": {
+            "type": "GamePickerList",
+            "mustDeriveType": {
+              "type": "Type",
+              "value": "Eco.Gameplay.Aliases.IAlias"
+            },
+            "requiredTag": null,
+            "internalDescription": "<link=\"view:714:1276\"><icon name=\"Demographic\"><style=\"Government\">Active</style></icon></link>  <link=\"view:2433:16826530\"><icon name=\"ElectedTitle\"><style=\"Government\">Volunteer Deputy</style></icon></link>",
+            "entries": [
+              {
+                "type": "Eco.Gameplay.Civics.Titles.ElectedTitle",
+                "name": "Volunteer Deputy",
+                "reference": true
+              },
+              {
+                "type": "Eco.Gameplay.Civics.Demographics.Demographic",
+                "name": "Active",
+                "reference": true
+              }
+            ]
+          },
+          "Executors": {
+            "type": "GamePickerList",
+            "mustDeriveType": {
+              "type": "Type",
+              "value": "Eco.Gameplay.Aliases.IAlias"
+            },
+            "requiredTag": null,
+            "internalDescription": "<style=\"ErrorLight\">None</style>",
+            "entries": []
+          },
+          "ElectionProcess": {
+            "type": "Eco.Gameplay.Civics.ElectionProcess",
+            "name": "Deputee fast election",
+            "reference": true
+          },
+          "Priority": 0.0
+        }
+      }
+    ]
+  }
+}

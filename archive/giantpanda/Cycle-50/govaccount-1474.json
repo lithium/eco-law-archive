@@ -1,0 +1,31 @@
+{
+  "version": [
+    1,
+    0
+  ],
+  "type": "Eco.Gameplay.Economy.TreasuryBankAccount",
+  "name": "Treasury Bank Account",
+  "reference": false,
+  "description": null,
+  "managers": [],
+  "users": [],
+  "properties": {},
+  "holdings": [
+    {
+      "currency": {
+        "type": "Eco.Gameplay.Economy.Currency",
+        "name": "PattyBRaps Credit",
+        "reference": true
+      },
+      "amount": 5.0
+    },
+    {
+      "currency": {
+        "type": "Eco.Gameplay.Economy.Currency",
+        "name": "Panda",
+        "reference": true
+      },
+      "amount": 31605.75
+    }
+  ]
+}

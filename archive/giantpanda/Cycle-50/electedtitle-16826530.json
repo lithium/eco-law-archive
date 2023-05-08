@@ -1,0 +1,65 @@
+{
+  "version": [
+    1,
+    0
+  ],
+  "type": "Eco.Gameplay.Civics.Titles.ElectedTitle",
+  "name": "Volunteer Deputy",
+  "reference": false,
+  "description": null,
+  "properties": {
+    "ElectionProcess": {
+      "type": "Eco.Gameplay.Civics.ElectionProcess",
+      "name": "Basic Election",
+      "reference": true
+    },
+    "EligibleCandidates": {
+      "type": "Eco.Gameplay.Civics.Demographics.Demographic",
+      "name": "Everyone",
+      "reference": true
+    },
+    "RequiredOfCandidates": null,
+    "MaxOccupants": 3,
+    "Successor": null,
+    "WhoCanRemoveFromOffice": null,
+    "TermLimitDays": 2.0,
+    "TotalTermsAllowed": 0,
+    "ConsecutiveTermsAllowed": 0,
+    "CanElectionsBeProposedDuringTerm": false,
+    "CanSetGlobalMarkers": false,
+    "CanSetGlobalObjective": false,
+    "CanSetTreasuryTaxes": false,
+    "CanUseTreasuryBankAccount": false,
+    "HasGovernmentBankingPrivileges": false,
+    "RequiredOfOfficeHolders": null,
+    "BackupOwner": {
+      "type": "Eco.Gameplay.Civics.Demographics.Demographic",
+      "name": "Everyone",
+      "reference": true
+    },
+    "Wages": {
+      "type": "Eco.Gameplay.Economy.Jobs.RecurringTransferDefinition",
+      "reference": false,
+      "properties": {
+        "Currency": {
+          "type": "GameValueWrapper",
+          "value": {
+            "type": "Eco.Gameplay.Economy.Currency",
+            "name": "Panda",
+            "reference": true
+          }
+        },
+        "AmountPerHour": {
+          "type": "GameValueWrapper",
+          "value": 0.0
+        },
+        "PaymentType": "OnlineHours"
+      }
+    },
+    "WagesSourceBankAccount": {
+      "type": "Eco.Gameplay.Economy.TreasuryBankAccount",
+      "name": "Treasury Bank Account",
+      "reference": true
+    }
+  }
+}

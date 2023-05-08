@@ -1,0 +1,97 @@
+{
+  "version": [
+    1,
+    0
+  ],
+  "type": "Eco.Gameplay.Civics.Constitutional.ConstitutionalAmendment",
+  "name": "Presidential Veto Amendment",
+  "reference": false,
+  "description": "Amending Constitution to allow president ability to veto basic elections. A power that will be used only in emergency situations regarding violation of server rules, or immediate destruction of the status quo",
+  "properties": {
+    "RemoveExistingArticles": [],
+    "NewArticles": [
+      {
+        "type": "Eco.Gameplay.Civics.CivicArticle",
+        "name": "Article",
+        "reference": false,
+        "description": null,
+        "properties": {
+          "AppliesTo": {
+            "type": "Eco.Gameplay.Civics.Constitutional.CivicCondition",
+            "reference": false,
+            "properties": {
+              "PerformingCivicActions": {
+                "type": "GamePickerList",
+                "mustDeriveType": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.Civics.CivicAction"
+                },
+                "requiredTag": null,
+                "internalDescription": "<link=\"view:2419:-1\"><icon name=\"CivicAction_PerformExecutiveAction\"><color=#60FFFFFF>Executive Action</color></icon></link>",
+                "entries": [
+                  {
+                    "type": "Type",
+                    "value": "Eco.Gameplay.Civics.Laws.ExecutiveActions.CivicAction_PerformExecutiveAction"
+                  }
+                ]
+              },
+              "ChangingCivicObjects": {
+                "type": "GamePickerList",
+                "mustDeriveType": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.Civics.Misc.IProposable"
+                },
+                "requiredTag": null,
+                "internalDescription": "<link=\"view:1587:-1\"><icon name=\"ElectionProcess\"><color=#60FFFFFF>Election Process</color></icon></link>",
+                "entries": [
+                  {
+                    "type": "Type",
+                    "value": "Eco.Gameplay.Civics.ElectionProcess"
+                  }
+                ]
+              }
+            }
+          },
+          "Proposers": {
+            "type": "GamePickerList",
+            "mustDeriveType": {
+              "type": "Type",
+              "value": "Eco.Gameplay.Aliases.IAlias"
+            },
+            "requiredTag": null,
+            "internalDescription": "<link=\"view:2433:16826902\"><icon name=\"ElectedTitle\"><style=\"Government\">Volunteer President</style></icon></link>",
+            "entries": [
+              {
+                "type": "Eco.Gameplay.Civics.Titles.ElectedTitle",
+                "name": "Volunteer President",
+                "reference": true
+              }
+            ]
+          },
+          "Executors": {
+            "type": "GamePickerList",
+            "mustDeriveType": {
+              "type": "Type",
+              "value": "Eco.Gameplay.Aliases.IAlias"
+            },
+            "requiredTag": null,
+            "internalDescription": "<link=\"view:2433:16826902\"><icon name=\"ElectedTitle\"><style=\"Government\">Volunteer President</style></icon></link>",
+            "entries": [
+              {
+                "type": "Eco.Gameplay.Civics.Titles.ElectedTitle",
+                "name": "Volunteer President",
+                "reference": true
+              }
+            ]
+          },
+          "ElectionProcess": {
+            "type": "Eco.Gameplay.Civics.ElectionProcess",
+            "name": "Basic Election",
+            "reference": true
+          },
+          "Priority": 0.0
+        }
+      }
+    ]
+  }
+}

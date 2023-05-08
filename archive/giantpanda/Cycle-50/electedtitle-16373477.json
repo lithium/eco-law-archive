@@ -1,0 +1,51 @@
+{
+  "version": [
+    1,
+    0
+  ],
+  "type": "Eco.Gameplay.Civics.Titles.ElectedTitle",
+  "name": "Volunteer Park Manager",
+  "reference": false,
+  "description": "Park Manager is in charge of maintaining public parks deemed by the Panda Park Act",
+  "properties": {
+    "ElectionProcess": {
+      "type": "Eco.Gameplay.Civics.ElectionProcess",
+      "name": "Deputee fast election",
+      "reference": true
+    },
+    "EligibleCandidates": {
+      "type": "Eco.Gameplay.Players.User",
+      "name": "Magnetar",
+      "reference": true
+    },
+    "RequiredOfCandidates": null,
+    "MaxOccupants": 1,
+    "Successor": null,
+    "WhoCanRemoveFromOffice": null,
+    "TermLimitDays": 2.0,
+    "TotalTermsAllowed": 7,
+    "ConsecutiveTermsAllowed": 7,
+    "CanElectionsBeProposedDuringTerm": false,
+    "CanSetGlobalMarkers": false,
+    "CanSetGlobalObjective": false,
+    "CanSetTreasuryTaxes": false,
+    "CanUseTreasuryBankAccount": false,
+    "HasGovernmentBankingPrivileges": false,
+    "RequiredOfOfficeHolders": null,
+    "BackupOwner": {
+      "type": "Eco.Gameplay.Civics.Titles.ElectedTitle",
+      "name": "Volunteer Deputy",
+      "reference": true
+    },
+    "Wages": {
+      "type": "Eco.Gameplay.Economy.Jobs.RecurringTransferDefinition",
+      "reference": false,
+      "properties": {
+        "Currency": null,
+        "AmountPerHour": null,
+        "PaymentType": "OnlineAndOfflineHours"
+      }
+    },
+    "WagesSourceBankAccount": null
+  }
+}

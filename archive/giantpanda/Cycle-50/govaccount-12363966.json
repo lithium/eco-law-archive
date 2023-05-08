@@ -1,0 +1,29 @@
+{
+  "version": [
+    1,
+    0
+  ],
+  "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
+  "name": "Subsidy account",
+  "reference": false,
+  "description": null,
+  "managers": [
+    {
+      "type": "Eco.Gameplay.Civics.Titles.ElectedTitle",
+      "name": "Volunteer President",
+      "reference": true
+    }
+  ],
+  "users": [],
+  "properties": {},
+  "holdings": [
+    {
+      "currency": {
+        "type": "Eco.Gameplay.Economy.Currency",
+        "name": "Panda",
+        "reference": true
+      },
+      "amount": 614.0
+    }
+  ]
+}
