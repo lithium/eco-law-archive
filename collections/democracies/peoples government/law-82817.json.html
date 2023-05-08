@@ -1,0 +1,2524 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Environmental Protection Act - peoples government | Eco Law Archive</title>
+
+
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+<style>
+  .reference {
+    color: rgb(115,225,113);
+    font-weight: bold;
+  }
+
+  .card-list .card {
+      margin-bottom: 1em;
+  }
+
+  .json-preview {
+    font-size: 10pt;
+    font-family: monospace;
+  }
+
+  tr.indented th {
+    padding-left: 2em;
+  }
+
+  .if-then-block {
+    padding: 12px;
+    border: 2px solid rgb(50,166,240);
+  }
+  .if-then-block + .if-then-block {
+    margin-top: 1em;
+
+  }
+
+  .trigger-column {
+    border: 2px solid rgb(96,240,137);
+  }
+  .trigger-column > p.title {
+    background: rgb(96,240,137);
+    color: white;
+    padding: 0.5em;
+    font-weight: bolder;
+    text-align: center;
+  }
+
+  .ifthen-column {
+    padding: 0;
+    margin-left: 1em;
+  }
+  .ifthen-column .title {
+    background: rgb(50,166,240);
+    color: white;
+    padding: 0.5em;
+    font-weight: bolder;
+    text-align: center;
+
+  }
+
+</style>
+
+<script>
+  function json_toggle(evt) {
+    const targetId = evt.target.getAttribute("data-targetid")
+    const el = document.getElementById(targetId)
+    el.style.display = el.style.display == "block" ? "none" : "block";
+  }
+</script>
+
+  </head>
+
+  <body>
+  <section class="section">
+    <div class="container">
+      <h1 class="title">
+  Eco Law Archive
+</h1>
+<h1 class="subtitle">
+  An archive of implemented <a target="_blank" href="https://play.eco">ECO</a> civics
+</h1>
+
+      <div class="tabs is-toggle">
+        <ul>
+          <li><a href="/">Collections</a></li>
+          <li><a href="/constitutions.html">Constitutions</a></li>
+          <li><a href="/electionprocesses.html">Election Processes</a></li>
+          <li><a href="/titles.html">Titles</a></li>
+          <li><a href="/demographics.html">Demographics</a></li>
+          <li class="is-active"><a href="/laws.html">Laws</a></li>
+        </ul>
+      </div>
+
+      <div class="content">
+        <h1 class="title is-1">Law</h1>
+        <h1 class="title is-2">Environmental Protection Act <a href="/collections/democracies/peoples government"><span class="tag">democracies/peoples government</span></a></h1>
+        <h2 class="subtitle is-5">A law to protect the common resources for all people to access</h2>
+
+      <div class="card-list">
+        <div class="content">
+            <p class="title is-5">Section 1: Anti Pollution Act</p>
+            <p class="subtitle is-6">Shut down heavy industry pollution sources if total CO2 rises too high
+
+            <div class="columns">
+              <div class="column is-one-third card-list trigger-column">
+                <p class="title is-5">Triggers</p>
+                <div class="card">
+                    <table class="table">
+                      <tr>
+                        <th>Trigger</th>
+                        <td>PolluteAir</td>
+                      </tr>
+
+                        	<tr class="indented">
+		<th>Pollution Source</th>
+		<td>
+
+				5 
+				Item:
+					<span>BlastFurnaceItem</span>,
+					<span>OilRefineryItem</span>,
+					<span>CombustionGeneratorItem</span>,
+					<span>CementKilnItem</span>,
+					<span>SteamEngineItem</span>
+
+		</td>
+	</tr>
+
+
+
+                    </table>
+
+                    <div>
+                    <a class="button is-text is-small" data-targetId="trigger-AntiPollutionAct-0" onclick="return json_toggle(event)">JSON</a><pre class="json-preview" id="trigger-AntiPollutionAct-0" style="display: none"><code>{
+  "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+  "reference": false,
+  "properties": {
+    "Trigger": {
+      "type": "Type",
+      "value": "Eco.Gameplay.GameActions.PolluteAir"
+    },
+    "Configs": [
+      {
+        "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+        "typeToConfig": "Eco.Gameplay.GameActions.PolluteAir",
+        "propNameBacker": "PollutionSource",
+        "propDisplayName": "Pollution Source",
+        "properties": {
+          "List": {
+            "type": "GamePickerList",
+            "mustDeriveType": {
+              "type": "Type",
+              "value": "Eco.Gameplay.Items.Item"
+            },
+            "requiredTag": "Polluter",
+            "internalDescription": "<foldout><linktext><u>5 World Objects</u></linktext><title>5 World Objects</title><link=\"Item:BlastFurnaceItem\"><style=\"Item\"><icon name=\"BlastFurnaceItem\">Blast Furnace</icon></style></link>\r\n<link=\"Item:CementKilnItem\"><style=\"Item\"><icon name=\"CementKilnItem\">Cement Kiln</icon></style></link>\r\n<link=\"Item:CombustionGeneratorItem\"><style=\"Item\"><icon name=\"CombustionGeneratorItem\">Combustion Generator</icon></style></link>\r\n<link=\"Item:OilRefineryItem\"><style=\"Item\"><icon name=\"OilRefineryItem\">Oil Refinery</icon></style></link>\r\n<link=\"Item:SteamEngineItem\"><style=\"Item\"><icon name=\"SteamEngineItem\">Steam Engine</icon></style></link>\r\n</foldout>",
+            "entries": [
+              {
+                "type": "Type",
+                "value": "Eco.Mods.TechTree.BlastFurnaceItem"
+              },
+              {
+                "type": "Type",
+                "value": "Eco.Mods.TechTree.OilRefineryItem"
+              },
+              {
+                "type": "Type",
+                "value": "Eco.Mods.TechTree.CombustionGeneratorItem"
+              },
+              {
+                "type": "Type",
+                "value": "Eco.Mods.TechTree.CementKilnItem"
+              },
+              {
+                "type": "Type",
+                "value": "Eco.Mods.TechTree.SteamEngineItem"
+              }
+            ]
+          }
+        }
+      }
+    ]
+  }
+}</code></pre>
+                    </div>
+                </div>
+              </div>
+
+              <div class="column is-two-thirds card-list ifthen-column">
+
+                <div class="if-then-block"> 
+
+                  <div class="columns">
+                    <div class="column is-one-half">
+                      <p class="title is-5">If  <span class="tag">All</span></p>
+                      <div class="card">
+                        
+ <table class="table">
+  <tr>
+    <th colspan=2>Compare</th>
+  </tr>
+  <tr class="indented">
+  	<th>Left</th>
+  	<td>Environment Statistic: TotalCO2</td>
+  </tr>
+
+  <tr class="indented">
+  	<th>Comparison</th>
+  	<td>GreaterThanOrEqualTo</td>
+  </tr>
+
+  <tr class="indented">
+  	<th>Right</th>
+  	<td>
+
+	Number: 380
+</td>
+  </tr>
+
+</table>
+                      </div>
+                    </div>
+
+                    <div class="column is-one-half">
+                      <p class="title is-5">Then</p>
+                      <div class="card">
+                        
+
+<table>
+	<tr colspan="2">
+		<th>Prevent</th>
+	</tr>
+	<tr>
+		<th>Infobox On Success?</th>
+		<td>
+			No
+		</td>
+	</tr>
+</table>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div>
+                  <a class="button is-text is-small" data-targetId="if-AntiPollutionAct-0" onclick="return json_toggle(event)">JSON</a><pre class="json-preview" id="if-AntiPollutionAct-0" style="display: none"><code>{
+  "type": "Eco.Gameplay.Civics.IfThenBlock",
+  "reference": false,
+  "properties": {
+    "If": {
+      "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+      "properties": {
+        "List": [
+          {
+            "type": "Eco.Gameplay.Civics.GameValues.Compare",
+            "properties": {
+              "Left": {
+                "type": "Eco.Gameplay.Civics.GameValues.EnvironmentStatistic",
+                "properties": {
+                  "Statistic": {
+                    "type": "Eco.Core.Stats.StatEntry",
+                    "name": "TotalCO2",
+                    "reference": true
+                  }
+                }
+              },
+              "Comparison": "GreaterThanOrEqualTo",
+              "Right": {
+                "type": "GameValueWrapper",
+                "value": 380
+              }
+            }
+          }
+        ],
+        "Comparison": "All"
+      }
+    },
+    "Then": [
+      {
+        "type": "Eco.Gameplay.Civics.LegalActions.Prevent_LegalAction",
+        "reference": false,
+        "properties": {
+          "InfoboxOnSuccess": {
+            "type": "Eco.Gameplay.Civics.GameValues.No",
+            "properties": {}
+          }
+        }
+      }
+    ]
+  }
+}</code></pre>
+                  </div>
+                </div>
+
+
+              </div>
+
+
+            </div>
+        </div>
+        <div class="content">
+            <p class="title is-5">Section 2: Public Hunting Rights</p>
+            <p class="subtitle is-6">Allow anyone to hunt on any land
+
+            <div class="columns">
+              <div class="column is-one-third card-list trigger-column">
+                <p class="title is-5">Triggers</p>
+                <div class="card">
+                    <table class="table">
+                      <tr>
+                        <th>Trigger</th>
+                        <td>HarvestOrHunt</td>
+                      </tr>
+
+                        	<tr class="indented">
+		<th>Species</th>
+		<td>
+
+				27 
+				Species:
+					<span>BighornSheep</span>,
+					<span>Trout</span>,
+					<span>Crab</span>,
+					<span>Hare</span>,
+					<span>Tuna</span>,
+					<span>Coyote</span>,
+					<span>Turkey</span>,
+					<span>Tarantula</span>,
+					<span>Bass</span>,
+					<span>PacificSardine</span>,
+					<span>Bison</span>,
+					<span>Salmon</span>,
+					<span>Fox</span>,
+					<span>Jaguar</span>,
+					<span>Elk</span>,
+					<span>SnappingTurtle</span>,
+					<span>MoonJellyfish</span>,
+					<span>Deer</span>,
+					<span>Agouti</span>,
+					<span>Wolf</span>,
+					<span>Alligator</span>,
+					<span>Tortoise</span>,
+					<span>Otter</span>,
+					<span>PrairieDog</span>,
+					<span>BlueShark</span>,
+					<span>MountainGoat</span>,
+					<span>Cod</span>
+
+		</td>
+	</tr>
+
+
+                        	<tr class="indented">
+		<th>Tool Used</th>
+		<td>
+				Any
+
+
+		</td>
+	</tr>
+
+
+
+                    </table>
+
+                    <div>
+                    <a class="button is-text is-small" data-targetId="trigger-PublicHuntingRights-0" onclick="return json_toggle(event)">JSON</a><pre class="json-preview" id="trigger-PublicHuntingRights-0" style="display: none"><code>{
+  "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+  "reference": false,
+  "properties": {
+    "Trigger": {
+      "type": "Type",
+      "value": "Eco.Gameplay.GameActions.HarvestOrHunt"
+    },
+    "Configs": [
+      {
+        "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+        "typeToConfig": "Eco.Gameplay.GameActions.HarvestOrHunt",
+        "propNameBacker": "Species",
+        "propDisplayName": "Species",
+        "properties": {
+          "List": {
+            "type": "GamePickerList",
+            "mustDeriveType": {
+              "type": "Type",
+              "value": "Eco.Simulation.Types.Species"
+            },
+            "requiredTag": null,
+            "internalDescription": "<foldout><linktext><u>27 Animals</u></linktext><title>27 Animals</title><link=\"view:3749:-1\"><icon name=\"AgoutiSpecies\"><color=#60FFFFFF>Agouti Species</color></icon></link>\r\n<link=\"view:1705:-1\"><icon name=\"AlligatorSpecies\"><color=#60FFFFFF>Alligator Species</color></icon></link>\r\n<link=\"view:536:-1\"><icon name=\"BassSpecies\"><color=#60FFFFFF>Bass Species</color></icon></link>\r\n<link=\"view:1748:-1\"><icon name=\"BighornSheepSpecies\"><color=#60FFFFFF>Bighorn Sheep Species</color></icon></link>\r\n<link=\"view:2236:-1\"><icon name=\"BisonSpecies\"><color=#60FFFFFF>Bison Species</color></icon></link>\r\n<link=\"view:1545:-1\"><icon name=\"BlueSharkSpecies\"><color=#60FFFFFF>Blue Shark Species</color></icon></link>\r\n<link=\"view:3262:-1\"><icon name=\"CodSpecies\"><color=#60FFFFFF>Cod Species</color></icon></link>\r\n<link=\"view:2916:-1\"><icon name=\"CoyoteSpecies\"><color=#60FFFFFF>Coyote Species</color></icon></link>\r\n<link=\"view:1677:-1\"><icon name=\"CrabSpecies\"><color=#60FFFFFF>Crab Species</color></icon></link>\r\n<link=\"view:760:-1\"><icon name=\"DeerSpecies\"><color=#60FFFFFF>Deer Species</color></icon></link>\r\n<link=\"view:3396:-1\"><icon name=\"ElkSpecies\"><color=#60FFFFFF>Elk Species</color></icon></link>\r\n<link=\"view:2566:-1\"><icon name=\"FoxSpecies\"><color=#60FFFFFF>Fox Species</color></icon></link>\r\n<link=\"view:1453:-1\"><icon name=\"HareSpecies\"><color=#60FFFFFF>Hare Species</color></icon></link>\r\n<link=\"view:3562:-1\"><icon name=\"JaguarSpecies\"><color=#60FFFFFF>Jaguar Species</color></icon></link>\r\n<link=\"view:145:-1\"><icon name=\"MoonJellyfishSpecies\"><color=#60FFFFFF>Moon Jellyfish Species</color></icon></link>\r\n<link=\"view:2117:-1\"><icon name=\"MountainGoatSpecies\"><color=#60FFFFFF>Mountain Goat Species</color></icon></link>\r\n<link=\"view:2752:-1\"><icon name=\"OtterSpecies\"><color=#60FFFFFF>Otter Species</color></icon></link>\r\n<link=\"view:1538:-1\"><icon name=\"PacificSardineSpecies\"><color=#60FFFFFF>Pacific Sardine Species</color></icon></link>\r\n<link=\"view:374:-1\"><icon name=\"PrairieDogSpecies\"><color=#60FFFFFF>Prairie Dog Species</color></icon></link>\r\n<link=\"view:1980:-1\"><icon name=\"SalmonSpecies\"><color=#60FFFFFF>Salmon Species</color></icon></link>\r\n<link=\"view:399:-1\"><icon name=\"SnappingTurtleSpecies\"><color=#60FFFFFF>Snapping Turtle Species</color></icon></link>\r\n<link=\"view:3445:-1\"><icon name=\"TarantulaSpecies\"><color=#60FFFFFF>Tarantula Species</color></icon></link>\r\n<link=\"view:2983:-1\"><icon name=\"TortoiseSpecies\"><color=#60FFFFFF>Tortoise Species</color></icon></link>\r\n<link=\"view:589:-1\"><icon name=\"TroutSpecies\"><color=#60FFFFFF>Trout Species</color></icon></link>\r\n<link=\"view:3503:-1\"><icon name=\"TunaSpecies\"><color=#60FFFFFF>Tuna Species</color></icon></link>\r\n<link=\"view:581:-1\"><icon name=\"TurkeySpecies\"><color=#60FFFFFF>Turkey Species</color></icon></link>\r\n<link=\"view:2281:-1\"><icon name=\"WolfSpecies\"><color=#60FFFFFF>Wolf Species</color></icon></link></foldout>",
+            "entries": [
+              {
+                "type": "Type",
+                "value": "Eco.Mods.TechTree.BighornSheep+BighornSheepSpecies"
+              },
+              {
+                "type": "Type",
+                "value": "Eco.Mods.TechTree.Trout+TroutSpecies"
+              },
+              {
+                "type": "Type",
+                "value": "Eco.Mods.TechTree.Crab+CrabSpecies"
+              },
+              {
+                "type": "Type",
+                "value": "Eco.Mods.TechTree.Hare+HareSpecies"
+              },
+              {
+                "type": "Type",
+                "value": "Eco.Mods.TechTree.Tuna+TunaSpecies"
+              },
+              {
+                "type": "Type",
+                "value": "Eco.Mods.TechTree.Coyote+CoyoteSpecies"
+              },
+              {
+                "type": "Type",
+                "value": "Eco.Mods.TechTree.Turkey+TurkeySpecies"
+              },
+              {
+                "type": "Type",
+                "value": "Eco.Mods.TechTree.Tarantula+TarantulaSpecies"
+              },
+              {
+                "type": "Type",
+                "value": "Eco.Mods.TechTree.Bass+BassSpecies"
+              },
+              {
+                "type": "Type",
+                "value": "Eco.Mods.TechTree.PacificSardine+PacificSardineSpecies"
+              },
+              {
+                "type": "Type",
+                "value": "Eco.Mods.TechTree.Bison+BisonSpecies"
+              },
+              {
+                "type": "Type",
+                "value": "Eco.Mods.TechTree.Salmon+SalmonSpecies"
+              },
+              {
+                "type": "Type",
+                "value": "Eco.Mods.TechTree.Fox+FoxSpecies"
+              },
+              {
+                "type": "Type",
+                "value": "Eco.Mods.TechTree.Jaguar+JaguarSpecies"
+              },
+              {
+                "type": "Type",
+                "value": "Eco.Mods.TechTree.Elk+ElkSpecies"
+              },
+              {
+                "type": "Type",
+                "value": "Eco.Mods.TechTree.SnappingTurtle+SnappingTurtleSpecies"
+              },
+              {
+                "type": "Type",
+                "value": "Eco.Mods.TechTree.MoonJellyfish+MoonJellyfishSpecies"
+              },
+              {
+                "type": "Type",
+                "value": "Eco.Mods.TechTree.Deer+DeerSpecies"
+              },
+              {
+                "type": "Type",
+                "value": "Eco.Mods.TechTree.Agouti+AgoutiSpecies"
+              },
+              {
+                "type": "Type",
+                "value": "Eco.Mods.TechTree.Wolf+WolfSpecies"
+              },
+              {
+                "type": "Type",
+                "value": "Eco.Mods.TechTree.Alligator+AlligatorSpecies"
+              },
+              {
+                "type": "Type",
+                "value": "Eco.Mods.Organisms.Tortoise+TortoiseSpecies"
+              },
+              {
+                "type": "Type",
+                "value": "Eco.Mods.TechTree.Otter+OtterSpecies"
+              },
+              {
+                "type": "Type",
+                "value": "Eco.Mods.TechTree.PrairieDog+PrairieDogSpecies"
+              },
+              {
+                "type": "Type",
+                "value": "Eco.Mods.TechTree.BlueShark+BlueSharkSpecies"
+              },
+              {
+                "type": "Type",
+                "value": "Eco.Mods.TechTree.MountainGoat+MountainGoatSpecies"
+              },
+              {
+                "type": "Type",
+                "value": "Eco.Mods.TechTree.Cod+CodSpecies"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+        "typeToConfig": "Eco.Gameplay.GameActions.HarvestOrHunt",
+        "propNameBacker": "ToolUsed",
+        "propDisplayName": "Tool Used",
+        "properties": {
+          "List": {
+            "type": "GamePickerList",
+            "mustDeriveType": {
+              "type": "Type",
+              "value": "Eco.Gameplay.Items.Item"
+            },
+            "requiredTag": "Harvester",
+            "internalDescription": "Any",
+            "entries": []
+          }
+        }
+      }
+    ]
+  }
+}</code></pre>
+                    </div>
+                </div>
+              </div>
+
+              <div class="column is-two-thirds card-list ifthen-column">
+
+                <div class="if-then-block"> 
+
+                  <div class="columns">
+                    <div class="column is-one-half">
+                      <p class="title is-5">If  <span class="tag">All</span></p>
+                    </div>
+
+                    <div class="column is-one-half">
+                      <p class="title is-5">Then</p>
+                      <div class="card">
+                        
+
+<table>
+	<tr colspan="2">
+		<th>Ignore Authorization</th>
+	</tr>
+	<tr>
+		<th>Infobox On Success?</th>
+		<td>
+			No
+		</td>
+	</tr>
+</table>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div>
+                  <a class="button is-text is-small" data-targetId="if-PublicHuntingRights-0" onclick="return json_toggle(event)">JSON</a><pre class="json-preview" id="if-PublicHuntingRights-0" style="display: none"><code>{
+  "type": "Eco.Gameplay.Civics.IfThenBlock",
+  "reference": false,
+  "properties": {
+    "If": {
+      "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+      "properties": {
+        "List": [],
+        "Comparison": "All"
+      }
+    },
+    "Then": [
+      {
+        "type": "Eco.Gameplay.Civics.LegalActions.IgnoreAuth_LegalAction",
+        "reference": false,
+        "properties": {
+          "InfoboxOnSuccess": {
+            "type": "Eco.Gameplay.Civics.GameValues.No",
+            "properties": {}
+          }
+        }
+      }
+    ]
+  }
+}</code></pre>
+                  </div>
+                </div>
+
+
+              </div>
+
+
+            </div>
+        </div>
+        <div class="content">
+            <p class="title is-5">Section 3: Protect Old Growth Redwood</p>
+            <p class="subtitle is-6">Do not allow chopping down of Old Growth Redwoods under any circumstance
+
+            <div class="columns">
+              <div class="column is-one-third card-list trigger-column">
+                <p class="title is-5">Triggers</p>
+                <div class="card">
+                    <table class="table">
+                      <tr>
+                        <th>Trigger</th>
+                        <td>ChopTree</td>
+                      </tr>
+
+                        	<tr class="indented">
+		<th>Species</th>
+		<td>
+
+				1 
+				TreeSpecies:
+					<span>OldGrowthRedwood</span>
+
+		</td>
+	</tr>
+
+
+                        	<tr class="indented">
+		<th>Tool Used</th>
+		<td>
+				Any
+
+
+		</td>
+	</tr>
+
+
+
+                    </table>
+
+                    <div>
+                    <a class="button is-text is-small" data-targetId="trigger-ProtectOldGrowthRedwood-0" onclick="return json_toggle(event)">JSON</a><pre class="json-preview" id="trigger-ProtectOldGrowthRedwood-0" style="display: none"><code>{
+  "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+  "reference": false,
+  "properties": {
+    "Trigger": {
+      "type": "Type",
+      "value": "Eco.Gameplay.GameActions.ChopTree"
+    },
+    "Configs": [
+      {
+        "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+        "typeToConfig": "Eco.Gameplay.GameActions.ChopTree",
+        "propNameBacker": "Species",
+        "propDisplayName": "Species",
+        "properties": {
+          "List": {
+            "type": "GamePickerList",
+            "mustDeriveType": {
+              "type": "Type",
+              "value": "Eco.Simulation.Types.TreeSpecies"
+            },
+            "requiredTag": null,
+            "internalDescription": "<link=\"view:3813:-1\"><icon name=\"OldGrowthRedwoodSpecies\"><color=#60FFFFFF>Old Growth Redwood Species</color></icon></link>",
+            "entries": [
+              {
+                "type": "Type",
+                "value": "Eco.Mods.Organisms.OldGrowthRedwood+OldGrowthRedwoodSpecies"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+        "typeToConfig": "Eco.Gameplay.GameActions.ChopTree",
+        "propNameBacker": "ToolUsed",
+        "propDisplayName": "Tool Used",
+        "properties": {
+          "List": {
+            "type": "GamePickerList",
+            "mustDeriveType": {
+              "type": "Type",
+              "value": "Eco.Gameplay.Items.Item"
+            },
+            "requiredTag": "Logging",
+            "internalDescription": "Any",
+            "entries": []
+          }
+        }
+      }
+    ]
+  }
+}</code></pre>
+                    </div>
+                </div>
+              </div>
+
+              <div class="column is-two-thirds card-list ifthen-column">
+
+                <div class="if-then-block"> 
+
+                  <div class="columns">
+                    <div class="column is-one-half">
+                      <p class="title is-5">If  <span class="tag">All</span></p>
+                    </div>
+
+                    <div class="column is-one-half">
+                      <p class="title is-5">Then</p>
+                      <div class="card">
+                        
+
+<table>
+	<tr colspan="2">
+		<th>Prevent</th>
+	</tr>
+	<tr>
+		<th>Infobox On Success?</th>
+		<td>
+			No
+		</td>
+	</tr>
+</table>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div>
+                  <a class="button is-text is-small" data-targetId="if-ProtectOldGrowthRedwood-0" onclick="return json_toggle(event)">JSON</a><pre class="json-preview" id="if-ProtectOldGrowthRedwood-0" style="display: none"><code>{
+  "type": "Eco.Gameplay.Civics.IfThenBlock",
+  "reference": false,
+  "properties": {
+    "If": {
+      "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+      "properties": {
+        "List": [],
+        "Comparison": "All"
+      }
+    },
+    "Then": [
+      {
+        "type": "Eco.Gameplay.Civics.LegalActions.Prevent_LegalAction",
+        "reference": false,
+        "properties": {
+          "InfoboxOnSuccess": {
+            "type": "Eco.Gameplay.Civics.GameValues.No",
+            "properties": {}
+          }
+        }
+      }
+    ]
+  }
+}</code></pre>
+                  </div>
+                </div>
+
+
+              </div>
+
+
+            </div>
+        </div>
+        <div class="content">
+            <p class="title is-5">Section 4: Anti Littering Law</p>
+            <p class="subtitle is-6">Forbids dropping garbage or tailings on unowned or unauthorized land
+
+            <div class="columns">
+              <div class="column is-one-third card-list trigger-column">
+                <p class="title is-5">Triggers</p>
+                <div class="card">
+                    <table class="table">
+                      <tr>
+                        <th>Trigger</th>
+                        <td>DropGarbage</td>
+                      </tr>
+
+
+                    </table>
+
+                    <div>
+                    <a class="button is-text is-small" data-targetId="trigger-AntiLitteringLaw-0" onclick="return json_toggle(event)">JSON</a><pre class="json-preview" id="trigger-AntiLitteringLaw-0" style="display: none"><code>{
+  "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+  "reference": false,
+  "properties": {
+    "Trigger": {
+      "type": "Type",
+      "value": "Eco.Gameplay.GameActions.DropGarbage"
+    },
+    "Configs": []
+  }
+}</code></pre>
+                    </div>
+                </div>
+                <div class="card">
+                    <table class="table">
+                      <tr>
+                        <th>Trigger</th>
+                        <td>DropOrPickupBlock</td>
+                      </tr>
+
+                        	<tr class="indented">
+		<th>Block Placed or Picked Up</th>
+		<td>
+
+				2 
+				BlockItem:
+					<span>WetTailingsItem</span>,
+					<span>TailingsItem</span>
+
+		</td>
+	</tr>
+
+
+
+                    </table>
+
+                    <div>
+                    <a class="button is-text is-small" data-targetId="trigger-AntiLitteringLaw-1" onclick="return json_toggle(event)">JSON</a><pre class="json-preview" id="trigger-AntiLitteringLaw-1" style="display: none"><code>{
+  "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+  "reference": false,
+  "properties": {
+    "Trigger": {
+      "type": "Type",
+      "value": "Eco.Gameplay.GameActions.DropOrPickupBlock"
+    },
+    "Configs": [
+      {
+        "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+        "typeToConfig": "Eco.Gameplay.GameActions.DropOrPickupBlock",
+        "propNameBacker": "ItemUsed",
+        "propDisplayName": "Block Placed or Picked Up",
+        "properties": {
+          "List": {
+            "type": "GamePickerList",
+            "mustDeriveType": {
+              "type": "Type",
+              "value": "Eco.Gameplay.Items.BlockItem"
+            },
+            "requiredTag": null,
+            "internalDescription": "<link=\"Item:TailingsItem\"><style=\"Item\"><icon name=\"TailingsItem\">Tailings</icon></style></link>  <link=\"Item:WetTailingsItem\"><style=\"Item\"><icon name=\"WetTailingsItem\">Wet Tailings</icon></style></link>",
+            "entries": [
+              {
+                "type": "Type",
+                "value": "Eco.Mods.TechTree.WetTailingsItem"
+              },
+              {
+                "type": "Type",
+                "value": "Eco.Mods.TechTree.TailingsItem"
+              }
+            ]
+          }
+        }
+      }
+    ]
+  }
+}</code></pre>
+                    </div>
+                </div>
+              </div>
+
+              <div class="column is-two-thirds card-list ifthen-column">
+
+                <div class="if-then-block"> 
+
+                  <div class="columns">
+                    <div class="column is-one-half">
+                      <p class="title is-5">If  <span class="tag">Any</span></p>
+                      <div class="card">
+                        
+<table>
+	<tr>
+		<th colspan="2">Property Requirements</th>
+	</tr>
+	<tr>
+		<th>Citizen</th>
+		<td><table class="table">
+  <tr>
+    <th><icon name="User">Citizen</icon></th>
+    <td>The citizen who dropped the garbage.</td>
+  </tr>
+</table></td>
+	</tr>
+	<tr>
+		<th>Authorized or Not</th>
+		<td>UnauthorizedOnProperty</td>
+	</tr>
+</table>
+                      </div>
+                      <div class="card">
+                        <table class="table">
+  <tr>
+    <th colspan=2>On Unowned Land</th>
+  </tr>
+</table>
+                      </div>
+                    </div>
+
+                    <div class="column is-one-half">
+                      <p class="title is-5">Then</p>
+                      <div class="card">
+                        
+
+<table>
+	<tr colspan="2">
+		<th>Prevent</th>
+	</tr>
+	<tr>
+		<th>Infobox On Success?</th>
+		<td>
+			No
+		</td>
+	</tr>
+</table>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div>
+                  <a class="button is-text is-small" data-targetId="if-AntiLitteringLaw-0" onclick="return json_toggle(event)">JSON</a><pre class="json-preview" id="if-AntiLitteringLaw-0" style="display: none"><code>{
+  "type": "Eco.Gameplay.Civics.IfThenBlock",
+  "reference": false,
+  "properties": {
+    "If": {
+      "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+      "properties": {
+        "List": [
+          {
+            "type": "Eco.Gameplay.Civics.GameValues.Values.PropertyRequirements",
+            "properties": {
+              "Citizen": {
+                "type": "GameValueContext",
+                "_name": "Citizen",
+                "markedUpName": "<icon name=\"User\">Citizen</icon>",
+                "contextDescription": "The citizen who dropped the garbage."
+              },
+              "AuthorizedOrNot": "UnauthorizedOnProperty"
+            }
+          },
+          {
+            "type": "Eco.Gameplay.Civics.GameValues.Values.OnUnownedLand",
+            "properties": {}
+          }
+        ],
+        "Comparison": "Any"
+      }
+    },
+    "Then": [
+      {
+        "type": "Eco.Gameplay.Civics.LegalActions.Prevent_LegalAction",
+        "reference": false,
+        "properties": {
+          "InfoboxOnSuccess": {
+            "type": "Eco.Gameplay.Civics.GameValues.No",
+            "properties": {}
+          }
+        }
+      }
+    ]
+  }
+}</code></pre>
+                  </div>
+                </div>
+
+
+              </div>
+
+
+            </div>
+        </div>
+        <div class="content">
+            <p class="title is-5">Section 5: Protect Endangerd Bison</p>
+            <p class="subtitle is-6">Protects Bison from extinction
+
+            <div class="columns">
+              <div class="column is-one-third card-list trigger-column">
+                <p class="title is-5">Triggers</p>
+                <div class="card">
+                    <table class="table">
+                      <tr>
+                        <th>Trigger</th>
+                        <td>HarvestOrHunt</td>
+                      </tr>
+
+                        	<tr class="indented">
+		<th>Species</th>
+		<td>
+
+				1 
+				Species:
+					<span>Bison</span>
+
+		</td>
+	</tr>
+
+
+                        	<tr class="indented">
+		<th>Tool Used</th>
+		<td>
+				Any
+
+
+		</td>
+	</tr>
+
+
+
+                    </table>
+
+                    <div>
+                    <a class="button is-text is-small" data-targetId="trigger-ProtectEndangerdBison-0" onclick="return json_toggle(event)">JSON</a><pre class="json-preview" id="trigger-ProtectEndangerdBison-0" style="display: none"><code>{
+  "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+  "reference": false,
+  "properties": {
+    "Trigger": {
+      "type": "Type",
+      "value": "Eco.Gameplay.GameActions.HarvestOrHunt"
+    },
+    "Configs": [
+      {
+        "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+        "typeToConfig": "Eco.Gameplay.GameActions.HarvestOrHunt",
+        "propNameBacker": "Species",
+        "propDisplayName": "Species",
+        "properties": {
+          "List": {
+            "type": "GamePickerList",
+            "mustDeriveType": {
+              "type": "Type",
+              "value": "Eco.Simulation.Types.Species"
+            },
+            "requiredTag": null,
+            "internalDescription": "<link=\"view:2236:-1\"><icon name=\"BisonSpecies\"><color=#60FFFFFF>Bison Species</color></icon></link>",
+            "entries": [
+              {
+                "type": "Type",
+                "value": "Eco.Mods.TechTree.Bison+BisonSpecies"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+        "typeToConfig": "Eco.Gameplay.GameActions.HarvestOrHunt",
+        "propNameBacker": "ToolUsed",
+        "propDisplayName": "Tool Used",
+        "properties": {
+          "List": {
+            "type": "GamePickerList",
+            "mustDeriveType": {
+              "type": "Type",
+              "value": "Eco.Gameplay.Items.Item"
+            },
+            "requiredTag": "Harvester",
+            "internalDescription": "Any",
+            "entries": []
+          }
+        }
+      }
+    ]
+  }
+}</code></pre>
+                    </div>
+                </div>
+              </div>
+
+              <div class="column is-two-thirds card-list ifthen-column">
+
+                <div class="if-then-block"> 
+
+                  <div class="columns">
+                    <div class="column is-one-half">
+                      <p class="title is-5">If  <span class="tag">All</span></p>
+                      <div class="card">
+                        
+ <table class="table">
+  <tr>
+    <th colspan=2>Compare</th>
+  </tr>
+  <tr class="indented">
+  	<th>Left</th>
+  	<td>
+    <strong>Species Population</strong>
+    of 1 Species: 
+
+        <span>Bison</span>
+
+</td>
+  </tr>
+
+  <tr class="indented">
+  	<th>Comparison</th>
+  	<td>LessThanOrEqualTo</td>
+  </tr>
+
+  <tr class="indented">
+  	<th>Right</th>
+  	<td>
+
+	Number: 30
+</td>
+  </tr>
+
+</table>
+                      </div>
+                    </div>
+
+                    <div class="column is-one-half">
+                      <p class="title is-5">Then</p>
+                      <div class="card">
+                        
+
+<table>
+	<tr colspan="2">
+		<th>Prevent</th>
+	</tr>
+	<tr>
+		<th>Infobox On Success?</th>
+		<td>
+			No
+		</td>
+	</tr>
+</table>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div>
+                  <a class="button is-text is-small" data-targetId="if-ProtectEndangerdBison-0" onclick="return json_toggle(event)">JSON</a><pre class="json-preview" id="if-ProtectEndangerdBison-0" style="display: none"><code>{
+  "type": "Eco.Gameplay.Civics.IfThenBlock",
+  "reference": false,
+  "properties": {
+    "If": {
+      "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+      "properties": {
+        "List": [
+          {
+            "type": "Eco.Gameplay.Civics.GameValues.Compare",
+            "properties": {
+              "Left": {
+                "type": "Eco.Gameplay.Civics.GameValues.Population",
+                "properties": {
+                  "SpeciesTypes": {
+                    "type": "GamePickerList",
+                    "mustDeriveType": {
+                      "type": "Type",
+                      "value": "Eco.Simulation.Types.Species"
+                    },
+                    "requiredTag": null,
+                    "internalDescription": "<link=\"view:2236:-1\"><icon name=\"BisonSpecies\"><color=#60FFFFFF>Bison Species</color></icon></link>",
+                    "entries": [
+                      {
+                        "type": "Type",
+                        "value": "Eco.Mods.TechTree.Bison+BisonSpecies"
+                      }
+                    ]
+                  }
+                }
+              },
+              "Comparison": "LessThanOrEqualTo",
+              "Right": {
+                "type": "GameValueWrapper",
+                "value": 30
+              }
+            }
+          }
+        ],
+        "Comparison": "All"
+      }
+    },
+    "Then": [
+      {
+        "type": "Eco.Gameplay.Civics.LegalActions.Prevent_LegalAction",
+        "reference": false,
+        "properties": {
+          "InfoboxOnSuccess": {
+            "type": "Eco.Gameplay.Civics.GameValues.No",
+            "properties": {}
+          }
+        }
+      }
+    ]
+  }
+}</code></pre>
+                  </div>
+                </div>
+
+
+              </div>
+
+
+            </div>
+        </div>
+        <div class="content">
+            <p class="title is-5">Section 6: Protect the Alligators</p>
+            <p class="subtitle is-6">Protects Alligators from extinction
+
+            <div class="columns">
+              <div class="column is-one-third card-list trigger-column">
+                <p class="title is-5">Triggers</p>
+                <div class="card">
+                    <table class="table">
+                      <tr>
+                        <th>Trigger</th>
+                        <td>HarvestOrHunt</td>
+                      </tr>
+
+                        	<tr class="indented">
+		<th>Species</th>
+		<td>
+
+				1 
+				Species:
+					<span>Alligator</span>
+
+		</td>
+	</tr>
+
+
+                        	<tr class="indented">
+		<th>Tool Used</th>
+		<td>
+				Any
+
+
+		</td>
+	</tr>
+
+
+
+                    </table>
+
+                    <div>
+                    <a class="button is-text is-small" data-targetId="trigger-ProtecttheAlligators-0" onclick="return json_toggle(event)">JSON</a><pre class="json-preview" id="trigger-ProtecttheAlligators-0" style="display: none"><code>{
+  "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+  "reference": false,
+  "properties": {
+    "Trigger": {
+      "type": "Type",
+      "value": "Eco.Gameplay.GameActions.HarvestOrHunt"
+    },
+    "Configs": [
+      {
+        "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+        "typeToConfig": "Eco.Gameplay.GameActions.HarvestOrHunt",
+        "propNameBacker": "Species",
+        "propDisplayName": "Species",
+        "properties": {
+          "List": {
+            "type": "GamePickerList",
+            "mustDeriveType": {
+              "type": "Type",
+              "value": "Eco.Simulation.Types.Species"
+            },
+            "requiredTag": null,
+            "internalDescription": "<link=\"view:1705:-1\"><icon name=\"AlligatorSpecies\"><color=#60FFFFFF>Alligator Species</color></icon></link>",
+            "entries": [
+              {
+                "type": "Type",
+                "value": "Eco.Mods.TechTree.Alligator+AlligatorSpecies"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+        "typeToConfig": "Eco.Gameplay.GameActions.HarvestOrHunt",
+        "propNameBacker": "ToolUsed",
+        "propDisplayName": "Tool Used",
+        "properties": {
+          "List": {
+            "type": "GamePickerList",
+            "mustDeriveType": {
+              "type": "Type",
+              "value": "Eco.Gameplay.Items.Item"
+            },
+            "requiredTag": "Harvester",
+            "internalDescription": "Any",
+            "entries": []
+          }
+        }
+      }
+    ]
+  }
+}</code></pre>
+                    </div>
+                </div>
+              </div>
+
+              <div class="column is-two-thirds card-list ifthen-column">
+
+                <div class="if-then-block"> 
+
+                  <div class="columns">
+                    <div class="column is-one-half">
+                      <p class="title is-5">If  <span class="tag">All</span></p>
+                      <div class="card">
+                        
+ <table class="table">
+  <tr>
+    <th colspan=2>Compare</th>
+  </tr>
+  <tr class="indented">
+  	<th>Left</th>
+  	<td>
+    <strong>Species Population</strong>
+    of 1 Species: 
+
+        <span>Alligator</span>
+
+</td>
+  </tr>
+
+  <tr class="indented">
+  	<th>Comparison</th>
+  	<td>LessThanOrEqualTo</td>
+  </tr>
+
+  <tr class="indented">
+  	<th>Right</th>
+  	<td>
+
+	Number: 30
+</td>
+  </tr>
+
+</table>
+                      </div>
+                    </div>
+
+                    <div class="column is-one-half">
+                      <p class="title is-5">Then</p>
+                      <div class="card">
+                        
+
+<table>
+	<tr colspan="2">
+		<th>Prevent</th>
+	</tr>
+	<tr>
+		<th>Infobox On Success?</th>
+		<td>
+			No
+		</td>
+	</tr>
+</table>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div>
+                  <a class="button is-text is-small" data-targetId="if-ProtecttheAlligators-0" onclick="return json_toggle(event)">JSON</a><pre class="json-preview" id="if-ProtecttheAlligators-0" style="display: none"><code>{
+  "type": "Eco.Gameplay.Civics.IfThenBlock",
+  "reference": false,
+  "properties": {
+    "If": {
+      "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+      "properties": {
+        "List": [
+          {
+            "type": "Eco.Gameplay.Civics.GameValues.Compare",
+            "properties": {
+              "Left": {
+                "type": "Eco.Gameplay.Civics.GameValues.Population",
+                "properties": {
+                  "SpeciesTypes": {
+                    "type": "GamePickerList",
+                    "mustDeriveType": {
+                      "type": "Type",
+                      "value": "Eco.Simulation.Types.Species"
+                    },
+                    "requiredTag": null,
+                    "internalDescription": "<link=\"view:1705:-1\"><icon name=\"AlligatorSpecies\"><color=#60FFFFFF>Alligator Species</color></icon></link>",
+                    "entries": [
+                      {
+                        "type": "Type",
+                        "value": "Eco.Mods.TechTree.Alligator+AlligatorSpecies"
+                      }
+                    ]
+                  }
+                }
+              },
+              "Comparison": "LessThanOrEqualTo",
+              "Right": {
+                "type": "GameValueWrapper",
+                "value": 30
+              }
+            }
+          }
+        ],
+        "Comparison": "All"
+      }
+    },
+    "Then": [
+      {
+        "type": "Eco.Gameplay.Civics.LegalActions.Prevent_LegalAction",
+        "reference": false,
+        "properties": {
+          "InfoboxOnSuccess": {
+            "type": "Eco.Gameplay.Civics.GameValues.No",
+            "properties": {}
+          }
+        }
+      }
+    ]
+  }
+}</code></pre>
+                  </div>
+                </div>
+
+
+              </div>
+
+
+            </div>
+        </div>
+        <div class="content">
+            <p class="title is-5">Section 7: Protect the Otters</p>
+            <p class="subtitle is-6">
+
+            <div class="columns">
+              <div class="column is-one-third card-list trigger-column">
+                <p class="title is-5">Triggers</p>
+                <div class="card">
+                    <table class="table">
+                      <tr>
+                        <th>Trigger</th>
+                        <td>HarvestOrHunt</td>
+                      </tr>
+
+                        	<tr class="indented">
+		<th>Species</th>
+		<td>
+
+				1 
+				Species:
+					<span>Otter</span>
+
+		</td>
+	</tr>
+
+
+                        	<tr class="indented">
+		<th>Tool Used</th>
+		<td>
+				Any
+
+
+		</td>
+	</tr>
+
+
+
+                    </table>
+
+                    <div>
+                    <a class="button is-text is-small" data-targetId="trigger-ProtecttheOtters-0" onclick="return json_toggle(event)">JSON</a><pre class="json-preview" id="trigger-ProtecttheOtters-0" style="display: none"><code>{
+  "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+  "reference": false,
+  "properties": {
+    "Trigger": {
+      "type": "Type",
+      "value": "Eco.Gameplay.GameActions.HarvestOrHunt"
+    },
+    "Configs": [
+      {
+        "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+        "typeToConfig": "Eco.Gameplay.GameActions.HarvestOrHunt",
+        "propNameBacker": "Species",
+        "propDisplayName": "Species",
+        "properties": {
+          "List": {
+            "type": "GamePickerList",
+            "mustDeriveType": {
+              "type": "Type",
+              "value": "Eco.Simulation.Types.Species"
+            },
+            "requiredTag": null,
+            "internalDescription": "<link=\"view:2752:-1\"><icon name=\"OtterSpecies\"><color=#60FFFFFF>Otter Species</color></icon></link>",
+            "entries": [
+              {
+                "type": "Type",
+                "value": "Eco.Mods.TechTree.Otter+OtterSpecies"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+        "typeToConfig": "Eco.Gameplay.GameActions.HarvestOrHunt",
+        "propNameBacker": "ToolUsed",
+        "propDisplayName": "Tool Used",
+        "properties": {
+          "List": {
+            "type": "GamePickerList",
+            "mustDeriveType": {
+              "type": "Type",
+              "value": "Eco.Gameplay.Items.Item"
+            },
+            "requiredTag": "Harvester",
+            "internalDescription": "Any",
+            "entries": []
+          }
+        }
+      }
+    ]
+  }
+}</code></pre>
+                    </div>
+                </div>
+              </div>
+
+              <div class="column is-two-thirds card-list ifthen-column">
+
+                <div class="if-then-block"> 
+
+                  <div class="columns">
+                    <div class="column is-one-half">
+                      <p class="title is-5">If  <span class="tag">All</span></p>
+                      <div class="card">
+                        
+ <table class="table">
+  <tr>
+    <th colspan=2>Compare</th>
+  </tr>
+  <tr class="indented">
+  	<th>Left</th>
+  	<td>
+    <strong>Species Population</strong>
+    of 1 Species: 
+
+        <span>Otter</span>
+
+</td>
+  </tr>
+
+  <tr class="indented">
+  	<th>Comparison</th>
+  	<td>LessThanOrEqualTo</td>
+  </tr>
+
+  <tr class="indented">
+  	<th>Right</th>
+  	<td>
+
+	Number: 30
+</td>
+  </tr>
+
+</table>
+                      </div>
+                    </div>
+
+                    <div class="column is-one-half">
+                      <p class="title is-5">Then</p>
+                      <div class="card">
+                        
+
+<table>
+	<tr colspan="2">
+		<th>Prevent</th>
+	</tr>
+	<tr>
+		<th>Infobox On Success?</th>
+		<td>
+			No
+		</td>
+	</tr>
+</table>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div>
+                  <a class="button is-text is-small" data-targetId="if-ProtecttheOtters-0" onclick="return json_toggle(event)">JSON</a><pre class="json-preview" id="if-ProtecttheOtters-0" style="display: none"><code>{
+  "type": "Eco.Gameplay.Civics.IfThenBlock",
+  "reference": false,
+  "properties": {
+    "If": {
+      "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+      "properties": {
+        "List": [
+          {
+            "type": "Eco.Gameplay.Civics.GameValues.Compare",
+            "properties": {
+              "Left": {
+                "type": "Eco.Gameplay.Civics.GameValues.Population",
+                "properties": {
+                  "SpeciesTypes": {
+                    "type": "GamePickerList",
+                    "mustDeriveType": {
+                      "type": "Type",
+                      "value": "Eco.Simulation.Types.Species"
+                    },
+                    "requiredTag": null,
+                    "internalDescription": "<link=\"view:2752:-1\"><icon name=\"OtterSpecies\"><color=#60FFFFFF>Otter Species</color></icon></link>",
+                    "entries": [
+                      {
+                        "type": "Type",
+                        "value": "Eco.Mods.TechTree.Otter+OtterSpecies"
+                      }
+                    ]
+                  }
+                }
+              },
+              "Comparison": "LessThanOrEqualTo",
+              "Right": {
+                "type": "GameValueWrapper",
+                "value": 30
+              }
+            }
+          }
+        ],
+        "Comparison": "All"
+      }
+    },
+    "Then": [
+      {
+        "type": "Eco.Gameplay.Civics.LegalActions.Prevent_LegalAction",
+        "reference": false,
+        "properties": {
+          "InfoboxOnSuccess": {
+            "type": "Eco.Gameplay.Civics.GameValues.No",
+            "properties": {}
+          }
+        }
+      }
+    ]
+  }
+}</code></pre>
+                  </div>
+                </div>
+
+
+              </div>
+
+
+            </div>
+        </div>
+      </div>
+
+
+      </div>
+
+      <div class="content">
+        Full <a class="button is-text is-small" data-targetId="toplevel-law-0" onclick="return json_toggle(event)">JSON</a><pre class="json-preview" id="toplevel-law-0" style="display: none"><code>{
+  "version": [
+    1,
+    0
+  ],
+  "type": "Eco.Gameplay.Civics.Laws.Law",
+  "name": "Environmental Protection Act",
+  "reference": false,
+  "description": "A law to protect the common resources for all people to access",
+  "properties": {
+    "Sections": [
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Anti Pollution Act",
+          "UserDescription": "Shut down heavy industry pollution sources if total CO2 rises too high",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.PolluteAir"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.PolluteAir",
+                    "propNameBacker": "PollutionSource",
+                    "propDisplayName": "Pollution Source",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Polluter",
+                        "internalDescription": "<foldout><linktext><u>5 World Objects</u></linktext><title>5 World Objects</title><link=\"Item:BlastFurnaceItem\"><style=\"Item\"><icon name=\"BlastFurnaceItem\">Blast Furnace</icon></style></link>\r\n<link=\"Item:CementKilnItem\"><style=\"Item\"><icon name=\"CementKilnItem\">Cement Kiln</icon></style></link>\r\n<link=\"Item:CombustionGeneratorItem\"><style=\"Item\"><icon name=\"CombustionGeneratorItem\">Combustion Generator</icon></style></link>\r\n<link=\"Item:OilRefineryItem\"><style=\"Item\"><icon name=\"OilRefineryItem\">Oil Refinery</icon></style></link>\r\n<link=\"Item:SteamEngineItem\"><style=\"Item\"><icon name=\"SteamEngineItem\">Steam Engine</icon></style></link>\r\n</foldout>",
+                        "entries": [
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.BlastFurnaceItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.OilRefineryItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.CombustionGeneratorItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.CementKilnItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SteamEngineItem"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                        "properties": {
+                          "Left": {
+                            "type": "Eco.Gameplay.Civics.GameValues.EnvironmentStatistic",
+                            "properties": {
+                              "Statistic": {
+                                "type": "Eco.Core.Stats.StatEntry",
+                                "name": "TotalCO2",
+                                "reference": true
+                              }
+                            }
+                          },
+                          "Comparison": "GreaterThanOrEqualTo",
+                          "Right": {
+                            "type": "GameValueWrapper",
+                            "value": 380
+                          }
+                        }
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.Prevent_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Public Hunting Rights",
+          "UserDescription": "Allow anyone to hunt on any land",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.HarvestOrHunt"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.HarvestOrHunt",
+                    "propNameBacker": "Species",
+                    "propDisplayName": "Species",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Simulation.Types.Species"
+                        },
+                        "requiredTag": null,
+                        "internalDescription": "<foldout><linktext><u>27 Animals</u></linktext><title>27 Animals</title><link=\"view:3749:-1\"><icon name=\"AgoutiSpecies\"><color=#60FFFFFF>Agouti Species</color></icon></link>\r\n<link=\"view:1705:-1\"><icon name=\"AlligatorSpecies\"><color=#60FFFFFF>Alligator Species</color></icon></link>\r\n<link=\"view:536:-1\"><icon name=\"BassSpecies\"><color=#60FFFFFF>Bass Species</color></icon></link>\r\n<link=\"view:1748:-1\"><icon name=\"BighornSheepSpecies\"><color=#60FFFFFF>Bighorn Sheep Species</color></icon></link>\r\n<link=\"view:2236:-1\"><icon name=\"BisonSpecies\"><color=#60FFFFFF>Bison Species</color></icon></link>\r\n<link=\"view:1545:-1\"><icon name=\"BlueSharkSpecies\"><color=#60FFFFFF>Blue Shark Species</color></icon></link>\r\n<link=\"view:3262:-1\"><icon name=\"CodSpecies\"><color=#60FFFFFF>Cod Species</color></icon></link>\r\n<link=\"view:2916:-1\"><icon name=\"CoyoteSpecies\"><color=#60FFFFFF>Coyote Species</color></icon></link>\r\n<link=\"view:1677:-1\"><icon name=\"CrabSpecies\"><color=#60FFFFFF>Crab Species</color></icon></link>\r\n<link=\"view:760:-1\"><icon name=\"DeerSpecies\"><color=#60FFFFFF>Deer Species</color></icon></link>\r\n<link=\"view:3396:-1\"><icon name=\"ElkSpecies\"><color=#60FFFFFF>Elk Species</color></icon></link>\r\n<link=\"view:2566:-1\"><icon name=\"FoxSpecies\"><color=#60FFFFFF>Fox Species</color></icon></link>\r\n<link=\"view:1453:-1\"><icon name=\"HareSpecies\"><color=#60FFFFFF>Hare Species</color></icon></link>\r\n<link=\"view:3562:-1\"><icon name=\"JaguarSpecies\"><color=#60FFFFFF>Jaguar Species</color></icon></link>\r\n<link=\"view:145:-1\"><icon name=\"MoonJellyfishSpecies\"><color=#60FFFFFF>Moon Jellyfish Species</color></icon></link>\r\n<link=\"view:2117:-1\"><icon name=\"MountainGoatSpecies\"><color=#60FFFFFF>Mountain Goat Species</color></icon></link>\r\n<link=\"view:2752:-1\"><icon name=\"OtterSpecies\"><color=#60FFFFFF>Otter Species</color></icon></link>\r\n<link=\"view:1538:-1\"><icon name=\"PacificSardineSpecies\"><color=#60FFFFFF>Pacific Sardine Species</color></icon></link>\r\n<link=\"view:374:-1\"><icon name=\"PrairieDogSpecies\"><color=#60FFFFFF>Prairie Dog Species</color></icon></link>\r\n<link=\"view:1980:-1\"><icon name=\"SalmonSpecies\"><color=#60FFFFFF>Salmon Species</color></icon></link>\r\n<link=\"view:399:-1\"><icon name=\"SnappingTurtleSpecies\"><color=#60FFFFFF>Snapping Turtle Species</color></icon></link>\r\n<link=\"view:3445:-1\"><icon name=\"TarantulaSpecies\"><color=#60FFFFFF>Tarantula Species</color></icon></link>\r\n<link=\"view:2983:-1\"><icon name=\"TortoiseSpecies\"><color=#60FFFFFF>Tortoise Species</color></icon></link>\r\n<link=\"view:589:-1\"><icon name=\"TroutSpecies\"><color=#60FFFFFF>Trout Species</color></icon></link>\r\n<link=\"view:3503:-1\"><icon name=\"TunaSpecies\"><color=#60FFFFFF>Tuna Species</color></icon></link>\r\n<link=\"view:581:-1\"><icon name=\"TurkeySpecies\"><color=#60FFFFFF>Turkey Species</color></icon></link>\r\n<link=\"view:2281:-1\"><icon name=\"WolfSpecies\"><color=#60FFFFFF>Wolf Species</color></icon></link></foldout>",
+                        "entries": [
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.BighornSheep+BighornSheepSpecies"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.Trout+TroutSpecies"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.Crab+CrabSpecies"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.Hare+HareSpecies"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.Tuna+TunaSpecies"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.Coyote+CoyoteSpecies"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.Turkey+TurkeySpecies"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.Tarantula+TarantulaSpecies"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.Bass+BassSpecies"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.PacificSardine+PacificSardineSpecies"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.Bison+BisonSpecies"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.Salmon+SalmonSpecies"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.Fox+FoxSpecies"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.Jaguar+JaguarSpecies"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.Elk+ElkSpecies"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SnappingTurtle+SnappingTurtleSpecies"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.MoonJellyfish+MoonJellyfishSpecies"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.Deer+DeerSpecies"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.Agouti+AgoutiSpecies"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.Wolf+WolfSpecies"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.Alligator+AlligatorSpecies"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.Organisms.Tortoise+TortoiseSpecies"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.Otter+OtterSpecies"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.PrairieDog+PrairieDogSpecies"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.BlueShark+BlueSharkSpecies"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.MountainGoat+MountainGoatSpecies"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.Cod+CodSpecies"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.HarvestOrHunt",
+                    "propNameBacker": "ToolUsed",
+                    "propDisplayName": "Tool Used",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Harvester",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.IgnoreAuth_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Protect Old Growth Redwood",
+          "UserDescription": "Do not allow chopping down of Old Growth Redwoods under any circumstance",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.ChopTree"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ChopTree",
+                    "propNameBacker": "Species",
+                    "propDisplayName": "Species",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Simulation.Types.TreeSpecies"
+                        },
+                        "requiredTag": null,
+                        "internalDescription": "<link=\"view:3813:-1\"><icon name=\"OldGrowthRedwoodSpecies\"><color=#60FFFFFF>Old Growth Redwood Species</color></icon></link>",
+                        "entries": [
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.Organisms.OldGrowthRedwood+OldGrowthRedwoodSpecies"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ChopTree",
+                    "propNameBacker": "ToolUsed",
+                    "propDisplayName": "Tool Used",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Logging",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.Prevent_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Anti Littering Law",
+          "UserDescription": "Forbids dropping garbage or tailings on unowned or unauthorized land",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.DropGarbage"
+                },
+                "Configs": []
+              }
+            },
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.DropOrPickupBlock"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.DropOrPickupBlock",
+                    "propNameBacker": "ItemUsed",
+                    "propDisplayName": "Block Placed or Picked Up",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.BlockItem"
+                        },
+                        "requiredTag": null,
+                        "internalDescription": "<link=\"Item:TailingsItem\"><style=\"Item\"><icon name=\"TailingsItem\">Tailings</icon></style></link>  <link=\"Item:WetTailingsItem\"><style=\"Item\"><icon name=\"WetTailingsItem\">Wet Tailings</icon></style></link>",
+                        "entries": [
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.WetTailingsItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.TailingsItem"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.PropertyRequirements",
+                        "properties": {
+                          "Citizen": {
+                            "type": "GameValueContext",
+                            "_name": "Citizen",
+                            "markedUpName": "<icon name=\"User\">Citizen</icon>",
+                            "contextDescription": "The citizen who dropped the garbage."
+                          },
+                          "AuthorizedOrNot": "UnauthorizedOnProperty"
+                        }
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.OnUnownedLand",
+                        "properties": {}
+                      }
+                    ],
+                    "Comparison": "Any"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.Prevent_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Protect Endangerd Bison",
+          "UserDescription": "Protects Bison from extinction",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.HarvestOrHunt"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.HarvestOrHunt",
+                    "propNameBacker": "Species",
+                    "propDisplayName": "Species",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Simulation.Types.Species"
+                        },
+                        "requiredTag": null,
+                        "internalDescription": "<link=\"view:2236:-1\"><icon name=\"BisonSpecies\"><color=#60FFFFFF>Bison Species</color></icon></link>",
+                        "entries": [
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.Bison+BisonSpecies"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.HarvestOrHunt",
+                    "propNameBacker": "ToolUsed",
+                    "propDisplayName": "Tool Used",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Harvester",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                        "properties": {
+                          "Left": {
+                            "type": "Eco.Gameplay.Civics.GameValues.Population",
+                            "properties": {
+                              "SpeciesTypes": {
+                                "type": "GamePickerList",
+                                "mustDeriveType": {
+                                  "type": "Type",
+                                  "value": "Eco.Simulation.Types.Species"
+                                },
+                                "requiredTag": null,
+                                "internalDescription": "<link=\"view:2236:-1\"><icon name=\"BisonSpecies\"><color=#60FFFFFF>Bison Species</color></icon></link>",
+                                "entries": [
+                                  {
+                                    "type": "Type",
+                                    "value": "Eco.Mods.TechTree.Bison+BisonSpecies"
+                                  }
+                                ]
+                              }
+                            }
+                          },
+                          "Comparison": "LessThanOrEqualTo",
+                          "Right": {
+                            "type": "GameValueWrapper",
+                            "value": 30
+                          }
+                        }
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.Prevent_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Protect the Alligators",
+          "UserDescription": "Protects Alligators from extinction",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.HarvestOrHunt"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.HarvestOrHunt",
+                    "propNameBacker": "Species",
+                    "propDisplayName": "Species",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Simulation.Types.Species"
+                        },
+                        "requiredTag": null,
+                        "internalDescription": "<link=\"view:1705:-1\"><icon name=\"AlligatorSpecies\"><color=#60FFFFFF>Alligator Species</color></icon></link>",
+                        "entries": [
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.Alligator+AlligatorSpecies"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.HarvestOrHunt",
+                    "propNameBacker": "ToolUsed",
+                    "propDisplayName": "Tool Used",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Harvester",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                        "properties": {
+                          "Left": {
+                            "type": "Eco.Gameplay.Civics.GameValues.Population",
+                            "properties": {
+                              "SpeciesTypes": {
+                                "type": "GamePickerList",
+                                "mustDeriveType": {
+                                  "type": "Type",
+                                  "value": "Eco.Simulation.Types.Species"
+                                },
+                                "requiredTag": null,
+                                "internalDescription": "<link=\"view:1705:-1\"><icon name=\"AlligatorSpecies\"><color=#60FFFFFF>Alligator Species</color></icon></link>",
+                                "entries": [
+                                  {
+                                    "type": "Type",
+                                    "value": "Eco.Mods.TechTree.Alligator+AlligatorSpecies"
+                                  }
+                                ]
+                              }
+                            }
+                          },
+                          "Comparison": "LessThanOrEqualTo",
+                          "Right": {
+                            "type": "GameValueWrapper",
+                            "value": 30
+                          }
+                        }
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.Prevent_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Protect the Otters",
+          "UserDescription": "",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.HarvestOrHunt"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.HarvestOrHunt",
+                    "propNameBacker": "Species",
+                    "propDisplayName": "Species",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Simulation.Types.Species"
+                        },
+                        "requiredTag": null,
+                        "internalDescription": "<link=\"view:2752:-1\"><icon name=\"OtterSpecies\"><color=#60FFFFFF>Otter Species</color></icon></link>",
+                        "entries": [
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.Otter+OtterSpecies"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.HarvestOrHunt",
+                    "propNameBacker": "ToolUsed",
+                    "propDisplayName": "Tool Used",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Harvester",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                        "properties": {
+                          "Left": {
+                            "type": "Eco.Gameplay.Civics.GameValues.Population",
+                            "properties": {
+                              "SpeciesTypes": {
+                                "type": "GamePickerList",
+                                "mustDeriveType": {
+                                  "type": "Type",
+                                  "value": "Eco.Simulation.Types.Species"
+                                },
+                                "requiredTag": null,
+                                "internalDescription": "<link=\"view:2752:-1\"><icon name=\"OtterSpecies\"><color=#60FFFFFF>Otter Species</color></icon></link>",
+                                "entries": [
+                                  {
+                                    "type": "Type",
+                                    "value": "Eco.Mods.TechTree.Otter+OtterSpecies"
+                                  }
+                                ]
+                              }
+                            }
+                          },
+                          "Comparison": "LessThanOrEqualTo",
+                          "Right": {
+                            "type": "GameValueWrapper",
+                            "value": 30
+                          }
+                        }
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.Prevent_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "filename": "law-82817.json",
+  "collection": "democracies",
+  "set": "peoples government"
+}</code></pre>
+      </div>
+
+
+    </div>
+  </section>
+  </body>
+</html>

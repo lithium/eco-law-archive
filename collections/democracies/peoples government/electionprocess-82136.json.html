@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Active Election - peoples government | Eco Law Archive</title>
+
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+<style>
+  .reference {
+    color: rgb(115,225,113);
+    font-weight: bold;
+  }
+
+  .card-list .card {
+      margin-bottom: 1em;
+  }
+
+  .json-preview {
+    font-size: 10pt;
+    font-family: monospace;
+  }
+
+  tr.indented th {
+    padding-left: 2em;
+  }
+
+  .if-then-block {
+    padding: 12px;
+    border: 2px solid rgb(50,166,240);
+  }
+  .if-then-block + .if-then-block {
+    margin-top: 1em;
+
+  }
+
+  .trigger-column {
+    border: 2px solid rgb(96,240,137);
+  }
+  .trigger-column > p.title {
+    background: rgb(96,240,137);
+    color: white;
+    padding: 0.5em;
+    font-weight: bolder;
+    text-align: center;
+  }
+
+  .ifthen-column {
+    padding: 0;
+    margin-left: 1em;
+  }
+  .ifthen-column .title {
+    background: rgb(50,166,240);
+    color: white;
+    padding: 0.5em;
+    font-weight: bolder;
+    text-align: center;
+
+  }
+
+</style>
+
+<script>
+  function json_toggle(evt) {
+    const targetId = evt.target.getAttribute("data-targetid")
+    const el = document.getElementById(targetId)
+    el.style.display = el.style.display == "block" ? "none" : "block";
+  }
+</script>
+    
+  </head>
+
+  <body>
+  <section class="section">
+    <div class="container">
+      <h1 class="title">
+  Eco Law Archive
+</h1>
+<h1 class="subtitle">
+  An archive of implemented <a target="_blank" href="https://play.eco">ECO</a> civics
+</h1>
+
+      <div class="tabs is-toggle">
+        <ul>
+          <li><a href="/">Collections</a></li>
+          <li><a href="/constitutions.html">Constitutions</a></li>
+          <li class="is-active"><a href="/electionprocesses.html">Election Processes</a></li>
+          <li><a href="/titles.html">Titles</a></li>
+          <li><a href="/demographics.html">Demographics</a></li>
+          <li><a href="/laws.html">Laws</a></li>
+        </ul>
+      </div>
+
+      <div class="content">
+        <h1 class="title is-1">Election Process</h1>
+        <h1 class="title is-2">Active Election</h1>
+        <h2 class="subtitle is-5">Description: </h2>
+
+            <table >
+              <tbody>
+                <tr>
+                  <th>Voters</th>
+                  <td>
+                    <span title="Demographic: Active" class="icon-text"><span class="icon"><i class="fas fa-people-line"></i></span><span class="reference">Active</span></span>
+                  </td>
+                </tr>
+
+                <tr>
+                  <th>Vetoers</th>
+                  <td>
+                    
+                  </td>
+                </tr>
+
+                <tr>
+                  <th>How to Proceed if Elections End In A Tie</th>
+                  <td>
+                    IncumbentPriority
+                  </td>
+                </tr>
+
+
+                <tr>
+                  <th>Maximum Election Hours</th>
+                  <td>
+                    18h
+                  </td>
+                </tr>
+
+
+                <tr>
+                  <th>Minimum Percent of Eligible Voters Required</th>
+                  <td>
+                    10%
+                  </td>
+                </tr>
+
+                <tr>
+                  <th>Percent of All Voters to Instant Win</th>
+                  <td>
+                    15%
+                  </td>
+                </tr>
+
+                <tr>
+                  <th>Percent of All Voters to Instant Lose</th>
+                  <td>
+                    15%
+                  </td>
+                </tr>
+
+                <tr>
+                  <th>End Election Early When This Percent Have Voted</th>
+                  <td>
+                    25%
+                  </td>
+                </tr>
+
+                <tr>
+                  <th>Minimum Days Between Elections Of This Type</th>
+                  <td>
+                    0
+                  </td>
+                </tr>
+
+                <tr>
+                  <th>Anonymous Voting</th>
+                  <td>
+                    <span class="icon-text"><span class="icon"><i class="fa-regular fa-square-full"></i></span></span>
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+      </div>
+
+      <a class="button is-text is-small" data-targetId="[object Object]-default-undefined" onclick="return json_toggle(event)">JSON</a><pre class="json-preview" id="[object Object]-default-undefined" style="display: none"><code>{
+  "version": [
+    1,
+    0
+  ],
+  "type": "Eco.Gameplay.Civics.ElectionProcess",
+  "name": "Active Election",
+  "reference": false,
+  "description": null,
+  "properties": {
+    "Voters": {
+      "type": "Eco.Gameplay.Civics.Demographics.Demographic",
+      "name": "Active",
+      "reference": true
+    },
+    "Vetoers": null,
+    "HowToProceedIfElectionsEndInATie": "IncumbentPriority",
+    "MaximumElectionHours": 18,
+    "MinimumPercentOfEligibleVotersRequired": 10,
+    "PercentOfAllVotersToInstantWin": 15,
+    "PercentOfAllVotersToInstantLose": 15,
+    "EndElectionEarlyWhenThisPercentHaveVoted": 25,
+    "MinimumDaysBetweenElectionsOfThisType": 0,
+    "AnonymousVoting": false
+  },
+  "filename": "electionprocess-82136.json",
+  "collection": "democracies",
+  "set": "peoples government"
+}</code></pre>
+
+    </div>
+  </section>
+  </body>
+</html>
