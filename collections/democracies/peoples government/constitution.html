@@ -105,130 +105,9 @@
 
           <div class="card">
             <div class="card-content">
-              <p class="title is-5">Article 1: Everyone can propose a Basic Election to do anything</p>
+              <p class="title is-5">Article 1: Anyone in Active can propose an Active Election to do anything</p>
 
               
-
-<table>
-	<tr>
-		<th>
-			Applies To
-		</th>
-		<td>
-			All Other Civic Abilities
-		</td>
-	</tr>
-
-
-	<tr>
-		<th>
-			Proposers	
-		</th>
-		<td>
-			<div><span title="Demographic: Everyone" class="icon-text"><span class="icon"><i class="fas fa-people-line"></i></span><span class="reference">Everyone</span></span></div>
-		</td>
-	</tr>
-
-	<tr>
-		<th>
-			Executors	
-		</th>
-		<td>
-		</td>
-	</tr>
-
-	<tr>
-		<th>
-			Election Process	
-		</th>
-		<td>
-			<span title="ElectionProcess: Basic Election" class="icon-text"><span class="icon"><i class="fas fa-check-to-slot"></i></span><span class="reference">Basic Election</span></span>
-		</td>
-	</tr>
-
-	<tr>
-		<th>Priority</th>
-		<td>0</td>
-	</tr>
-
-</table>
-            </div>
-          </div>
-
-          <a class="button is-text is-small" data-targetId="[object Object]-default-undefined" onclick="return json_toggle(event)">JSON</a><pre class="json-preview" id="[object Object]-default-undefined" style="display: none"><code>{
-  "version": [
-    1,
-    0
-  ],
-  "type": "Eco.Gameplay.Civics.Constitution",
-  "name": "The Peoples' Government",
-  "reference": false,
-  "description": null,
-  "properties": {
-    "Articles": [
-      {
-        "type": "Eco.Gameplay.Civics.CivicArticle",
-        "name": "Everyone can propose a Basic Election to do anything",
-        "reference": false,
-        "description": null,
-        "properties": {
-          "AppliesTo": {
-            "type": "Eco.Gameplay.Civics.Constitutional.CivicConditionAllOtherCivicAbilities",
-            "reference": false,
-            "properties": {}
-          },
-          "Proposers": {
-            "type": "GamePickerList",
-            "mustDeriveType": {
-              "type": "Type",
-              "value": "Eco.Gameplay.Aliases.IAlias"
-            },
-            "requiredTag": null,
-            "internalDescription": "<link=\"view:595:137\"><icon name=\"Demographic\"><style=\"Government\">Everyone</style></icon></link>",
-            "entries": [
-              {
-                "type": "Eco.Gameplay.Civics.Demographics.Demographic",
-                "name": "Everyone",
-                "reference": true
-              }
-            ]
-          },
-          "Executors": {
-            "type": "GamePickerList",
-            "mustDeriveType": {
-              "type": "Type",
-              "value": "Eco.Gameplay.Aliases.IAlias"
-            },
-            "requiredTag": null,
-            "internalDescription": "<style=\"ErrorLight\">None</style>",
-            "entries": []
-          },
-          "ElectionProcess": {
-            "type": "Eco.Gameplay.Civics.ElectionProcess",
-            "name": "Basic Election",
-            "reference": true
-          },
-          "Priority": 0
-        }
-      }
-    ]
-  },
-  "filename": "constitution-81668.json",
-  "collection": "democracies",
-  "set": "peoples government"
-}</code></pre>
-        </div>
-
-        <div>
-            <p class="title is-3">Amendment 1: Active Elections</p>
-
-            <div class="card-list">
-              <div class="card">
-                <div class="card-content">
-
-                  <p class="title is-5">Article 1: Anyone in Active can propose an Active Election to do anything</p>
-
-                  
 
 <table>
 	<tr>
@@ -273,22 +152,20 @@
 	</tr>
 
 </table>
-                </div>
-              </div>
             </div>
+          </div>
 
-            <a class="button is-text is-small" data-targetId="amendment-ActiveElections-0" onclick="return json_toggle(event)">JSON</a><pre class="json-preview" id="amendment-ActiveElections-0" style="display: none"><code>{
+          <a class="button is-text is-small" data-targetId="[object Object]-default-undefined" onclick="return json_toggle(event)">JSON</a><pre class="json-preview" id="[object Object]-default-undefined" style="display: none"><code>{
   "version": [
     1,
     0
   ],
-  "type": "Eco.Gameplay.Civics.Constitutional.ConstitutionalAmendment",
-  "name": "Active Elections",
+  "type": "Eco.Gameplay.Civics.Constitution",
+  "name": "The Peoples' Government",
   "reference": false,
   "description": null,
   "properties": {
-    "RemoveExistingArticles": [],
-    "NewArticles": [
+    "Articles": [
       {
         "type": "Eco.Gameplay.Civics.CivicArticle",
         "name": "Anyone in Active can propose an Active Election to do anything",
@@ -336,10 +213,13 @@
       }
     ]
   },
-  "filename": "amendment-82181.json",
+  "filename": "constitution-81668.json",
   "collection": "democracies",
   "set": "peoples government"
 }</code></pre>
+        </div>
+
+        <div>
         </div>
 
       </div>
