@@ -15,12 +15,12 @@
 
       <div class="tabs is-toggle">
         <ul>
-          <li><a href="/">Collections</a></li>
-          <li class="is-active"><a href="/constitutions.html">Constitutions</a></li>
-          <li><a href="/electionprocesses.html">Election Processes</a></li>
-          <li><a href="/titles.html">Titles</a></li>
-          <li><a href="/demographics.html">Demographics</a></li>
-          <li><a href="/laws.html">Laws</a></li>
+          <li><a href=".">Collections</a></li>
+          <li class="is-active"><a href="#">Constitutions</a></li>
+          <li><a href="./electionprocesses.html">Election Processes</a></li>
+          <li><a href="./titles.html">Titles</a></li>
+          <li><a href="./demographics.html">Demographics</a></li>
+          <li><a href="./laws.html">Laws</a></li>
         </ul>
       </div>
 
@@ -29,8 +29,8 @@
         <ul>
           {{#each constitutions}}
           <li>
-            <a href="/collections/{{collection}}/{{set}}/constitution.html">{{name}}</a>
-            <a href="/collections/{{collection}}/{{set}}"><span class="tag">{{collection}}/{{set}}</span></a>
+            <a href="./collections/{{collection}}/{{set}}/constitution.html">{{name}}</a>
+            <a href="./collections/{{collection}}/{{set}}"><span class="tag">{{collection}}/{{set}}</span></a>
           </li>
           {{/each}}
         </ul>
@@ -43,8 +43,8 @@
         <ul>
           {{#each amendments}}
           <li>
-            <a href="/collections/{{collection}}/{{set}}/constitution.html">{{name}}</a>
-            <a href="/collections/{{collection}}/{{set}}"><span class="tag">{{collection}}/{{set}}</span></a>
+            <a href="./collections/{{collection}}/{{set}}/constitution.html">{{name}}</a>
+            <a href="./collections/{{collection}}/{{set}}"><span class="tag">{{collection}}/{{set}}</span></a>
           </li>
           {{/each}}
         </ul>
