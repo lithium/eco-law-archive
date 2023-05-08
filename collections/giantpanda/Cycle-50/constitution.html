@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Panda Constitution - Cycle-50 | Eco Law Archive</title>
+
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+<style>
+  .reference {
+    color: rgb(115,225,113);
+    font-weight: bold;
+  }
+
+  .card-list .card {
+      margin-bottom: 1em;
+  }
+
+  .json-preview {
+    font-size: 10pt;
+    font-family: monospace;
+  }
+
+  tr.indented th {
+    padding-left: 2em;
+  }
+
+  .if-then-block {
+    padding: 12px;
+    border: 2px solid rgb(50,166,240);
+  }
+  .if-then-block + .if-then-block {
+    margin-top: 1em;
+
+  }
+
+  .trigger-column {
+    border: 2px solid rgb(96,240,137);
+  }
+  .trigger-column > p.title {
+    background: rgb(96,240,137);
+    color: white;
+    padding: 0.5em;
+    font-weight: bolder;
+    text-align: center;
+  }
+
+  .ifthen-column {
+    padding: 0;
+    margin-left: 1em;
+  }
+  .ifthen-column .title {
+    background: rgb(50,166,240);
+    color: white;
+    padding: 0.5em;
+    font-weight: bolder;
+    text-align: center;
+
+  }
+
+</style>
+
+<script>
+  function json_toggle(evt) {
+    const targetId = evt.target.getAttribute("data-targetid")
+    const el = document.getElementById(targetId)
+    el.style.display = el.style.display == "block" ? "none" : "block";
+  }
+</script>
+  </head>
+
+  <body>
+  <section class="section">
+    <div class="container">
+      <h1 class="title">
+  Eco Law Archive
+</h1>
+<h1 class="subtitle">
+  An archive of implemented <a target="_blank" href="https://play.eco">ECO</a> civics
+</h1>
+
+      <div class="tabs is-toggle">
+        <ul>
+          <li><a href="../../../">Collections</a></li>
+          <li class="is-active"><a href="../../../constitutions.html">Constitutions</a></li>
+          <li><a href="../../../electionprocesses.html">Election Processes</a></li>
+          <li><a href="../../../titles.html">Titles</a></li>
+          <li><a href="../../../demographics.html">Demographics</a></li>
+          <li><a href="../../../laws.html">Laws</a></li>
+        </ul>
+      </div>
+
+
+      <div class="content">
+        <h1 class="title is-1">Constitution</h1>
+        <h1 class="title is-2">Panda Constitution <a href="/collections/giantpanda/Cycle-50"><span class="tag">giantpanda/Cycle-50</span></a>
+        </h1>
+        <h2 class="subtitle is-4"> A basic constitution to get an early government . Everyone can propose a election and vote for them.</h2>
+
+
+        <div class="card-list">
+
+          <div class="card">
+            <div class="card-content">
+              <p class="title is-5">Article 1: Panda Constitution - All Other Privileges</p>
+
+              
+
+<table>
+	<tr>
+		<th>
+			Applies To
+		</th>
+		<td>
+			All Other Civic Abilities
+		</td>
+	</tr>
+
+
+	<tr>
+		<th>
+			Proposers	
+		</th>
+		<td>
+			<div><span title="Demographic: Everyone" class="icon-text"><span class="icon"><i class="fas fa-people-line"></i></span><span class="reference">Everyone</span></span></div>
+		</td>
+	</tr>
+
+	<tr>
+		<th>
+			Executors	
+		</th>
+		<td>
+		</td>
+	</tr>
+
+	<tr>
+		<th>
+			Election Process	
+		</th>
+		<td>
+			<span title="ElectionProcess: Basic Election" class="icon-text"><span class="icon"><i class="fas fa-check-to-slot"></i></span><span class="reference">Basic Election</span></span>
+		</td>
+	</tr>
+
+	<tr>
+		<th>Priority</th>
+		<td>0</td>
+	</tr>
+
+</table>
+            </div>
+          </div>
+
+          <a class="button is-text is-small" data-targetId="[object Object]-default-undefined" onclick="return json_toggle(event)">JSON</a><pre class="json-preview" id="[object Object]-default-undefined" style="display: none"><code>{
+  "version": [
+    1,
+    0
+  ],
+  "type": "Eco.Gameplay.Civics.Constitution",
+  "name": "Panda Constitution",
+  "reference": false,
+  "description": "A basic constitution to get an early government . Everyone can propose a election and vote for them.",
+  "properties": {
+    "Articles": [
+      {
+        "type": "Eco.Gameplay.Civics.CivicArticle",
+        "name": "Panda Constitution - All Other Privileges",
+        "reference": false,
+        "description": null,
+        "properties": {
+          "AppliesTo": {
+            "type": "Eco.Gameplay.Civics.Constitutional.CivicConditionAllOtherCivicAbilities",
+            "reference": false,
+            "properties": {}
+          },
+          "Proposers": {
+            "type": "GamePickerList",
+            "mustDeriveType": {
+              "type": "Type",
+              "value": "Eco.Gameplay.Aliases.IAlias"
+            },
+            "requiredTag": null,
+            "internalDescription": "<link=\"view:714:137\"><icon name=\"Demographic\"><style=\"Government\">Everyone</style></icon></link>",
+            "entries": [
+              {
+                "type": "Eco.Gameplay.Civics.Demographics.Demographic",
+                "name": "Everyone",
+                "reference": true
+              }
+            ]
+          },
+          "Executors": {
+            "type": "GamePickerList",
+            "mustDeriveType": {
+              "type": "Type",
+              "value": "Eco.Gameplay.Aliases.IAlias"
+            },
+            "requiredTag": null,
+            "internalDescription": "<style=\"ErrorLight\">None</style>",
+            "entries": []
+          },
+          "ElectionProcess": {
+            "type": "Eco.Gameplay.Civics.ElectionProcess",
+            "name": "Basic Election",
+            "reference": true
+          },
+          "Priority": 0
+        }
+      }
+    ]
+  },
+  "filename": "constitution-354868.json",
+  "collection": "giantpanda",
+  "set": "Cycle-50"
+}</code></pre>
+        </div>
+
+        <div>
+            <p class="title is-3">Amendment 1: Vote by Deputies</p>
+
+            <div class="card-list">
+              <div class="card">
+                <div class="card-content">
+
+                  <p class="title is-5">Article 1: Fast Track Civic Actions</p>
+                    <p class="subtitle is-5">Description: This amendment allows elected Deputees to fast track all Civic actions except the Constitutional Amendments - this should be used with descretion and wisdom.</p>
+
+                  
+
+<table>
+	<tr>
+		<th>
+			Applies To
+		</th>
+		<td>
+			<pre class="json-preview">{
+  "type": "Eco.Gameplay.Civics.Constitutional.CivicCondition",
+  "reference": false,
+  "properties": {
+    "PerformingCivicActions": {
+      "type": "GamePickerList",
+      "mustDeriveType": {
+        "type": "Type",
+        "value": "Eco.Gameplay.Civics.CivicAction"
+      },
+      "requiredTag": null,
+      "internalDescription": "<link=\"view:2419:-1\"><icon name=\"CivicAction_PerformExecutiveAction\"><color=#60FFFFFF>Executive Action</color></icon></link>",
+      "entries": [
+        {
+          "type": "Type",
+          "value": "Eco.Gameplay.Civics.Laws.ExecutiveActions.CivicAction_PerformExecutiveAction"
+        }
+      ]
+    },
+    "ChangingCivicObjects": {
+      "type": "GamePickerList",
+      "mustDeriveType": {
+        "type": "Type",
+        "value": "Eco.Gameplay.Civics.Misc.IProposable"
+      },
+      "requiredTag": null,
+      "internalDescription": "<foldout><linktext><u>6 Civic Objects</u></linktext><title>6 Civic Objects</title><link=\"view:714:-1\"><icon name=\"Demographic\"><color=#60FFFFFF>Demographic</color></icon></link>\r\n<link=\"view:2491:-1\"><icon name=\"District\"><color=#60FFFFFF>District</color></icon></link>\r\n<link=\"view:3707:-1\"><icon name=\"DistrictMap\"><color=#60FFFFFF>District Map</color></icon></link>\r\n<link=\"view:2433:-1\"><icon name=\"ElectedTitle\"><color=#60FFFFFF>Elected Title</color></icon></link>\r\n<link=\"view:1587:-1\"><icon name=\"ElectionProcess\"><color=#60FFFFFF>Election Process</color></icon></link>\r\n<link=\"view:3059:-1\"><icon name=\"Law\"><color=#60FFFFFF>Law</color></icon></link></foldout>",
+      "entries": [
+        {
+          "type": "Type",
+          "value": "Eco.Gameplay.LegislationSystem.District"
+        },
+        {
+          "type": "Type",
+          "value": "Eco.Gameplay.Civics.Demographics.Demographic"
+        },
+        {
+          "type": "Type",
+          "value": "Eco.Gameplay.Civics.Titles.ElectedTitle"
+        },
+        {
+          "type": "Type",
+          "value": "Eco.Gameplay.Civics.Laws.Law"
+        },
+        {
+          "type": "Type",
+          "value": "Eco.Gameplay.Civics.ElectionProcess"
+        },
+        {
+          "type": "Type",
+          "value": "Eco.Gameplay.Civics.Districts.DistrictMap"
+        }
+      ]
+    }
+  }
+}}</pre>
+		</td>
+	</tr>
+
+
+	<tr>
+		<th>
+			Proposers	
+		</th>
+		<td>
+			<div><span title="ElectedTitle: Volunteer Deputy" class="icon-text"><span class="icon"><i class="fas fa-person-burst"></i></span><span class="reference">Volunteer Deputy</span></span></div>
+			<div><span title="Demographic: Active" class="icon-text"><span class="icon"><i class="fas fa-people-line"></i></span><span class="reference">Active</span></span></div>
+		</td>
+	</tr>
+
+	<tr>
+		<th>
+			Executors	
+		</th>
+		<td>
+		</td>
+	</tr>
+
+	<tr>
+		<th>
+			Election Process	
+		</th>
+		<td>
+			<span title="ElectionProcess: Deputee fast election" class="icon-text"><span class="icon"><i class="fas fa-check-to-slot"></i></span><span class="reference">Deputee fast election</span></span>
+		</td>
+	</tr>
+
+	<tr>
+		<th>Priority</th>
+		<td>0</td>
+	</tr>
+
+</table>
+                </div>
+              </div>
+            </div>
+
+            <a class="button is-text is-small" data-targetId="amendment-VotebyDeputies-0" onclick="return json_toggle(event)">JSON</a><pre class="json-preview" id="amendment-VotebyDeputies-0" style="display: none"><code>{
+  "version": [
+    1,
+    0
+  ],
+  "type": "Eco.Gameplay.Civics.Constitutional.ConstitutionalAmendment",
+  "name": "Vote by Deputies",
+  "reference": false,
+  "description": null,
+  "properties": {
+    "RemoveExistingArticles": [],
+    "NewArticles": [
+      {
+        "type": "Eco.Gameplay.Civics.CivicArticle",
+        "name": "Fast Track Civic Actions",
+        "reference": false,
+        "description": "This amendment allows elected Deputees to fast track all Civic actions except the Constitutional Amendments - this should be used with descretion and wisdom.",
+        "properties": {
+          "AppliesTo": {
+            "type": "Eco.Gameplay.Civics.Constitutional.CivicCondition",
+            "reference": false,
+            "properties": {
+              "PerformingCivicActions": {
+                "type": "GamePickerList",
+                "mustDeriveType": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.Civics.CivicAction"
+                },
+                "requiredTag": null,
+                "internalDescription": "<link=\"view:2419:-1\"><icon name=\"CivicAction_PerformExecutiveAction\"><color=#60FFFFFF>Executive Action</color></icon></link>",
+                "entries": [
+                  {
+                    "type": "Type",
+                    "value": "Eco.Gameplay.Civics.Laws.ExecutiveActions.CivicAction_PerformExecutiveAction"
+                  }
+                ]
+              },
+              "ChangingCivicObjects": {
+                "type": "GamePickerList",
+                "mustDeriveType": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.Civics.Misc.IProposable"
+                },
+                "requiredTag": null,
+                "internalDescription": "<foldout><linktext><u>6 Civic Objects</u></linktext><title>6 Civic Objects</title><link=\"view:714:-1\"><icon name=\"Demographic\"><color=#60FFFFFF>Demographic</color></icon></link>\r\n<link=\"view:2491:-1\"><icon name=\"District\"><color=#60FFFFFF>District</color></icon></link>\r\n<link=\"view:3707:-1\"><icon name=\"DistrictMap\"><color=#60FFFFFF>District Map</color></icon></link>\r\n<link=\"view:2433:-1\"><icon name=\"ElectedTitle\"><color=#60FFFFFF>Elected Title</color></icon></link>\r\n<link=\"view:1587:-1\"><icon name=\"ElectionProcess\"><color=#60FFFFFF>Election Process</color></icon></link>\r\n<link=\"view:3059:-1\"><icon name=\"Law\"><color=#60FFFFFF>Law</color></icon></link></foldout>",
+                "entries": [
+                  {
+                    "type": "Type",
+                    "value": "Eco.Gameplay.LegislationSystem.District"
+                  },
+                  {
+                    "type": "Type",
+                    "value": "Eco.Gameplay.Civics.Demographics.Demographic"
+                  },
+                  {
+                    "type": "Type",
+                    "value": "Eco.Gameplay.Civics.Titles.ElectedTitle"
+                  },
+                  {
+                    "type": "Type",
+                    "value": "Eco.Gameplay.Civics.Laws.Law"
+                  },
+                  {
+                    "type": "Type",
+                    "value": "Eco.Gameplay.Civics.ElectionProcess"
+                  },
+                  {
+                    "type": "Type",
+                    "value": "Eco.Gameplay.Civics.Districts.DistrictMap"
+                  }
+                ]
+              }
+            }
+          },
+          "Proposers": {
+            "type": "GamePickerList",
+            "mustDeriveType": {
+              "type": "Type",
+              "value": "Eco.Gameplay.Aliases.IAlias"
+            },
+            "requiredTag": null,
+            "internalDescription": "<link=\"view:714:1276\"><icon name=\"Demographic\"><style=\"Government\">Active</style></icon></link>  <link=\"view:2433:16826530\"><icon name=\"ElectedTitle\"><style=\"Government\">Volunteer Deputy</style></icon></link>",
+            "entries": [
+              {
+                "type": "Eco.Gameplay.Civics.Titles.ElectedTitle",
+                "name": "Volunteer Deputy",
+                "reference": true
+              },
+              {
+                "type": "Eco.Gameplay.Civics.Demographics.Demographic",
+                "name": "Active",
+                "reference": true
+              }
+            ]
+          },
+          "Executors": {
+            "type": "GamePickerList",
+            "mustDeriveType": {
+              "type": "Type",
+              "value": "Eco.Gameplay.Aliases.IAlias"
+            },
+            "requiredTag": null,
+            "internalDescription": "<style=\"ErrorLight\">None</style>",
+            "entries": []
+          },
+          "ElectionProcess": {
+            "type": "Eco.Gameplay.Civics.ElectionProcess",
+            "name": "Deputee fast election",
+            "reference": true
+          },
+          "Priority": 0
+        }
+      }
+    ]
+  },
+  "filename": "amendment-14605880.json",
+  "collection": "giantpanda",
+  "set": "Cycle-50"
+}</code></pre>
+            <p class="title is-3">Amendment 2: Presidential Veto Amendment</p>
+            <p class="subtitle is-4">Amending Constitution to allow president ability to veto basic elections. A power that will be used only in emergency situations regarding violation of server rules, or immediate destruction of the status quo</p>
+
+            <div class="card-list">
+              <div class="card">
+                <div class="card-content">
+
+                  <p class="title is-5">Article 1: Article</p>
+
+                  
+
+<table>
+	<tr>
+		<th>
+			Applies To
+		</th>
+		<td>
+			<pre class="json-preview">{
+  "type": "Eco.Gameplay.Civics.Constitutional.CivicCondition",
+  "reference": false,
+  "properties": {
+    "PerformingCivicActions": {
+      "type": "GamePickerList",
+      "mustDeriveType": {
+        "type": "Type",
+        "value": "Eco.Gameplay.Civics.CivicAction"
+      },
+      "requiredTag": null,
+      "internalDescription": "<link=\"view:2419:-1\"><icon name=\"CivicAction_PerformExecutiveAction\"><color=#60FFFFFF>Executive Action</color></icon></link>",
+      "entries": [
+        {
+          "type": "Type",
+          "value": "Eco.Gameplay.Civics.Laws.ExecutiveActions.CivicAction_PerformExecutiveAction"
+        }
+      ]
+    },
+    "ChangingCivicObjects": {
+      "type": "GamePickerList",
+      "mustDeriveType": {
+        "type": "Type",
+        "value": "Eco.Gameplay.Civics.Misc.IProposable"
+      },
+      "requiredTag": null,
+      "internalDescription": "<link=\"view:1587:-1\"><icon name=\"ElectionProcess\"><color=#60FFFFFF>Election Process</color></icon></link>",
+      "entries": [
+        {
+          "type": "Type",
+          "value": "Eco.Gameplay.Civics.ElectionProcess"
+        }
+      ]
+    }
+  }
+}}</pre>
+		</td>
+	</tr>
+
+
+	<tr>
+		<th>
+			Proposers	
+		</th>
+		<td>
+			<div><span title="ElectedTitle: Volunteer President" class="icon-text"><span class="icon"><i class="fas fa-person-burst"></i></span><span class="reference">Volunteer President</span></span></div>
+		</td>
+	</tr>
+
+	<tr>
+		<th>
+			Executors	
+		</th>
+		<td>
+			<div><span title="ElectedTitle: Volunteer President" class="icon-text"><span class="icon"><i class="fas fa-person-burst"></i></span><span class="reference">Volunteer President</span></span></div>
+		</td>
+	</tr>
+
+	<tr>
+		<th>
+			Election Process	
+		</th>
+		<td>
+			<span title="ElectionProcess: Basic Election" class="icon-text"><span class="icon"><i class="fas fa-check-to-slot"></i></span><span class="reference">Basic Election</span></span>
+		</td>
+	</tr>
+
+	<tr>
+		<th>Priority</th>
+		<td>0</td>
+	</tr>
+
+</table>
+                </div>
+              </div>
+            </div>
+
+            <a class="button is-text is-small" data-targetId="amendment-PresidentialVetoAmendment-1" onclick="return json_toggle(event)">JSON</a><pre class="json-preview" id="amendment-PresidentialVetoAmendment-1" style="display: none"><code>{
+  "version": [
+    1,
+    0
+  ],
+  "type": "Eco.Gameplay.Civics.Constitutional.ConstitutionalAmendment",
+  "name": "Presidential Veto Amendment",
+  "reference": false,
+  "description": "Amending Constitution to allow president ability to veto basic elections. A power that will be used only in emergency situations regarding violation of server rules, or immediate destruction of the status quo",
+  "properties": {
+    "RemoveExistingArticles": [],
+    "NewArticles": [
+      {
+        "type": "Eco.Gameplay.Civics.CivicArticle",
+        "name": "Article",
+        "reference": false,
+        "description": null,
+        "properties": {
+          "AppliesTo": {
+            "type": "Eco.Gameplay.Civics.Constitutional.CivicCondition",
+            "reference": false,
+            "properties": {
+              "PerformingCivicActions": {
+                "type": "GamePickerList",
+                "mustDeriveType": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.Civics.CivicAction"
+                },
+                "requiredTag": null,
+                "internalDescription": "<link=\"view:2419:-1\"><icon name=\"CivicAction_PerformExecutiveAction\"><color=#60FFFFFF>Executive Action</color></icon></link>",
+                "entries": [
+                  {
+                    "type": "Type",
+                    "value": "Eco.Gameplay.Civics.Laws.ExecutiveActions.CivicAction_PerformExecutiveAction"
+                  }
+                ]
+              },
+              "ChangingCivicObjects": {
+                "type": "GamePickerList",
+                "mustDeriveType": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.Civics.Misc.IProposable"
+                },
+                "requiredTag": null,
+                "internalDescription": "<link=\"view:1587:-1\"><icon name=\"ElectionProcess\"><color=#60FFFFFF>Election Process</color></icon></link>",
+                "entries": [
+                  {
+                    "type": "Type",
+                    "value": "Eco.Gameplay.Civics.ElectionProcess"
+                  }
+                ]
+              }
+            }
+          },
+          "Proposers": {
+            "type": "GamePickerList",
+            "mustDeriveType": {
+              "type": "Type",
+              "value": "Eco.Gameplay.Aliases.IAlias"
+            },
+            "requiredTag": null,
+            "internalDescription": "<link=\"view:2433:16826902\"><icon name=\"ElectedTitle\"><style=\"Government\">Volunteer President</style></icon></link>",
+            "entries": [
+              {
+                "type": "Eco.Gameplay.Civics.Titles.ElectedTitle",
+                "name": "Volunteer President",
+                "reference": true
+              }
+            ]
+          },
+          "Executors": {
+            "type": "GamePickerList",
+            "mustDeriveType": {
+              "type": "Type",
+              "value": "Eco.Gameplay.Aliases.IAlias"
+            },
+            "requiredTag": null,
+            "internalDescription": "<link=\"view:2433:16826902\"><icon name=\"ElectedTitle\"><style=\"Government\">Volunteer President</style></icon></link>",
+            "entries": [
+              {
+                "type": "Eco.Gameplay.Civics.Titles.ElectedTitle",
+                "name": "Volunteer President",
+                "reference": true
+              }
+            ]
+          },
+          "ElectionProcess": {
+            "type": "Eco.Gameplay.Civics.ElectionProcess",
+            "name": "Basic Election",
+            "reference": true
+          },
+          "Priority": 0
+        }
+      }
+    ]
+  },
+  "filename": "amendment-16829090.json",
+  "collection": "giantpanda",
+  "set": "Cycle-50"
+}</code></pre>
+        </div>
+
+      </div>
+
+
+
+
+    </div>
+  </section>
+
+  </body>
+</html>

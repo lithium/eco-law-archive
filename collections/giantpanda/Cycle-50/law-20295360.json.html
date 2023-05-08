@@ -1,0 +1,2364 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>State Aid Laws v1.5 - Cycle-50 | Eco Law Archive</title>
+
+
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+<style>
+  .reference {
+    color: rgb(115,225,113);
+    font-weight: bold;
+  }
+
+  .card-list .card {
+      margin-bottom: 1em;
+  }
+
+  .json-preview {
+    font-size: 10pt;
+    font-family: monospace;
+  }
+
+  tr.indented th {
+    padding-left: 2em;
+  }
+
+  .if-then-block {
+    padding: 12px;
+    border: 2px solid rgb(50,166,240);
+  }
+  .if-then-block + .if-then-block {
+    margin-top: 1em;
+
+  }
+
+  .trigger-column {
+    border: 2px solid rgb(96,240,137);
+  }
+  .trigger-column > p.title {
+    background: rgb(96,240,137);
+    color: white;
+    padding: 0.5em;
+    font-weight: bolder;
+    text-align: center;
+  }
+
+  .ifthen-column {
+    padding: 0;
+    margin-left: 1em;
+  }
+  .ifthen-column .title {
+    background: rgb(50,166,240);
+    color: white;
+    padding: 0.5em;
+    font-weight: bolder;
+    text-align: center;
+
+  }
+
+</style>
+
+<script>
+  function json_toggle(evt) {
+    const targetId = evt.target.getAttribute("data-targetid")
+    const el = document.getElementById(targetId)
+    el.style.display = el.style.display == "block" ? "none" : "block";
+  }
+</script>
+
+  </head>
+
+  <body>
+  <section class="section">
+    <div class="container">
+      <h1 class="title">
+  Eco Law Archive
+</h1>
+<h1 class="subtitle">
+  An archive of implemented <a target="_blank" href="https://play.eco">ECO</a> civics
+</h1>
+
+      <div class="tabs is-toggle">
+        <ul>
+          <li><a href="../../../">Collections</a></li>
+          <li><a href="../../../constitutions.html">Constitutions</a></li>
+          <li><a href="../../../electionprocesses.html">Election Processes</a></li>
+          <li><a href="../../../titles.html">Titles</a></li>
+          <li><a href="../../../demographics.html">Demographics</a></li>
+          <li class="is-active"><a href="../../../laws.html">Laws</a></li>
+        </ul>
+      </div>
+
+      <div class="content">
+        <h1 class="title is-1">Law</h1>
+        <h1 class="title is-2">State Aid Laws v1.5 <a href="../../../collections/giantpanda/Cycle-50"><span class="tag">giantpanda/Cycle-50</span></a></h1>
+        <h2 class="subtitle is-5">Laws that support specific industries</h2>
+
+      <div class="card-list">
+        <div class="content">
+            <p class="title is-5">Section 1: &quot;Panda Green Fields Support Act&quot;</p>
+            <p class="subtitle is-6">Farmers are contributing to leave no panda hungry, bu we are very very poor and live in simple shacks. Let us participate on the growing wealth with this little subsidy.
+
+            <div class="columns">
+              <div class="column is-one-third card-list trigger-column">
+                <p class="title is-5">Triggers</p>
+                <div class="card">
+                    <table class="table">
+                      <tr>
+                        <th>Trigger</th>
+                        <td>CitizenTimer</td>
+                      </tr>
+
+                        	<tr class="indented">
+		<th>Repeat For Each User</th>
+		<td><span title="Demographic: Active" class="icon-text"><span class="icon"><i class="fas fa-people-line"></i></span><span class="reference">Active</span></span></td>
+	</tr>
+
+	<tr class="indented">
+		<th>Hours Between Executions</th>
+		<td>2</td>
+	</tr>
+
+
+                    </table>
+
+                    <div>
+                    <a class="button is-text is-small" data-targetId="trigger-PandaGreenFieldsSupportAct-0" onclick="return json_toggle(event)">JSON</a><pre class="json-preview" id="trigger-PandaGreenFieldsSupportAct-0" style="display: none"><code>{
+  "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+  "reference": false,
+  "properties": {
+    "Trigger": {
+      "type": "Type",
+      "value": "Eco.Gameplay.GameActions.CitizenTimer"
+    },
+    "Configs": [
+      {
+        "type": "Eco.Gameplay.GameActions.CitizenTimerTriggerConfig",
+        "typeToConfig": null,
+        "propNameBacker": null,
+        "propDisplayName": null,
+        "properties": {
+          "RepeatForEachUser": {
+            "type": "Eco.Gameplay.Civics.Demographics.Demographic",
+            "name": "Active",
+            "reference": true
+          },
+          "HoursBetweenExecutions": 2
+        }
+      }
+    ]
+  }
+}</code></pre>
+                    </div>
+                </div>
+              </div>
+
+              <div class="column is-two-thirds card-list ifthen-column">
+
+                <div class="if-then-block"> 
+
+                  <div class="columns">
+                    <div class="column is-one-half">
+                      <p class="title is-5">If  <span class="tag">All</span></p>
+                      <div class="card">
+                        
+ <table class="table">
+  <tr>
+    <th colspan=2>Skill Requirements</th>
+  </tr>
+  <tr class="indented">
+  	<th>Citizen</th>
+  	<td>Citizen - The citizen currently being processed for the timer event.</td>
+  </tr>
+
+  <tr class="indented">
+  	<th>Skills</th>
+  	<td>
+      <div>FarmingSkill</div>
+    </td>
+  </tr>
+
+  <tr class="indented">
+    <th>Requirements</th>
+    <td>HasAll</td>
+  </tr>
+
+  <tr class="indented">
+  	<th>Required Level</th>
+  	<td>
+
+	Number: 3
+</td>
+  </tr>
+
+</table>
+                      </div>
+                      <div class="card">
+                        
+ <table class="table">
+  <tr>
+    <th colspan=2>Compare</th>
+  </tr>
+  <tr class="indented">
+  	<th>Left</th>
+  	<td>
+<table class="table">
+  <tr>
+    <th colspan=2>Wealth</th>
+  </tr>
+
+  <tr class="indented">
+    <th>Citizen</th>
+    <td>The citizen currently being processed for the timer event.</td>
+  </tr>
+
+  <tr class="indented">
+    <th>Currency</th>
+    <td>
+        <span title="Currency: Panda" class="icon-text"><span class="icon"><i class="fas fa-coins"></i></span><span class="reference">Panda</span></span>
+
+    </td>
+  </tr>
+
+</table>
+
+</td>
+  </tr>
+
+  <tr class="indented">
+  	<th>Comparison</th>
+  	<td>LessThanOrEqualTo</td>
+  </tr>
+
+  <tr class="indented">
+  	<th>Right</th>
+  	<td>
+
+	Number: 400
+</td>
+  </tr>
+
+</table>
+                      </div>
+                    </div>
+
+                    <div class="column is-one-half">
+                      <p class="title is-5">Then</p>
+                      <div class="card">
+                        <table>
+	<tr>
+		<th colspan="2">Pay</th>
+	</tr>
+	<tr class="indented">
+		<th>Target</th>
+		<td><table class="table">
+  <tr>
+    <th><icon name="User">Citizen</icon></th>
+    <td>The citizen currently being processed for the timer event.</td>
+  </tr>
+</table></td>
+	</tr>
+	<tr class="indented">
+		<th>Source Bank Account</th>
+		<td>
+
+	<span title="GovernmentBankAccount: Subsidy account" class="icon-text"><span class="icon"><i class="fas undefined"></i></span><span class="reference">Subsidy account</span></span>
+</td>
+	</tr>
+	<tr class="indented">
+		<th>Target Bank Account</th>
+		<td>
+PersonalBankAccount: <table class="table">
+  <tr>
+    <th><icon name="User">Citizen</icon></th>
+    <td>The citizen currently being processed for the timer event.</td>
+  </tr>
+</table></td>
+	</tr>
+	<tr class="indented">
+		<th>Currency</th>
+		<td>
+
+	<span title="Currency: Panda" class="icon-text"><span class="icon"><i class="fas fa-coins"></i></span><span class="reference">Panda</span></span>
+</td>
+	</tr>
+	<tr class="indented">
+		<th>Amount</th>
+		<td>
+
+	Number: 10
+</td>
+	</tr>
+	<tr class="indented">
+		<th>Prevent If Unable To Pay</th>
+		<td>No</td>
+	</tr>
+	<tr class="indented">
+		<th>Infobox On Success</th>
+		<td>No</td>
+	</tr>
+
+</table>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div>
+                  <a class="button is-text is-small" data-targetId="if-PandaGreenFieldsSupportAct-0" onclick="return json_toggle(event)">JSON</a><pre class="json-preview" id="if-PandaGreenFieldsSupportAct-0" style="display: none"><code>{
+  "type": "Eco.Gameplay.Civics.IfThenBlock",
+  "reference": false,
+  "properties": {
+    "If": {
+      "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+      "properties": {
+        "List": [
+          {
+            "type": "Eco.Gameplay.Civics.GameValues.Values.SkillRequirements",
+            "properties": {
+              "Citizen": {
+                "type": "GameValueContext",
+                "_name": "Citizen",
+                "markedUpName": "<icon name=\"User\">Citizen</icon>",
+                "contextDescription": "The citizen currently being processed for the timer event."
+              },
+              "Skills": {
+                "type": "GamePickerList",
+                "mustDeriveType": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.Skills.Skill"
+                },
+                "requiredTag": null,
+                "internalDescription": "<link=\"Item:FarmingSkill\"><style=\"Item\"><icon name=\"FarmingSkill\">Farming</icon></style></link>",
+                "entries": [
+                  {
+                    "type": "Type",
+                    "value": "Eco.Mods.TechTree.FarmingSkill"
+                  }
+                ]
+              },
+              "Requirements": "HasAll",
+              "RequiredLevel": {
+                "type": "GameValueWrapper",
+                "value": 3
+              }
+            }
+          },
+          {
+            "type": "Eco.Gameplay.Civics.GameValues.Compare",
+            "properties": {
+              "Left": {
+                "type": "Eco.Gameplay.Civics.GameValues.Values.Wealth",
+                "properties": {
+                  "Currency": {
+                    "type": "GameValueWrapper",
+                    "value": {
+                      "type": "Eco.Gameplay.Economy.Currency",
+                      "name": "Panda",
+                      "reference": true
+                    }
+                  },
+                  "Citizen": {
+                    "type": "GameValueContext",
+                    "_name": "Citizen",
+                    "markedUpName": "<icon name=\"User\">Citizen</icon>",
+                    "contextDescription": "The citizen currently being processed for the timer event."
+                  }
+                }
+              },
+              "Comparison": "LessThanOrEqualTo",
+              "Right": {
+                "type": "GameValueWrapper",
+                "value": 400
+              }
+            }
+          }
+        ],
+        "Comparison": "All"
+      }
+    },
+    "Then": [
+      {
+        "type": "Eco.Gameplay.Civics.LegalActions.Pay_LegalAction",
+        "reference": false,
+        "properties": {
+          "SourceBankAccount": {
+            "type": "GameValueWrapper",
+            "value": {
+              "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
+              "name": "Subsidy account",
+              "reference": true
+            }
+          },
+          "TargetBankAccount": {
+            "type": "Eco.Gameplay.Civics.GameValues.PersonalBankAccount_GameValue",
+            "properties": {
+              "User": {
+                "type": "GameValueContext",
+                "_name": "Citizen",
+                "markedUpName": "<icon name=\"User\">Citizen</icon>",
+                "contextDescription": "The citizen currently being processed for the timer event."
+              }
+            }
+          },
+          "Target": {
+            "type": "GameValueContext",
+            "_name": "Citizen",
+            "markedUpName": "<icon name=\"User\">Citizen</icon>",
+            "contextDescription": "The citizen currently being processed for the timer event."
+          },
+          "Currency": {
+            "type": "GameValueWrapper",
+            "value": {
+              "type": "Eco.Gameplay.Economy.Currency",
+              "name": "Panda",
+              "reference": true
+            }
+          },
+          "Amount": {
+            "type": "GameValueWrapper",
+            "value": 10
+          },
+          "PreventIfUnableToPay": {
+            "type": "Eco.Gameplay.Civics.GameValues.No",
+            "properties": {}
+          },
+          "InfoboxOnSuccess": {
+            "type": "Eco.Gameplay.Civics.GameValues.No",
+            "properties": {}
+          }
+        }
+      }
+    ]
+  }
+}</code></pre>
+                  </div>
+                </div>
+
+
+              </div>
+
+
+            </div>
+        </div>
+        <div class="content">
+            <p class="title is-5">Section 2: Panda Milling Support Act</p>
+            <p class="subtitle is-6">A key component in baking, milling products are prone to quick decay times and can subject the miller to incur losses. 
+
+            <div class="columns">
+              <div class="column is-one-third card-list trigger-column">
+                <p class="title is-5">Triggers</p>
+                <div class="card">
+                    <table class="table">
+                      <tr>
+                        <th>Trigger</th>
+                        <td>CitizenTimer</td>
+                      </tr>
+
+                        	<tr class="indented">
+		<th>Repeat For Each User</th>
+		<td><span title="Demographic: Active" class="icon-text"><span class="icon"><i class="fas fa-people-line"></i></span><span class="reference">Active</span></span></td>
+	</tr>
+
+	<tr class="indented">
+		<th>Hours Between Executions</th>
+		<td>2</td>
+	</tr>
+
+
+                    </table>
+
+                    <div>
+                    <a class="button is-text is-small" data-targetId="trigger-PandaMillingSupportAct-0" onclick="return json_toggle(event)">JSON</a><pre class="json-preview" id="trigger-PandaMillingSupportAct-0" style="display: none"><code>{
+  "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+  "reference": false,
+  "properties": {
+    "Trigger": {
+      "type": "Type",
+      "value": "Eco.Gameplay.GameActions.CitizenTimer"
+    },
+    "Configs": [
+      {
+        "type": "Eco.Gameplay.GameActions.CitizenTimerTriggerConfig",
+        "typeToConfig": null,
+        "propNameBacker": null,
+        "propDisplayName": null,
+        "properties": {
+          "RepeatForEachUser": {
+            "type": "Eco.Gameplay.Civics.Demographics.Demographic",
+            "name": "Active",
+            "reference": true
+          },
+          "HoursBetweenExecutions": 2
+        }
+      }
+    ]
+  }
+}</code></pre>
+                    </div>
+                </div>
+              </div>
+
+              <div class="column is-two-thirds card-list ifthen-column">
+
+                <div class="if-then-block"> 
+
+                  <div class="columns">
+                    <div class="column is-one-half">
+                      <p class="title is-5">If  <span class="tag">All</span></p>
+                      <div class="card">
+                        
+ <table class="table">
+  <tr>
+    <th colspan=2>Skill Requirements</th>
+  </tr>
+  <tr class="indented">
+  	<th>Citizen</th>
+  	<td>Citizen - The citizen currently being processed for the timer event.</td>
+  </tr>
+
+  <tr class="indented">
+  	<th>Skills</th>
+  	<td>
+      <div>MillingSkill</div>
+    </td>
+  </tr>
+
+  <tr class="indented">
+    <th>Requirements</th>
+    <td>HasAll</td>
+  </tr>
+
+  <tr class="indented">
+  	<th>Required Level</th>
+  	<td>
+
+	Number: 3
+</td>
+  </tr>
+
+</table>
+                      </div>
+                      <div class="card">
+                        
+ <table class="table">
+  <tr>
+    <th colspan=2>Compare</th>
+  </tr>
+  <tr class="indented">
+  	<th>Left</th>
+  	<td>
+<table class="table">
+  <tr>
+    <th colspan=2>Wealth</th>
+  </tr>
+
+  <tr class="indented">
+    <th>Citizen</th>
+    <td>The citizen currently being processed for the timer event.</td>
+  </tr>
+
+  <tr class="indented">
+    <th>Currency</th>
+    <td>
+        <span title="Currency: Panda" class="icon-text"><span class="icon"><i class="fas fa-coins"></i></span><span class="reference">Panda</span></span>
+
+    </td>
+  </tr>
+
+</table>
+
+</td>
+  </tr>
+
+  <tr class="indented">
+  	<th>Comparison</th>
+  	<td>LessThanOrEqualTo</td>
+  </tr>
+
+  <tr class="indented">
+  	<th>Right</th>
+  	<td>
+
+	Number: 400
+</td>
+  </tr>
+
+</table>
+                      </div>
+                    </div>
+
+                    <div class="column is-one-half">
+                      <p class="title is-5">Then</p>
+                      <div class="card">
+                        <table>
+	<tr>
+		<th colspan="2">Pay</th>
+	</tr>
+	<tr class="indented">
+		<th>Target</th>
+		<td><table class="table">
+  <tr>
+    <th><icon name="User">Citizen</icon></th>
+    <td>The citizen currently being processed for the timer event.</td>
+  </tr>
+</table></td>
+	</tr>
+	<tr class="indented">
+		<th>Source Bank Account</th>
+		<td>
+
+	<span title="GovernmentBankAccount: Subsidy account" class="icon-text"><span class="icon"><i class="fas undefined"></i></span><span class="reference">Subsidy account</span></span>
+</td>
+	</tr>
+	<tr class="indented">
+		<th>Target Bank Account</th>
+		<td>
+PersonalBankAccount: <table class="table">
+  <tr>
+    <th><icon name="User">Citizen</icon></th>
+    <td>The citizen currently being processed for the timer event.</td>
+  </tr>
+</table></td>
+	</tr>
+	<tr class="indented">
+		<th>Currency</th>
+		<td>
+
+	<span title="Currency: Panda" class="icon-text"><span class="icon"><i class="fas fa-coins"></i></span><span class="reference">Panda</span></span>
+</td>
+	</tr>
+	<tr class="indented">
+		<th>Amount</th>
+		<td>
+
+	Number: 10
+</td>
+	</tr>
+	<tr class="indented">
+		<th>Prevent If Unable To Pay</th>
+		<td>No</td>
+	</tr>
+	<tr class="indented">
+		<th>Infobox On Success</th>
+		<td>No</td>
+	</tr>
+
+</table>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div>
+                  <a class="button is-text is-small" data-targetId="if-PandaMillingSupportAct-0" onclick="return json_toggle(event)">JSON</a><pre class="json-preview" id="if-PandaMillingSupportAct-0" style="display: none"><code>{
+  "type": "Eco.Gameplay.Civics.IfThenBlock",
+  "reference": false,
+  "properties": {
+    "If": {
+      "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+      "properties": {
+        "List": [
+          {
+            "type": "Eco.Gameplay.Civics.GameValues.Values.SkillRequirements",
+            "properties": {
+              "Citizen": {
+                "type": "GameValueContext",
+                "_name": "Citizen",
+                "markedUpName": "<icon name=\"User\">Citizen</icon>",
+                "contextDescription": "The citizen currently being processed for the timer event."
+              },
+              "Skills": {
+                "type": "GamePickerList",
+                "mustDeriveType": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.Skills.Skill"
+                },
+                "requiredTag": null,
+                "internalDescription": "<link=\"Item:MillingSkill\"><style=\"Item\"><icon name=\"MillingSkill\">Milling</icon></style></link>",
+                "entries": [
+                  {
+                    "type": "Type",
+                    "value": "Eco.Mods.TechTree.MillingSkill"
+                  }
+                ]
+              },
+              "Requirements": "HasAll",
+              "RequiredLevel": {
+                "type": "GameValueWrapper",
+                "value": 3
+              }
+            }
+          },
+          {
+            "type": "Eco.Gameplay.Civics.GameValues.Compare",
+            "properties": {
+              "Left": {
+                "type": "Eco.Gameplay.Civics.GameValues.Values.Wealth",
+                "properties": {
+                  "Currency": {
+                    "type": "GameValueWrapper",
+                    "value": {
+                      "type": "Eco.Gameplay.Economy.Currency",
+                      "name": "Panda",
+                      "reference": true
+                    }
+                  },
+                  "Citizen": {
+                    "type": "GameValueContext",
+                    "_name": "Citizen",
+                    "markedUpName": "<icon name=\"User\">Citizen</icon>",
+                    "contextDescription": "The citizen currently being processed for the timer event."
+                  }
+                }
+              },
+              "Comparison": "LessThanOrEqualTo",
+              "Right": {
+                "type": "GameValueWrapper",
+                "value": 400
+              }
+            }
+          }
+        ],
+        "Comparison": "All"
+      }
+    },
+    "Then": [
+      {
+        "type": "Eco.Gameplay.Civics.LegalActions.Pay_LegalAction",
+        "reference": false,
+        "properties": {
+          "SourceBankAccount": {
+            "type": "GameValueWrapper",
+            "value": {
+              "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
+              "name": "Subsidy account",
+              "reference": true
+            }
+          },
+          "TargetBankAccount": {
+            "type": "Eco.Gameplay.Civics.GameValues.PersonalBankAccount_GameValue",
+            "properties": {
+              "User": {
+                "type": "GameValueContext",
+                "_name": "Citizen",
+                "markedUpName": "<icon name=\"User\">Citizen</icon>",
+                "contextDescription": "The citizen currently being processed for the timer event."
+              }
+            }
+          },
+          "Target": {
+            "type": "GameValueContext",
+            "_name": "Citizen",
+            "markedUpName": "<icon name=\"User\">Citizen</icon>",
+            "contextDescription": "The citizen currently being processed for the timer event."
+          },
+          "Currency": {
+            "type": "GameValueWrapper",
+            "value": {
+              "type": "Eco.Gameplay.Economy.Currency",
+              "name": "Panda",
+              "reference": true
+            }
+          },
+          "Amount": {
+            "type": "GameValueWrapper",
+            "value": 10
+          },
+          "PreventIfUnableToPay": {
+            "type": "Eco.Gameplay.Civics.GameValues.No",
+            "properties": {}
+          },
+          "InfoboxOnSuccess": {
+            "type": "Eco.Gameplay.Civics.GameValues.No",
+            "properties": {}
+          }
+        }
+      }
+    ]
+  }
+}</code></pre>
+                  </div>
+                </div>
+
+
+              </div>
+
+
+            </div>
+        </div>
+        <div class="content">
+            <p class="title is-5">Section 3: Panda Road Infrastructure Support Act</p>
+            <p class="subtitle is-6">Experimental law to encourage continued manufacturing of stone roads and asphalt concrete, the government will subsidise part of the cost for making roads (capped to current poverty line 400)
+
+            <div class="columns">
+              <div class="column is-one-third card-list trigger-column">
+                <p class="title is-5">Triggers</p>
+                <div class="card">
+                    <table class="table">
+                      <tr>
+                        <th>Trigger</th>
+                        <td>CurrencyTrade</td>
+                      </tr>
+
+                        	<tr class="indented">
+		<th>Currency</th>
+		<td>
+
+				1 
+				Currency:
+					<span><span title="Currency: Panda" class="icon-text"><span class="icon"><i class="fas fa-coins"></i></span><span class="reference">Panda</span></span></span>
+
+		</td>
+	</tr>
+
+
+                        	<tr class="indented">
+		<th>Item Traded</th>
+		<td>
+
+				3 
+				Item:
+					<span>StoneRoadItem</span>,
+					<span>StoneRampItem</span>,
+					<span>AsphaltConcreteItem</span>
+
+		</td>
+	</tr>
+
+
+
+                    </table>
+
+                    <div>
+                    <a class="button is-text is-small" data-targetId="trigger-PandaRoadInfrastructureSupportAct-0" onclick="return json_toggle(event)">JSON</a><pre class="json-preview" id="trigger-PandaRoadInfrastructureSupportAct-0" style="display: none"><code>{
+  "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+  "reference": false,
+  "properties": {
+    "Trigger": {
+      "type": "Type",
+      "value": "Eco.Gameplay.GameActions.CurrencyTrade"
+    },
+    "Configs": [
+      {
+        "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+        "typeToConfig": "Eco.Gameplay.GameActions.CurrencyTrade",
+        "propNameBacker": "Currency",
+        "propDisplayName": "Currency",
+        "properties": {
+          "List": {
+            "type": "GamePickerList",
+            "mustDeriveType": {
+              "type": "Type",
+              "value": "Eco.Gameplay.Economy.Currency"
+            },
+            "requiredTag": null,
+            "internalDescription": "<link=\"view:3942:3368805\"><icon name=\"CurrencySymbol\"><style=\"Currency\">Panda</style></icon></link>",
+            "entries": [
+              {
+                "type": "Eco.Gameplay.Economy.Currency",
+                "name": "Panda",
+                "reference": true
+              }
+            ]
+          }
+        }
+      },
+      {
+        "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+        "typeToConfig": "Eco.Gameplay.GameActions.CurrencyTrade",
+        "propNameBacker": "ItemUsed",
+        "propDisplayName": "Item Traded",
+        "properties": {
+          "List": {
+            "type": "GamePickerList",
+            "mustDeriveType": {
+              "type": "Type",
+              "value": "Eco.Gameplay.Items.Item"
+            },
+            "requiredTag": null,
+            "internalDescription": "<foldout><linktext><u>3 Roads</u></linktext><title>3 Roads</title><link=\"Item:AsphaltConcreteItem\"><style=\"Item\"><icon name=\"AsphaltConcreteItem\">Asphalt Concrete</icon></style></link>\r\n<link=\"Item:StoneRampItem\"><style=\"Item\"><icon name=\"StoneRampItem\">Stone Ramp</icon></style></link>\r\n<link=\"Item:StoneRoadItem\"><style=\"Item\"><icon name=\"StoneRoadItem\">Stone Road</icon></style></link></foldout>",
+            "entries": [
+              {
+                "type": "Type",
+                "value": "Eco.Mods.TechTree.StoneRoadItem"
+              },
+              {
+                "type": "Type",
+                "value": "StoneRampItem"
+              },
+              {
+                "type": "Type",
+                "value": "Eco.Mods.TechTree.AsphaltConcreteItem"
+              }
+            ]
+          }
+        }
+      }
+    ]
+  }
+}</code></pre>
+                    </div>
+                </div>
+              </div>
+
+              <div class="column is-two-thirds card-list ifthen-column">
+
+                <div class="if-then-block"> 
+
+                  <div class="columns">
+                    <div class="column is-one-half">
+                      <p class="title is-5">If  <span class="tag">All</span></p>
+                      <div class="card">
+                        <table class="table">
+  <tr>
+    <th><icon name="CurrencyTrade">Selling</icon></th>
+    <td>Was the good bought or sold by the initiating player?</td>
+  </tr>
+</table>
+                      </div>
+                      <div class="card">
+                        
+ <table class="table">
+  <tr>
+    <th colspan=2>Compare</th>
+  </tr>
+  <tr class="indented">
+  	<th>Left</th>
+  	<td>
+<table class="table">
+  <tr>
+    <th colspan=2>Wealth</th>
+  </tr>
+
+  <tr class="indented">
+    <th>Citizen</th>
+    <td>The citizen who performed the interaction.</td>
+  </tr>
+
+  <tr class="indented">
+    <th>Currency</th>
+    <td>
+        Currency used in the transaction.    
+
+    </td>
+  </tr>
+
+</table>
+
+</td>
+  </tr>
+
+  <tr class="indented">
+  	<th>Comparison</th>
+  	<td>LessThanOrEqualTo</td>
+  </tr>
+
+  <tr class="indented">
+  	<th>Right</th>
+  	<td>
+
+	Number: 400
+</td>
+  </tr>
+
+</table>
+                      </div>
+                    </div>
+
+                    <div class="column is-one-half">
+                      <p class="title is-5">Then</p>
+                      <div class="card">
+                        <table>
+	<tr>
+		<th colspan="2">Pay</th>
+	</tr>
+	<tr class="indented">
+		<th>Target</th>
+		<td><table class="table">
+  <tr>
+    <th><icon name="User">Citizen</icon></th>
+    <td>The citizen who performed the interaction.</td>
+  </tr>
+</table></td>
+	</tr>
+	<tr class="indented">
+		<th>Source Bank Account</th>
+		<td>
+
+	<span title="GovernmentBankAccount: Subsidy account" class="icon-text"><span class="icon"><i class="fas undefined"></i></span><span class="reference">Subsidy account</span></span>
+</td>
+	</tr>
+	<tr class="indented">
+		<th>Target Bank Account</th>
+		<td>
+PersonalBankAccount: <table class="table">
+  <tr>
+    <th><icon name="User">Citizen</icon></th>
+    <td>The citizen who performed the interaction.</td>
+  </tr>
+</table></td>
+	</tr>
+	<tr class="indented">
+		<th>Currency</th>
+		<td>
+
+	<span title="Currency: Panda" class="icon-text"><span class="icon"><i class="fas fa-coins"></i></span><span class="reference">Panda</span></span>
+</td>
+	</tr>
+	<tr class="indented">
+		<th>Amount</th>
+		<td>
+
+	Number: 0.2
+</td>
+	</tr>
+	<tr class="indented">
+		<th>Prevent If Unable To Pay</th>
+		<td>No</td>
+	</tr>
+	<tr class="indented">
+		<th>Infobox On Success</th>
+		<td>No</td>
+	</tr>
+
+</table>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div>
+                  <a class="button is-text is-small" data-targetId="if-PandaRoadInfrastructureSupportAct-0" onclick="return json_toggle(event)">JSON</a><pre class="json-preview" id="if-PandaRoadInfrastructureSupportAct-0" style="display: none"><code>{
+  "type": "Eco.Gameplay.Civics.IfThenBlock",
+  "reference": false,
+  "properties": {
+    "If": {
+      "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+      "properties": {
+        "List": [
+          {
+            "type": "GameValueContext",
+            "_name": "Selling",
+            "markedUpName": "<icon name=\"CurrencyTrade\">Selling</icon>",
+            "contextDescription": "Was the good bought or sold by the initiating player?"
+          },
+          {
+            "type": "Eco.Gameplay.Civics.GameValues.Compare",
+            "properties": {
+              "Left": {
+                "type": "Eco.Gameplay.Civics.GameValues.Values.Wealth",
+                "properties": {
+                  "Currency": {
+                    "type": "GameValueContext",
+                    "_name": "Currency",
+                    "markedUpName": "<icon name=\"CurrencyTrade\">Currency</icon>",
+                    "contextDescription": "Currency used in the transaction."
+                  },
+                  "Citizen": {
+                    "type": "GameValueContext",
+                    "_name": "Citizen",
+                    "markedUpName": "<icon name=\"User\">Citizen</icon>",
+                    "contextDescription": "The citizen who performed the interaction."
+                  }
+                }
+              },
+              "Comparison": "LessThanOrEqualTo",
+              "Right": {
+                "type": "GameValueWrapper",
+                "value": 400
+              }
+            }
+          }
+        ],
+        "Comparison": "All"
+      }
+    },
+    "Then": [
+      {
+        "type": "Eco.Gameplay.Civics.LegalActions.Pay_LegalAction",
+        "reference": false,
+        "properties": {
+          "SourceBankAccount": {
+            "type": "GameValueWrapper",
+            "value": {
+              "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
+              "name": "Subsidy account",
+              "reference": true
+            }
+          },
+          "TargetBankAccount": {
+            "type": "Eco.Gameplay.Civics.GameValues.PersonalBankAccount_GameValue",
+            "properties": {
+              "User": {
+                "type": "GameValueContext",
+                "_name": "Citizen",
+                "markedUpName": "<icon name=\"User\">Citizen</icon>",
+                "contextDescription": "The citizen who performed the interaction."
+              }
+            }
+          },
+          "Target": {
+            "type": "GameValueContext",
+            "_name": "Citizen",
+            "markedUpName": "<icon name=\"User\">Citizen</icon>",
+            "contextDescription": "The citizen who performed the interaction."
+          },
+          "Currency": {
+            "type": "GameValueWrapper",
+            "value": {
+              "type": "Eco.Gameplay.Economy.Currency",
+              "name": "Panda",
+              "reference": true
+            }
+          },
+          "Amount": {
+            "type": "GameValueWrapper",
+            "value": 0.2
+          },
+          "PreventIfUnableToPay": {
+            "type": "Eco.Gameplay.Civics.GameValues.No",
+            "properties": {}
+          },
+          "InfoboxOnSuccess": {
+            "type": "Eco.Gameplay.Civics.GameValues.No",
+            "properties": {}
+          }
+        }
+      }
+    ]
+  }
+}</code></pre>
+                  </div>
+                </div>
+
+
+              </div>
+
+
+            </div>
+        </div>
+        <div class="content">
+            <p class="title is-5">Section 4: Panda Industries Support Act</p>
+            <p class="subtitle is-6">To encourage the smelting industry to provide readily accessible metals and components - the government will incentivize the sales of metal ores to the general population (capped to the current poverty line - 400)
+
+            <div class="columns">
+              <div class="column is-one-third card-list trigger-column">
+                <p class="title is-5">Triggers</p>
+                <div class="card">
+                    <table class="table">
+                      <tr>
+                        <th>Trigger</th>
+                        <td>CurrencyTrade</td>
+                      </tr>
+
+                        	<tr class="indented">
+		<th>Currency</th>
+		<td>
+
+				1 
+				Currency:
+					<span><span title="Currency: Panda" class="icon-text"><span class="icon"><i class="fas fa-coins"></i></span><span class="reference">Panda</span></span></span>
+
+		</td>
+	</tr>
+
+
+                        	<tr class="indented">
+		<th>Item Traded</th>
+		<td>
+
+				20 
+				Item:
+					<span>CompositeRedwoodLumberItem</span>,
+					<span>CompositePalmLumberItem</span>,
+					<span>CompositeSaguaroLumberItem</span>,
+					<span>CompositeFirLumberItem</span>,
+					<span>CompositeBirchLumberItem</span>,
+					<span>SteelBarItem</span>,
+					<span>CopperBarItem</span>,
+					<span>CompositeCeibaLumberItem</span>,
+					<span>CompositeJoshuaLumberItem</span>,
+					<span>GlassItem</span>,
+					<span>BrickItem</span>,
+					<span>SoftwoodLumberItem</span>,
+					<span>LumberItem</span>,
+					<span>CompositeSpruceLumberItem</span>,
+					<span>CompositeOakLumberItem</span>,
+					<span>CompositeCedarLumberItem</span>,
+					<span>HardwoodLumberItem</span>,
+					<span>GoldBarItem</span>,
+					<span>IronBarItem</span>,
+					<span>CompositeLumberItem</span>
+
+		</td>
+	</tr>
+
+
+
+                    </table>
+
+                    <div>
+                    <a class="button is-text is-small" data-targetId="trigger-PandaIndustriesSupportAct-0" onclick="return json_toggle(event)">JSON</a><pre class="json-preview" id="trigger-PandaIndustriesSupportAct-0" style="display: none"><code>{
+  "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+  "reference": false,
+  "properties": {
+    "Trigger": {
+      "type": "Type",
+      "value": "Eco.Gameplay.GameActions.CurrencyTrade"
+    },
+    "Configs": [
+      {
+        "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+        "typeToConfig": "Eco.Gameplay.GameActions.CurrencyTrade",
+        "propNameBacker": "Currency",
+        "propDisplayName": "Currency",
+        "properties": {
+          "List": {
+            "type": "GamePickerList",
+            "mustDeriveType": {
+              "type": "Type",
+              "value": "Eco.Gameplay.Economy.Currency"
+            },
+            "requiredTag": null,
+            "internalDescription": "<link=\"view:3942:3368805\"><icon name=\"CurrencySymbol\"><style=\"Currency\">Panda</style></icon></link>",
+            "entries": [
+              {
+                "type": "Eco.Gameplay.Economy.Currency",
+                "name": "Panda",
+                "reference": true
+              }
+            ]
+          }
+        }
+      },
+      {
+        "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+        "typeToConfig": "Eco.Gameplay.GameActions.CurrencyTrade",
+        "propNameBacker": "ItemUsed",
+        "propDisplayName": "Item Traded",
+        "properties": {
+          "List": {
+            "type": "GamePickerList",
+            "mustDeriveType": {
+              "type": "Type",
+              "value": "Eco.Gameplay.Items.Item"
+            },
+            "requiredTag": null,
+            "internalDescription": "<foldout><linktext><u>20 Blocks</u></linktext><title>20 Blocks</title><link=\"Item:BrickItem\"><style=\"Item\"><icon name=\"BrickItem\">Brick</icon></style></link>\r\n<link=\"Item:CompositeBirchLumberItem\"><style=\"Item\"><icon name=\"CompositeBirchLumberItem\">Composite Birch Lumber</icon></style></link>\r\n<link=\"Item:CompositeCedarLumberItem\"><style=\"Item\"><icon name=\"CompositeCedarLumberItem\">Composite Cedar Lumber</icon></style></link>\r\n<link=\"Item:CompositeCeibaLumberItem\"><style=\"Item\"><icon name=\"CompositeCeibaLumberItem\">Composite Ceiba Lumber</icon></style></link>\r\n<link=\"Item:CompositeFirLumberItem\"><style=\"Item\"><icon name=\"CompositeFirLumberItem\">Composite Fir Lumber</icon></style></link>\r\n<link=\"Item:CompositeJoshuaLumberItem\"><style=\"Item\"><icon name=\"CompositeJoshuaLumberItem\">Composite Joshua Lumber</icon></style></link>\r\n<link=\"Item:CompositeLumberItem\"><style=\"Item\"><icon name=\"CompositeLumberItem\">Composite Lumber</icon></style></link>\r\n<link=\"Item:CompositeOakLumberItem\"><style=\"Item\"><icon name=\"CompositeOakLumberItem\">Composite Oak Lumber</icon></style></link>\r\n<link=\"Item:CompositePalmLumberItem\"><style=\"Item\"><icon name=\"CompositePalmLumberItem\">Composite Palm Lumber</icon></style></link>\r\n<link=\"Item:CompositeRedwoodLumberItem\"><style=\"Item\"><icon name=\"CompositeRedwoodLumberItem\">Composite Redwood Lumber</icon></style></link>\r\n<link=\"Item:CompositeSaguaroLumberItem\"><style=\"Item\"><icon name=\"CompositeSaguaroLumberItem\">Composite Saguaro Lumber</icon></style></link>\r\n<link=\"Item:CompositeSpruceLumberItem\"><style=\"Item\"><icon name=\"CompositeSpruceLumberItem\">Composite Spruce Lumber</icon></style></link>\r\n<link=\"Item:CopperBarItem\"><style=\"Item\"><icon name=\"CopperBarItem\">Copper Bar</icon></style></link>\r\n<link=\"Item:GlassItem\"><style=\"Item\"><icon name=\"GlassItem\">Glass</icon></style></link>\r\n<link=\"Item:GoldBarItem\"><style=\"Item\"><icon name=\"GoldBarItem\">Gold Bar</icon></style></link>\r\n<link=\"Item:HardwoodLumberItem\"><style=\"Item\"><icon name=\"HardwoodLumberItem\">Hardwood Lumber</icon></style></link>\r\n<link=\"Item:IronBarItem\"><style=\"Item\"><icon name=\"IronBarItem\">Iron Bar</icon></style></link>\r\n<link=\"Item:LumberItem\"><style=\"Item\"><icon name=\"LumberItem\">Lumber</icon></style></link>\r\n<link=\"Item:SoftwoodLumberItem\"><style=\"Item\"><icon name=\"SoftwoodLumberItem\">Softwood Lumber</icon></style></link>\r\n<link=\"Item:SteelBarItem\"><style=\"Item\"><icon name=\"SteelBarItem\">Steel Bar</icon></style></link></foldout>",
+            "entries": [
+              {
+                "type": "Type",
+                "value": "Eco.Mods.TechTree.CompositeRedwoodLumberItem"
+              },
+              {
+                "type": "Type",
+                "value": "Eco.Mods.TechTree.CompositePalmLumberItem"
+              },
+              {
+                "type": "Type",
+                "value": "Eco.Mods.TechTree.CompositeSaguaroLumberItem"
+              },
+              {
+                "type": "Type",
+                "value": "Eco.Mods.TechTree.CompositeFirLumberItem"
+              },
+              {
+                "type": "Type",
+                "value": "Eco.Mods.TechTree.CompositeBirchLumberItem"
+              },
+              {
+                "type": "Type",
+                "value": "Eco.Mods.TechTree.SteelBarItem"
+              },
+              {
+                "type": "Type",
+                "value": "Eco.Mods.TechTree.CopperBarItem"
+              },
+              {
+                "type": "Type",
+                "value": "Eco.Mods.TechTree.CompositeCeibaLumberItem"
+              },
+              {
+                "type": "Type",
+                "value": "Eco.Mods.TechTree.CompositeJoshuaLumberItem"
+              },
+              {
+                "type": "Type",
+                "value": "Eco.Mods.TechTree.GlassItem"
+              },
+              {
+                "type": "Type",
+                "value": "Eco.Mods.TechTree.BrickItem"
+              },
+              {
+                "type": "Type",
+                "value": "Eco.Mods.TechTree.SoftwoodLumberItem"
+              },
+              {
+                "type": "Type",
+                "value": "Eco.Mods.TechTree.LumberItem"
+              },
+              {
+                "type": "Type",
+                "value": "Eco.Mods.TechTree.CompositeSpruceLumberItem"
+              },
+              {
+                "type": "Type",
+                "value": "Eco.Mods.TechTree.CompositeOakLumberItem"
+              },
+              {
+                "type": "Type",
+                "value": "Eco.Mods.TechTree.CompositeCedarLumberItem"
+              },
+              {
+                "type": "Type",
+                "value": "Eco.Mods.TechTree.HardwoodLumberItem"
+              },
+              {
+                "type": "Type",
+                "value": "Eco.Mods.TechTree.GoldBarItem"
+              },
+              {
+                "type": "Type",
+                "value": "Eco.Mods.TechTree.IronBarItem"
+              },
+              {
+                "type": "Type",
+                "value": "Eco.Mods.TechTree.CompositeLumberItem"
+              }
+            ]
+          }
+        }
+      }
+    ]
+  }
+}</code></pre>
+                    </div>
+                </div>
+              </div>
+
+              <div class="column is-two-thirds card-list ifthen-column">
+
+                <div class="if-then-block"> 
+
+                  <div class="columns">
+                    <div class="column is-one-half">
+                      <p class="title is-5">If  <span class="tag">All</span></p>
+                      <div class="card">
+                        <table class="table">
+  <tr>
+    <th><icon name="CurrencyTrade">Selling</icon></th>
+    <td>Was the good bought or sold by the initiating player?</td>
+  </tr>
+</table>
+                      </div>
+                      <div class="card">
+                        
+ <table class="table">
+  <tr>
+    <th colspan=2>Compare</th>
+  </tr>
+  <tr class="indented">
+  	<th>Left</th>
+  	<td>
+<table class="table">
+  <tr>
+    <th colspan=2>Wealth</th>
+  </tr>
+
+  <tr class="indented">
+    <th>Citizen</th>
+    <td>The citizen who performed the interaction.</td>
+  </tr>
+
+  <tr class="indented">
+    <th>Currency</th>
+    <td>
+        Currency used in the transaction.    
+
+    </td>
+  </tr>
+
+</table>
+
+</td>
+  </tr>
+
+  <tr class="indented">
+  	<th>Comparison</th>
+  	<td>LessThanOrEqualTo</td>
+  </tr>
+
+  <tr class="indented">
+  	<th>Right</th>
+  	<td>
+
+	Number: 400
+</td>
+  </tr>
+
+</table>
+                      </div>
+                    </div>
+
+                    <div class="column is-one-half">
+                      <p class="title is-5">Then</p>
+                      <div class="card">
+                        <table>
+	<tr>
+		<th colspan="2">Pay</th>
+	</tr>
+	<tr class="indented">
+		<th>Target</th>
+		<td><table class="table">
+  <tr>
+    <th><icon name="User">Citizen</icon></th>
+    <td>The citizen who performed the interaction.</td>
+  </tr>
+</table></td>
+	</tr>
+	<tr class="indented">
+		<th>Source Bank Account</th>
+		<td>
+
+	<span title="GovernmentBankAccount: Subsidy account" class="icon-text"><span class="icon"><i class="fas undefined"></i></span><span class="reference">Subsidy account</span></span>
+</td>
+	</tr>
+	<tr class="indented">
+		<th>Target Bank Account</th>
+		<td>
+PersonalBankAccount: <table class="table">
+  <tr>
+    <th><icon name="User">Citizen</icon></th>
+    <td>The citizen who performed the interaction.</td>
+  </tr>
+</table></td>
+	</tr>
+	<tr class="indented">
+		<th>Currency</th>
+		<td>
+
+	<span title="Currency: Panda" class="icon-text"><span class="icon"><i class="fas fa-coins"></i></span><span class="reference">Panda</span></span>
+</td>
+	</tr>
+	<tr class="indented">
+		<th>Amount</th>
+		<td>
+
+	Number: 0.2
+</td>
+	</tr>
+	<tr class="indented">
+		<th>Prevent If Unable To Pay</th>
+		<td>No</td>
+	</tr>
+	<tr class="indented">
+		<th>Infobox On Success</th>
+		<td>No</td>
+	</tr>
+
+</table>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div>
+                  <a class="button is-text is-small" data-targetId="if-PandaIndustriesSupportAct-0" onclick="return json_toggle(event)">JSON</a><pre class="json-preview" id="if-PandaIndustriesSupportAct-0" style="display: none"><code>{
+  "type": "Eco.Gameplay.Civics.IfThenBlock",
+  "reference": false,
+  "properties": {
+    "If": {
+      "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+      "properties": {
+        "List": [
+          {
+            "type": "GameValueContext",
+            "_name": "Selling",
+            "markedUpName": "<icon name=\"CurrencyTrade\">Selling</icon>",
+            "contextDescription": "Was the good bought or sold by the initiating player?"
+          },
+          {
+            "type": "Eco.Gameplay.Civics.GameValues.Compare",
+            "properties": {
+              "Left": {
+                "type": "Eco.Gameplay.Civics.GameValues.Values.Wealth",
+                "properties": {
+                  "Currency": {
+                    "type": "GameValueContext",
+                    "_name": "Currency",
+                    "markedUpName": "<icon name=\"CurrencyTrade\">Currency</icon>",
+                    "contextDescription": "Currency used in the transaction."
+                  },
+                  "Citizen": {
+                    "type": "GameValueContext",
+                    "_name": "Citizen",
+                    "markedUpName": "<icon name=\"User\">Citizen</icon>",
+                    "contextDescription": "The citizen who performed the interaction."
+                  }
+                }
+              },
+              "Comparison": "LessThanOrEqualTo",
+              "Right": {
+                "type": "GameValueWrapper",
+                "value": 400
+              }
+            }
+          }
+        ],
+        "Comparison": "All"
+      }
+    },
+    "Then": [
+      {
+        "type": "Eco.Gameplay.Civics.LegalActions.Pay_LegalAction",
+        "reference": false,
+        "properties": {
+          "SourceBankAccount": {
+            "type": "GameValueWrapper",
+            "value": {
+              "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
+              "name": "Subsidy account",
+              "reference": true
+            }
+          },
+          "TargetBankAccount": {
+            "type": "Eco.Gameplay.Civics.GameValues.PersonalBankAccount_GameValue",
+            "properties": {
+              "User": {
+                "type": "GameValueContext",
+                "_name": "Citizen",
+                "markedUpName": "<icon name=\"User\">Citizen</icon>",
+                "contextDescription": "The citizen who performed the interaction."
+              }
+            }
+          },
+          "Target": {
+            "type": "GameValueContext",
+            "_name": "Citizen",
+            "markedUpName": "<icon name=\"User\">Citizen</icon>",
+            "contextDescription": "The citizen who performed the interaction."
+          },
+          "Currency": {
+            "type": "GameValueWrapper",
+            "value": {
+              "type": "Eco.Gameplay.Economy.Currency",
+              "name": "Panda",
+              "reference": true
+            }
+          },
+          "Amount": {
+            "type": "GameValueWrapper",
+            "value": 0.2
+          },
+          "PreventIfUnableToPay": {
+            "type": "Eco.Gameplay.Civics.GameValues.No",
+            "properties": {}
+          },
+          "InfoboxOnSuccess": {
+            "type": "Eco.Gameplay.Civics.GameValues.No",
+            "properties": {}
+          }
+        }
+      }
+    ]
+  }
+}</code></pre>
+                  </div>
+                </div>
+
+
+              </div>
+
+
+            </div>
+        </div>
+      </div>
+
+
+      </div>
+
+      <div class="content">
+        Full <a class="button is-text is-small" data-targetId="toplevel-law-0" onclick="return json_toggle(event)">JSON</a><pre class="json-preview" id="toplevel-law-0" style="display: none"><code>{
+  "version": [
+    1,
+    0
+  ],
+  "type": "Eco.Gameplay.Civics.Laws.Law",
+  "name": "State Aid Laws v1.5",
+  "reference": false,
+  "description": "Laws that support specific industries",
+  "properties": {
+    "Sections": [
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "\"Panda Green Fields Support Act\"",
+          "UserDescription": "Farmers are contributing to leave no panda hungry, bu we are very very poor and live in simple shacks. Let us participate on the growing wealth with this little subsidy.",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.CitizenTimer"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.CitizenTimerTriggerConfig",
+                    "typeToConfig": null,
+                    "propNameBacker": null,
+                    "propDisplayName": null,
+                    "properties": {
+                      "RepeatForEachUser": {
+                        "type": "Eco.Gameplay.Civics.Demographics.Demographic",
+                        "name": "Active",
+                        "reference": true
+                      },
+                      "HoursBetweenExecutions": 2
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.SkillRequirements",
+                        "properties": {
+                          "Citizen": {
+                            "type": "GameValueContext",
+                            "_name": "Citizen",
+                            "markedUpName": "<icon name=\"User\">Citizen</icon>",
+                            "contextDescription": "The citizen currently being processed for the timer event."
+                          },
+                          "Skills": {
+                            "type": "GamePickerList",
+                            "mustDeriveType": {
+                              "type": "Type",
+                              "value": "Eco.Gameplay.Skills.Skill"
+                            },
+                            "requiredTag": null,
+                            "internalDescription": "<link=\"Item:FarmingSkill\"><style=\"Item\"><icon name=\"FarmingSkill\">Farming</icon></style></link>",
+                            "entries": [
+                              {
+                                "type": "Type",
+                                "value": "Eco.Mods.TechTree.FarmingSkill"
+                              }
+                            ]
+                          },
+                          "Requirements": "HasAll",
+                          "RequiredLevel": {
+                            "type": "GameValueWrapper",
+                            "value": 3
+                          }
+                        }
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                        "properties": {
+                          "Left": {
+                            "type": "Eco.Gameplay.Civics.GameValues.Values.Wealth",
+                            "properties": {
+                              "Currency": {
+                                "type": "GameValueWrapper",
+                                "value": {
+                                  "type": "Eco.Gameplay.Economy.Currency",
+                                  "name": "Panda",
+                                  "reference": true
+                                }
+                              },
+                              "Citizen": {
+                                "type": "GameValueContext",
+                                "_name": "Citizen",
+                                "markedUpName": "<icon name=\"User\">Citizen</icon>",
+                                "contextDescription": "The citizen currently being processed for the timer event."
+                              }
+                            }
+                          },
+                          "Comparison": "LessThanOrEqualTo",
+                          "Right": {
+                            "type": "GameValueWrapper",
+                            "value": 400
+                          }
+                        }
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.Pay_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "SourceBankAccount": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
+                          "name": "Subsidy account",
+                          "reference": true
+                        }
+                      },
+                      "TargetBankAccount": {
+                        "type": "Eco.Gameplay.Civics.GameValues.PersonalBankAccount_GameValue",
+                        "properties": {
+                          "User": {
+                            "type": "GameValueContext",
+                            "_name": "Citizen",
+                            "markedUpName": "<icon name=\"User\">Citizen</icon>",
+                            "contextDescription": "The citizen currently being processed for the timer event."
+                          }
+                        }
+                      },
+                      "Target": {
+                        "type": "GameValueContext",
+                        "_name": "Citizen",
+                        "markedUpName": "<icon name=\"User\">Citizen</icon>",
+                        "contextDescription": "The citizen currently being processed for the timer event."
+                      },
+                      "Currency": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Economy.Currency",
+                          "name": "Panda",
+                          "reference": true
+                        }
+                      },
+                      "Amount": {
+                        "type": "GameValueWrapper",
+                        "value": 10
+                      },
+                      "PreventIfUnableToPay": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Panda Milling Support Act",
+          "UserDescription": "A key component in baking, milling products are prone to quick decay times and can subject the miller to incur losses. ",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.CitizenTimer"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.CitizenTimerTriggerConfig",
+                    "typeToConfig": null,
+                    "propNameBacker": null,
+                    "propDisplayName": null,
+                    "properties": {
+                      "RepeatForEachUser": {
+                        "type": "Eco.Gameplay.Civics.Demographics.Demographic",
+                        "name": "Active",
+                        "reference": true
+                      },
+                      "HoursBetweenExecutions": 2
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.SkillRequirements",
+                        "properties": {
+                          "Citizen": {
+                            "type": "GameValueContext",
+                            "_name": "Citizen",
+                            "markedUpName": "<icon name=\"User\">Citizen</icon>",
+                            "contextDescription": "The citizen currently being processed for the timer event."
+                          },
+                          "Skills": {
+                            "type": "GamePickerList",
+                            "mustDeriveType": {
+                              "type": "Type",
+                              "value": "Eco.Gameplay.Skills.Skill"
+                            },
+                            "requiredTag": null,
+                            "internalDescription": "<link=\"Item:MillingSkill\"><style=\"Item\"><icon name=\"MillingSkill\">Milling</icon></style></link>",
+                            "entries": [
+                              {
+                                "type": "Type",
+                                "value": "Eco.Mods.TechTree.MillingSkill"
+                              }
+                            ]
+                          },
+                          "Requirements": "HasAll",
+                          "RequiredLevel": {
+                            "type": "GameValueWrapper",
+                            "value": 3
+                          }
+                        }
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                        "properties": {
+                          "Left": {
+                            "type": "Eco.Gameplay.Civics.GameValues.Values.Wealth",
+                            "properties": {
+                              "Currency": {
+                                "type": "GameValueWrapper",
+                                "value": {
+                                  "type": "Eco.Gameplay.Economy.Currency",
+                                  "name": "Panda",
+                                  "reference": true
+                                }
+                              },
+                              "Citizen": {
+                                "type": "GameValueContext",
+                                "_name": "Citizen",
+                                "markedUpName": "<icon name=\"User\">Citizen</icon>",
+                                "contextDescription": "The citizen currently being processed for the timer event."
+                              }
+                            }
+                          },
+                          "Comparison": "LessThanOrEqualTo",
+                          "Right": {
+                            "type": "GameValueWrapper",
+                            "value": 400
+                          }
+                        }
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.Pay_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "SourceBankAccount": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
+                          "name": "Subsidy account",
+                          "reference": true
+                        }
+                      },
+                      "TargetBankAccount": {
+                        "type": "Eco.Gameplay.Civics.GameValues.PersonalBankAccount_GameValue",
+                        "properties": {
+                          "User": {
+                            "type": "GameValueContext",
+                            "_name": "Citizen",
+                            "markedUpName": "<icon name=\"User\">Citizen</icon>",
+                            "contextDescription": "The citizen currently being processed for the timer event."
+                          }
+                        }
+                      },
+                      "Target": {
+                        "type": "GameValueContext",
+                        "_name": "Citizen",
+                        "markedUpName": "<icon name=\"User\">Citizen</icon>",
+                        "contextDescription": "The citizen currently being processed for the timer event."
+                      },
+                      "Currency": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Economy.Currency",
+                          "name": "Panda",
+                          "reference": true
+                        }
+                      },
+                      "Amount": {
+                        "type": "GameValueWrapper",
+                        "value": 10
+                      },
+                      "PreventIfUnableToPay": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Panda Road Infrastructure Support Act",
+          "UserDescription": "Experimental law to encourage continued manufacturing of stone roads and asphalt concrete, the government will subsidise part of the cost for making roads (capped to current poverty line 400)",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.CurrencyTrade"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.CurrencyTrade",
+                    "propNameBacker": "Currency",
+                    "propDisplayName": "Currency",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Economy.Currency"
+                        },
+                        "requiredTag": null,
+                        "internalDescription": "<link=\"view:3942:3368805\"><icon name=\"CurrencySymbol\"><style=\"Currency\">Panda</style></icon></link>",
+                        "entries": [
+                          {
+                            "type": "Eco.Gameplay.Economy.Currency",
+                            "name": "Panda",
+                            "reference": true
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.CurrencyTrade",
+                    "propNameBacker": "ItemUsed",
+                    "propDisplayName": "Item Traded",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": null,
+                        "internalDescription": "<foldout><linktext><u>3 Roads</u></linktext><title>3 Roads</title><link=\"Item:AsphaltConcreteItem\"><style=\"Item\"><icon name=\"AsphaltConcreteItem\">Asphalt Concrete</icon></style></link>\r\n<link=\"Item:StoneRampItem\"><style=\"Item\"><icon name=\"StoneRampItem\">Stone Ramp</icon></style></link>\r\n<link=\"Item:StoneRoadItem\"><style=\"Item\"><icon name=\"StoneRoadItem\">Stone Road</icon></style></link></foldout>",
+                        "entries": [
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.StoneRoadItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "StoneRampItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.AsphaltConcreteItem"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "GameValueContext",
+                        "_name": "Selling",
+                        "markedUpName": "<icon name=\"CurrencyTrade\">Selling</icon>",
+                        "contextDescription": "Was the good bought or sold by the initiating player?"
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                        "properties": {
+                          "Left": {
+                            "type": "Eco.Gameplay.Civics.GameValues.Values.Wealth",
+                            "properties": {
+                              "Currency": {
+                                "type": "GameValueContext",
+                                "_name": "Currency",
+                                "markedUpName": "<icon name=\"CurrencyTrade\">Currency</icon>",
+                                "contextDescription": "Currency used in the transaction."
+                              },
+                              "Citizen": {
+                                "type": "GameValueContext",
+                                "_name": "Citizen",
+                                "markedUpName": "<icon name=\"User\">Citizen</icon>",
+                                "contextDescription": "The citizen who performed the interaction."
+                              }
+                            }
+                          },
+                          "Comparison": "LessThanOrEqualTo",
+                          "Right": {
+                            "type": "GameValueWrapper",
+                            "value": 400
+                          }
+                        }
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.Pay_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "SourceBankAccount": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
+                          "name": "Subsidy account",
+                          "reference": true
+                        }
+                      },
+                      "TargetBankAccount": {
+                        "type": "Eco.Gameplay.Civics.GameValues.PersonalBankAccount_GameValue",
+                        "properties": {
+                          "User": {
+                            "type": "GameValueContext",
+                            "_name": "Citizen",
+                            "markedUpName": "<icon name=\"User\">Citizen</icon>",
+                            "contextDescription": "The citizen who performed the interaction."
+                          }
+                        }
+                      },
+                      "Target": {
+                        "type": "GameValueContext",
+                        "_name": "Citizen",
+                        "markedUpName": "<icon name=\"User\">Citizen</icon>",
+                        "contextDescription": "The citizen who performed the interaction."
+                      },
+                      "Currency": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Economy.Currency",
+                          "name": "Panda",
+                          "reference": true
+                        }
+                      },
+                      "Amount": {
+                        "type": "GameValueWrapper",
+                        "value": 0.2
+                      },
+                      "PreventIfUnableToPay": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Panda Industries Support Act",
+          "UserDescription": "To encourage the smelting industry to provide readily accessible metals and components - the government will incentivize the sales of metal ores to the general population (capped to the current poverty line - 400)",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.CurrencyTrade"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.CurrencyTrade",
+                    "propNameBacker": "Currency",
+                    "propDisplayName": "Currency",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Economy.Currency"
+                        },
+                        "requiredTag": null,
+                        "internalDescription": "<link=\"view:3942:3368805\"><icon name=\"CurrencySymbol\"><style=\"Currency\">Panda</style></icon></link>",
+                        "entries": [
+                          {
+                            "type": "Eco.Gameplay.Economy.Currency",
+                            "name": "Panda",
+                            "reference": true
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.CurrencyTrade",
+                    "propNameBacker": "ItemUsed",
+                    "propDisplayName": "Item Traded",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": null,
+                        "internalDescription": "<foldout><linktext><u>20 Blocks</u></linktext><title>20 Blocks</title><link=\"Item:BrickItem\"><style=\"Item\"><icon name=\"BrickItem\">Brick</icon></style></link>\r\n<link=\"Item:CompositeBirchLumberItem\"><style=\"Item\"><icon name=\"CompositeBirchLumberItem\">Composite Birch Lumber</icon></style></link>\r\n<link=\"Item:CompositeCedarLumberItem\"><style=\"Item\"><icon name=\"CompositeCedarLumberItem\">Composite Cedar Lumber</icon></style></link>\r\n<link=\"Item:CompositeCeibaLumberItem\"><style=\"Item\"><icon name=\"CompositeCeibaLumberItem\">Composite Ceiba Lumber</icon></style></link>\r\n<link=\"Item:CompositeFirLumberItem\"><style=\"Item\"><icon name=\"CompositeFirLumberItem\">Composite Fir Lumber</icon></style></link>\r\n<link=\"Item:CompositeJoshuaLumberItem\"><style=\"Item\"><icon name=\"CompositeJoshuaLumberItem\">Composite Joshua Lumber</icon></style></link>\r\n<link=\"Item:CompositeLumberItem\"><style=\"Item\"><icon name=\"CompositeLumberItem\">Composite Lumber</icon></style></link>\r\n<link=\"Item:CompositeOakLumberItem\"><style=\"Item\"><icon name=\"CompositeOakLumberItem\">Composite Oak Lumber</icon></style></link>\r\n<link=\"Item:CompositePalmLumberItem\"><style=\"Item\"><icon name=\"CompositePalmLumberItem\">Composite Palm Lumber</icon></style></link>\r\n<link=\"Item:CompositeRedwoodLumberItem\"><style=\"Item\"><icon name=\"CompositeRedwoodLumberItem\">Composite Redwood Lumber</icon></style></link>\r\n<link=\"Item:CompositeSaguaroLumberItem\"><style=\"Item\"><icon name=\"CompositeSaguaroLumberItem\">Composite Saguaro Lumber</icon></style></link>\r\n<link=\"Item:CompositeSpruceLumberItem\"><style=\"Item\"><icon name=\"CompositeSpruceLumberItem\">Composite Spruce Lumber</icon></style></link>\r\n<link=\"Item:CopperBarItem\"><style=\"Item\"><icon name=\"CopperBarItem\">Copper Bar</icon></style></link>\r\n<link=\"Item:GlassItem\"><style=\"Item\"><icon name=\"GlassItem\">Glass</icon></style></link>\r\n<link=\"Item:GoldBarItem\"><style=\"Item\"><icon name=\"GoldBarItem\">Gold Bar</icon></style></link>\r\n<link=\"Item:HardwoodLumberItem\"><style=\"Item\"><icon name=\"HardwoodLumberItem\">Hardwood Lumber</icon></style></link>\r\n<link=\"Item:IronBarItem\"><style=\"Item\"><icon name=\"IronBarItem\">Iron Bar</icon></style></link>\r\n<link=\"Item:LumberItem\"><style=\"Item\"><icon name=\"LumberItem\">Lumber</icon></style></link>\r\n<link=\"Item:SoftwoodLumberItem\"><style=\"Item\"><icon name=\"SoftwoodLumberItem\">Softwood Lumber</icon></style></link>\r\n<link=\"Item:SteelBarItem\"><style=\"Item\"><icon name=\"SteelBarItem\">Steel Bar</icon></style></link></foldout>",
+                        "entries": [
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.CompositeRedwoodLumberItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.CompositePalmLumberItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.CompositeSaguaroLumberItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.CompositeFirLumberItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.CompositeBirchLumberItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SteelBarItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.CopperBarItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.CompositeCeibaLumberItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.CompositeJoshuaLumberItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.GlassItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.BrickItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SoftwoodLumberItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.LumberItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.CompositeSpruceLumberItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.CompositeOakLumberItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.CompositeCedarLumberItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.HardwoodLumberItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.GoldBarItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.IronBarItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.CompositeLumberItem"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "GameValueContext",
+                        "_name": "Selling",
+                        "markedUpName": "<icon name=\"CurrencyTrade\">Selling</icon>",
+                        "contextDescription": "Was the good bought or sold by the initiating player?"
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                        "properties": {
+                          "Left": {
+                            "type": "Eco.Gameplay.Civics.GameValues.Values.Wealth",
+                            "properties": {
+                              "Currency": {
+                                "type": "GameValueContext",
+                                "_name": "Currency",
+                                "markedUpName": "<icon name=\"CurrencyTrade\">Currency</icon>",
+                                "contextDescription": "Currency used in the transaction."
+                              },
+                              "Citizen": {
+                                "type": "GameValueContext",
+                                "_name": "Citizen",
+                                "markedUpName": "<icon name=\"User\">Citizen</icon>",
+                                "contextDescription": "The citizen who performed the interaction."
+                              }
+                            }
+                          },
+                          "Comparison": "LessThanOrEqualTo",
+                          "Right": {
+                            "type": "GameValueWrapper",
+                            "value": 400
+                          }
+                        }
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.Pay_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "SourceBankAccount": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
+                          "name": "Subsidy account",
+                          "reference": true
+                        }
+                      },
+                      "TargetBankAccount": {
+                        "type": "Eco.Gameplay.Civics.GameValues.PersonalBankAccount_GameValue",
+                        "properties": {
+                          "User": {
+                            "type": "GameValueContext",
+                            "_name": "Citizen",
+                            "markedUpName": "<icon name=\"User\">Citizen</icon>",
+                            "contextDescription": "The citizen who performed the interaction."
+                          }
+                        }
+                      },
+                      "Target": {
+                        "type": "GameValueContext",
+                        "_name": "Citizen",
+                        "markedUpName": "<icon name=\"User\">Citizen</icon>",
+                        "contextDescription": "The citizen who performed the interaction."
+                      },
+                      "Currency": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Economy.Currency",
+                          "name": "Panda",
+                          "reference": true
+                        }
+                      },
+                      "Amount": {
+                        "type": "GameValueWrapper",
+                        "value": 0.2
+                      },
+                      "PreventIfUnableToPay": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "filename": "law-20295360.json",
+  "collection": "giantpanda",
+  "set": "Cycle-50"
+}</code></pre>
+      </div>
+
+
+    </div>
+  </section>
+  </body>
+</html>
