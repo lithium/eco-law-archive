@@ -16,6 +16,6 @@ jobs:
         with:
           src_dir: ./build
           dest_dir: .
-          branch: gh-pages
+          branch: main
           deploy_private_key: ${{ secrets.REPO_DEPLOY_PRIVATE_KEY }}
           debug: false
