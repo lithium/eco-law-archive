@@ -1,0 +1,21 @@
+name: Publish static site to GitHub Pages
+on:
+  push:
+    branches:
+      - main
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out
+        uses: actions/checkout@v1
+      - name: Process JSON
+        run: npm run build
+      - name: Publish content to GitHub Pages
+        uses: andre487/publish-to-orphan-gh-pages@v1.0.1
+        with:
+          src_dir: ./build
+          dest_dir: .
+          branch: gh-pages
+          deploy_private_key: ${{ secrets.REPO_DEPLOY_PRIVATE_KEY }}
+          debug: false

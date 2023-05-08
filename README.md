@@ -1,8 +1,12 @@
+# Eco Law Archive
+
+Human readable specifications of Eco civics.
+
 
 ## Overview
 
 ### Goal 
-Provide a way to document the specific configuration, but still provide a human readable version, of civics: Laws, Elections, Demographics, etc.  This will enable players to be able to accurately recreate them on other Eco servers.  
+Provide a way to document the specific configuration, but still provide a human readable version, of civics: Laws, Elections, Demographics, etc.  This will provide a way for players to accurately recreate them on other Eco servers.  
 
 ### Requirements
 
