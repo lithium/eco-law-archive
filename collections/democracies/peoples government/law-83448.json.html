@@ -1554,23 +1554,33 @@ PersonalBankAccount: <table class="table">
   </tr>
   <tr class="indented">
   	<th>Left</th>
-  	<td><table class="table">
-  <tr>
-    <th colspan=2>Citizen Age In Hours</th>
-  </tr>
-</table>
-    <table class="table">
+  	<td>
+<table>
+    <tr>
+        <th colspan="2">Hours Played</th>
+    </tr>
+    <tr class="indented">
+        <th>by Citizen</th>
+        <td><table class="table">
   <tr>
     <th><icon name="User">Citizen</icon></th>
     <td>The citizen who changed demographics.</td>
   </tr>
-</table>
-</td>
+</table></td>
+    </tr>
+    <tr class="indented">
+        <th>Within Last Number of Days</th>
+        <td>
+
+	Number: 7
+
+    </tr>
+</table></td>
   </tr>
 
   <tr class="indented">
   	<th>Comparison</th>
-  	<td>GreaterThan</td>
+  	<td>EqualTo</td>
   </tr>
 
   <tr class="indented">
@@ -1709,17 +1719,21 @@ PersonalBankAccount: <table class="table">
             "type": "Eco.Gameplay.Civics.GameValues.Compare",
             "properties": {
               "Left": {
-                "type": "Eco.Gameplay.Civics.GameValues.Values.CitizenAgeInHours",
+                "type": "Eco.Gameplay.Civics.GameValues.Values.HoursPlayed",
                 "properties": {
                   "Citizen": {
                     "type": "GameValueContext",
                     "_name": "Citizen",
                     "markedUpName": "<icon name=\"User\">Citizen</icon>",
                     "contextDescription": "The citizen who changed demographics."
+                  },
+                  "WithinLastNumberOfDays": {
+                    "type": "GameValueWrapper",
+                    "value": 7
                   }
                 }
               },
-              "Comparison": "GreaterThan",
+              "Comparison": "EqualTo",
               "Right": {
                 "type": "GameValueWrapper",
                 "value": 0
@@ -2579,17 +2593,21 @@ PersonalBankAccount: <table class="table">
                         "type": "Eco.Gameplay.Civics.GameValues.Compare",
                         "properties": {
                           "Left": {
-                            "type": "Eco.Gameplay.Civics.GameValues.Values.CitizenAgeInHours",
+                            "type": "Eco.Gameplay.Civics.GameValues.Values.HoursPlayed",
                             "properties": {
                               "Citizen": {
                                 "type": "GameValueContext",
                                 "_name": "Citizen",
                                 "markedUpName": "<icon name=\"User\">Citizen</icon>",
                                 "contextDescription": "The citizen who changed demographics."
+                              },
+                              "WithinLastNumberOfDays": {
+                                "type": "GameValueWrapper",
+                                "value": 7
                               }
                             }
                           },
-                          "Comparison": "GreaterThan",
+                          "Comparison": "EqualTo",
                           "Right": {
                             "type": "GameValueWrapper",
                             "value": 0

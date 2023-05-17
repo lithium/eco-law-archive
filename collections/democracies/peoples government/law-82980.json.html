@@ -277,6 +277,200 @@
 }</code></pre>
                   </div>
                 </div>
+                <div class="if-then-block"> 
+
+                  <div class="columns">
+                    <div class="column is-one-half">
+                      <p class="title is-5">If  <span class="tag">All</span></p>
+                      <div class="card">
+                        <table class="table">
+  <tr>
+    <th><icon name="ClaimOrUnclaimProperty">Unclaiming Land</icon></th>
+    <td>Was the property claimed or unclaimed?</td>
+  </tr>
+</table>
+                      </div>
+                      <div class="card">
+                        <table class="table">
+  <tr>
+    <th>District</th>
+    <td>
+      <div><span title="District: Main Roads" class="icon-text"><span class="icon"><i class="fas fa-map"></i></span><span class="reference">Main Roads</span></span></div>
+    </td>
+  </tr>
+  <tr>
+    <th>Requirements</th>
+    <td>InsideOne</td>
+  </tr>
+</table>
+                      </div>
+                    </div>
+
+                    <div class="column is-one-half">
+                      <p class="title is-5">Then</p>
+                      <div class="card">
+                        <table>
+	<tr>
+		<th colspan="2">Pay</th>
+	</tr>
+	<tr class="indented">
+		<th>Target</th>
+		<td><table class="table">
+  <tr>
+    <th><icon name="User">Citizen</icon></th>
+    <td>The citizen who claimed or unclaimed the land.</td>
+  </tr>
+</table></td>
+	</tr>
+	<tr class="indented">
+		<th>Source Bank Account</th>
+		<td>
+
+	<span title="TreasuryBankAccount: Treasury Bank Account" class="icon-text"><span class="icon"><i class="fas undefined"></i></span><span class="reference">Treasury Bank Account</span></span>
+</td>
+	</tr>
+	<tr class="indented">
+		<th>Target Bank Account</th>
+		<td>
+PersonalBankAccount: <table class="table">
+  <tr>
+    <th><icon name="User">Citizen</icon></th>
+    <td>The citizen who claimed or unclaimed the land.</td>
+  </tr>
+</table></td>
+	</tr>
+	<tr class="indented">
+		<th>Currency</th>
+		<td>
+
+	<span title="Currency: Government Currency" class="icon-text"><span class="icon"><i class="fas fa-coins"></i></span><span class="reference">Government Currency</span></span>
+</td>
+	</tr>
+	<tr class="indented">
+		<th>Amount</th>
+		<td>
+
+	Number: 20
+</td>
+	</tr>
+	<tr class="indented">
+		<th>Prevent If Unable To Pay</th>
+		<td>No</td>
+	</tr>
+	<tr class="indented">
+		<th>Infobox On Success</th>
+		<td>No</td>
+	</tr>
+
+</table>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div>
+                  <a class="button is-text is-small" data-targetId="if-PreventClaiminginRoadDistrict-1" onclick="return json_toggle(event)">JSON</a><pre class="json-preview" id="if-PreventClaiminginRoadDistrict-1" style="display: none"><code>{
+  "type": "Eco.Gameplay.Civics.IfThenBlock",
+  "reference": false,
+  "properties": {
+    "If": {
+      "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+      "properties": {
+        "List": [
+          {
+            "type": "GameValueContext",
+            "_name": "UnclaimingLand",
+            "markedUpName": "<icon name=\"ClaimOrUnclaimProperty\">Unclaiming Land</icon>",
+            "contextDescription": "Was the property claimed or unclaimed?"
+          },
+          {
+            "type": "Eco.Gameplay.Civics.GameValues.Values.DistrictRequirements",
+            "properties": {
+              "Location": {
+                "type": "GameValueContext",
+                "_name": "Action Location",
+                "markedUpName": "<icon name=\"ClaimOrUnclaimProperty\">Action Location</icon>",
+                "contextDescription": "The position of the claim."
+              },
+              "Districts": {
+                "type": "GamePickerList",
+                "mustDeriveType": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.LegislationSystem.District"
+                },
+                "requiredTag": null,
+                "internalDescription": "<link=\"view:3758:82253\"><icon name=\"District\"><color=#EAD94AFF>Main Roads</color></icon></link>",
+                "entries": [
+                  {
+                    "type": "Eco.Gameplay.LegislationSystem.District",
+                    "name": "Main Roads",
+                    "reference": true
+                  }
+                ]
+              },
+              "Requirements": "InsideOne"
+            }
+          }
+        ],
+        "Comparison": "All"
+      }
+    },
+    "Then": [
+      {
+        "type": "Eco.Gameplay.Civics.LegalActions.Pay_LegalAction",
+        "reference": false,
+        "properties": {
+          "SourceBankAccount": {
+            "type": "GameValueWrapper",
+            "value": {
+              "type": "Eco.Gameplay.Economy.TreasuryBankAccount",
+              "name": "Treasury Bank Account",
+              "reference": true
+            }
+          },
+          "TargetBankAccount": {
+            "type": "Eco.Gameplay.Civics.GameValues.PersonalBankAccount_GameValue",
+            "properties": {
+              "User": {
+                "type": "GameValueContext",
+                "_name": "Citizen",
+                "markedUpName": "<icon name=\"User\">Citizen</icon>",
+                "contextDescription": "The citizen who claimed or unclaimed the land."
+              }
+            }
+          },
+          "Target": {
+            "type": "GameValueContext",
+            "_name": "Citizen",
+            "markedUpName": "<icon name=\"User\">Citizen</icon>",
+            "contextDescription": "The citizen who claimed or unclaimed the land."
+          },
+          "Currency": {
+            "type": "GameValueWrapper",
+            "value": {
+              "type": "Eco.Gameplay.Economy.Currency",
+              "name": "Government Currency",
+              "reference": true
+            }
+          },
+          "Amount": {
+            "type": "GameValueWrapper",
+            "value": 20
+          },
+          "PreventIfUnableToPay": {
+            "type": "Eco.Gameplay.Civics.GameValues.No",
+            "properties": {}
+          },
+          "InfoboxOnSuccess": {
+            "type": "Eco.Gameplay.Civics.GameValues.No",
+            "properties": {}
+          }
+        }
+      }
+    ]
+  }
+}</code></pre>
+                  </div>
+                </div>
 
 
               </div>
@@ -1824,7 +2018,7 @@ PersonalBankAccount: <table class="table">
         </div>
         <div class="content">
             <p class="title is-5">Section 7: Stone Road Incentive</p>
-            <p class="subtitle is-6">Encourage placing Stone Road in the Road district and discourage removing it
+            <p class="subtitle is-6">Encourage placing Stone Road and Stone Ramps in the Road district and discourage removing it
 
             <div class="columns">
               <div class="column is-one-third card-list trigger-column">
@@ -1833,16 +2027,27 @@ PersonalBankAccount: <table class="table">
                     <table class="table">
                       <tr>
                         <th>Trigger</th>
-                        <td>DropOrPickupBlock</td>
+                        <td>ConstructOrDeconstruct</td>
                       </tr>
 
                         	<tr class="indented">
-		<th>Block Placed or Picked Up</th>
+		<th>Item Used</th>
 		<td>
 
-				1 
-				BlockItem:
-					<span>StoneRoadItem</span>
+				2 
+				Item:
+					<span>StoneRoadItem</span>,
+					<span>StoneRampItem</span>
+
+		</td>
+	</tr>
+
+
+                        	<tr class="indented">
+		<th>Tool Used</th>
+		<td>
+				Any
+
 
 		</td>
 	</tr>
@@ -1858,29 +2063,51 @@ PersonalBankAccount: <table class="table">
   "properties": {
     "Trigger": {
       "type": "Type",
-      "value": "Eco.Gameplay.GameActions.DropOrPickupBlock"
+      "value": "Eco.Gameplay.GameActions.ConstructOrDeconstruct"
     },
     "Configs": [
       {
         "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
-        "typeToConfig": "Eco.Gameplay.GameActions.DropOrPickupBlock",
+        "typeToConfig": "Eco.Gameplay.GameActions.ConstructOrDeconstruct",
         "propNameBacker": "ItemUsed",
-        "propDisplayName": "Block Placed or Picked Up",
+        "propDisplayName": "Item Used",
         "properties": {
           "List": {
             "type": "GamePickerList",
             "mustDeriveType": {
               "type": "Type",
-              "value": "Eco.Gameplay.Items.BlockItem"
+              "value": "Eco.Gameplay.Items.Item"
             },
-            "requiredTag": null,
-            "internalDescription": "<link=\"Item:StoneRoadItem\"><style=\"Item\"><icon name=\"StoneRoadItem\">Stone Road</icon></style></link>",
+            "requiredTag": "Constructable",
+            "internalDescription": "<link=\"Item:StoneRampItem\"><style=\"Item\"><icon name=\"StoneRampItem\">Stone Ramp</icon></style></link>  <link=\"Item:StoneRoadItem\"><style=\"Item\"><icon name=\"StoneRoadItem\">Stone Road</icon></style></link>",
             "entries": [
               {
                 "type": "Type",
                 "value": "Eco.Mods.TechTree.StoneRoadItem"
+              },
+              {
+                "type": "Type",
+                "value": "StoneRampItem"
               }
             ]
+          }
+        }
+      },
+      {
+        "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+        "typeToConfig": "Eco.Gameplay.GameActions.ConstructOrDeconstruct",
+        "propNameBacker": "ToolUsed",
+        "propDisplayName": "Tool Used",
+        "properties": {
+          "List": {
+            "type": "GamePickerList",
+            "mustDeriveType": {
+              "type": "Type",
+              "value": "Eco.Gameplay.Items.Item"
+            },
+            "requiredTag": "Construction",
+            "internalDescription": "Any",
+            "entries": []
           }
         }
       }
@@ -1901,8 +2128,8 @@ PersonalBankAccount: <table class="table">
                       <div class="card">
                         <table class="table">
   <tr>
-    <th><icon name="DropOrPickupBlock">Dropped</icon></th>
-    <td>Was the block dropped or picked up?</td>
+    <th><icon name="ConstructOrDeconstruct">Constructed</icon></th>
+    <td>Was the block constructed or deconstructed?</td>
   </tr>
 </table>
                       </div>
@@ -1994,9 +2221,9 @@ PersonalBankAccount: <table class="table">
         "List": [
           {
             "type": "GameValueContext",
-            "_name": "Dropped",
-            "markedUpName": "<icon name=\"DropOrPickupBlock\">Dropped</icon>",
-            "contextDescription": "Was the block dropped or picked up?"
+            "_name": "Constructed",
+            "markedUpName": "<icon name=\"ConstructOrDeconstruct\">Constructed</icon>",
+            "contextDescription": "Was the block constructed or deconstructed?"
           },
           {
             "type": "Eco.Gameplay.Civics.GameValues.Values.DistrictRequirements",
@@ -2095,8 +2322,8 @@ PersonalBankAccount: <table class="table">
                       <div class="card">
                         <table class="table">
   <tr>
-    <th><icon name="DropOrPickupBlock">Picked Up</icon></th>
-    <td>Was the block dropped or picked up?</td>
+    <th><icon name="ConstructOrDeconstruct">Deconstructed</icon></th>
+    <td>Was the block constructed or deconstructed?</td>
   </tr>
 </table>
                       </div>
@@ -2178,9 +2405,9 @@ PersonalBankAccount: <table class="table">
         "List": [
           {
             "type": "GameValueContext",
-            "_name": "PickedUp",
-            "markedUpName": "<icon name=\"DropOrPickupBlock\">Picked Up</icon>",
-            "contextDescription": "Was the block dropped or picked up?"
+            "_name": "Deconstructed",
+            "markedUpName": "<icon name=\"ConstructOrDeconstruct\">Deconstructed</icon>",
+            "contextDescription": "Was the block constructed or deconstructed?"
           },
           {
             "type": "Eco.Gameplay.Civics.GameValues.Values.DistrictRequirements",
@@ -2268,452 +2495,7 @@ PersonalBankAccount: <table class="table">
             </div>
         </div>
         <div class="content">
-            <p class="title is-5">Section 8: Stone Ramp Incentive</p>
-            <p class="subtitle is-6">Encourage placing Stone Ramps in the Road district and discourage removing them
-
-            <div class="columns">
-              <div class="column is-one-third card-list trigger-column">
-                <p class="title is-5">Triggers</p>
-                <div class="card">
-                    <table class="table">
-                      <tr>
-                        <th>Trigger</th>
-                        <td>PlaceOrPickUpObject</td>
-                      </tr>
-
-                        	<tr class="indented">
-		<th>Item Placed or Picked Up</th>
-		<td>
-
-				1 
-				WorldObjectItem:
-					<span>StoneRampItem</span>
-
-		</td>
-	</tr>
-
-
-
-                    </table>
-
-                    <div>
-                    <a class="button is-text is-small" data-targetId="trigger-StoneRampIncentive-0" onclick="return json_toggle(event)">JSON</a><pre class="json-preview" id="trigger-StoneRampIncentive-0" style="display: none"><code>{
-  "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
-  "reference": false,
-  "properties": {
-    "Trigger": {
-      "type": "Type",
-      "value": "Eco.Gameplay.GameActions.PlaceOrPickUpObject"
-    },
-    "Configs": [
-      {
-        "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
-        "typeToConfig": "Eco.Gameplay.GameActions.PlaceOrPickUpObject",
-        "propNameBacker": "ItemUsed",
-        "propDisplayName": "Item Placed or Picked Up",
-        "properties": {
-          "List": {
-            "type": "GamePickerList",
-            "mustDeriveType": {
-              "type": "Type",
-              "value": "Eco.Gameplay.Items.WorldObjectItem"
-            },
-            "requiredTag": null,
-            "internalDescription": "<link=\"Item:StoneRampItem\"><style=\"Item\"><icon name=\"StoneRampItem\">Stone Ramp</icon></style></link>",
-            "entries": [
-              {
-                "type": "Type",
-                "value": "StoneRampItem"
-              }
-            ]
-          }
-        }
-      }
-    ]
-  }
-}</code></pre>
-                    </div>
-                </div>
-              </div>
-
-              <div class="column is-two-thirds card-list ifthen-column">
-
-                <div class="if-then-block"> 
-
-                  <div class="columns">
-                    <div class="column is-one-half">
-                      <p class="title is-5">If  <span class="tag">All</span></p>
-                      <div class="card">
-                        <table class="table">
-  <tr>
-    <th><icon name="PlaceOrPickUpObject">Placing Object</icon></th>
-    <td>Was the item placed?</td>
-  </tr>
-</table>
-                      </div>
-                      <div class="card">
-                        <table class="table">
-  <tr>
-    <th>District</th>
-    <td>
-      <div><span title="District: Main Roads" class="icon-text"><span class="icon"><i class="fas fa-map"></i></span><span class="reference">Main Roads</span></span></div>
-    </td>
-  </tr>
-  <tr>
-    <th>Requirements</th>
-    <td>InsideOne</td>
-  </tr>
-</table>
-                      </div>
-                    </div>
-
-                    <div class="column is-one-half">
-                      <p class="title is-5">Then</p>
-                      <div class="card">
-                        <table>
-	<tr>
-		<th colspan="2">Pay</th>
-	</tr>
-	<tr class="indented">
-		<th>Target</th>
-		<td><table class="table">
-  <tr>
-    <th><icon name="User">Citizen</icon></th>
-    <td>The citizen who performed the interaction.</td>
-  </tr>
-</table></td>
-	</tr>
-	<tr class="indented">
-		<th>Source Bank Account</th>
-		<td>
-
-	<span title="TreasuryBankAccount: Treasury Bank Account" class="icon-text"><span class="icon"><i class="fas undefined"></i></span><span class="reference">Treasury Bank Account</span></span>
-</td>
-	</tr>
-	<tr class="indented">
-		<th>Target Bank Account</th>
-		<td>
-PersonalBankAccount: <table class="table">
-  <tr>
-    <th><icon name="User">Citizen</icon></th>
-    <td>The citizen who performed the interaction.</td>
-  </tr>
-</table></td>
-	</tr>
-	<tr class="indented">
-		<th>Currency</th>
-		<td>
-
-	<span title="Currency: Government Currency" class="icon-text"><span class="icon"><i class="fas fa-coins"></i></span><span class="reference">Government Currency</span></span>
-</td>
-	</tr>
-	<tr class="indented">
-		<th>Amount</th>
-		<td>
-
-	Number: 0.75
-</td>
-	</tr>
-	<tr class="indented">
-		<th>Prevent If Unable To Pay</th>
-		<td>No</td>
-	</tr>
-	<tr class="indented">
-		<th>Infobox On Success</th>
-		<td>No</td>
-	</tr>
-
-</table>
-                      </div>
-                    </div>
-
-                  </div>
-                  <div>
-                  <a class="button is-text is-small" data-targetId="if-StoneRampIncentive-0" onclick="return json_toggle(event)">JSON</a><pre class="json-preview" id="if-StoneRampIncentive-0" style="display: none"><code>{
-  "type": "Eco.Gameplay.Civics.IfThenBlock",
-  "reference": false,
-  "properties": {
-    "If": {
-      "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
-      "properties": {
-        "List": [
-          {
-            "type": "GameValueContext",
-            "_name": "PlacingObject",
-            "markedUpName": "<icon name=\"PlaceOrPickUpObject\">Placing Object</icon>",
-            "contextDescription": "Was the item placed?"
-          },
-          {
-            "type": "Eco.Gameplay.Civics.GameValues.Values.DistrictRequirements",
-            "properties": {
-              "Location": {
-                "type": "GameValueContext",
-                "_name": "Action Location",
-                "markedUpName": "<icon name=\"PlaceOrPickUpObject\">Action Location</icon>",
-                "contextDescription": "The position where the interaction took place."
-              },
-              "Districts": {
-                "type": "GamePickerList",
-                "mustDeriveType": {
-                  "type": "Type",
-                  "value": "Eco.Gameplay.LegislationSystem.District"
-                },
-                "requiredTag": null,
-                "internalDescription": "<link=\"view:3758:82253\"><icon name=\"District\"><color=#EAD94AFF>Main Roads</color></icon></link>",
-                "entries": [
-                  {
-                    "type": "Eco.Gameplay.LegislationSystem.District",
-                    "name": "Main Roads",
-                    "reference": true
-                  }
-                ]
-              },
-              "Requirements": "InsideOne"
-            }
-          }
-        ],
-        "Comparison": "All"
-      }
-    },
-    "Then": [
-      {
-        "type": "Eco.Gameplay.Civics.LegalActions.Pay_LegalAction",
-        "reference": false,
-        "properties": {
-          "SourceBankAccount": {
-            "type": "GameValueWrapper",
-            "value": {
-              "type": "Eco.Gameplay.Economy.TreasuryBankAccount",
-              "name": "Treasury Bank Account",
-              "reference": true
-            }
-          },
-          "TargetBankAccount": {
-            "type": "Eco.Gameplay.Civics.GameValues.PersonalBankAccount_GameValue",
-            "properties": {
-              "User": {
-                "type": "GameValueContext",
-                "_name": "Citizen",
-                "markedUpName": "<icon name=\"User\">Citizen</icon>",
-                "contextDescription": "The citizen who performed the interaction."
-              }
-            }
-          },
-          "Target": {
-            "type": "GameValueContext",
-            "_name": "Citizen",
-            "markedUpName": "<icon name=\"User\">Citizen</icon>",
-            "contextDescription": "The citizen who performed the interaction."
-          },
-          "Currency": {
-            "type": "GameValueWrapper",
-            "value": {
-              "type": "Eco.Gameplay.Economy.Currency",
-              "name": "Government Currency",
-              "reference": true
-            }
-          },
-          "Amount": {
-            "type": "GameValueWrapper",
-            "value": 0.75
-          },
-          "PreventIfUnableToPay": {
-            "type": "Eco.Gameplay.Civics.GameValues.No",
-            "properties": {}
-          },
-          "InfoboxOnSuccess": {
-            "type": "Eco.Gameplay.Civics.GameValues.No",
-            "properties": {}
-          }
-        }
-      }
-    ]
-  }
-}</code></pre>
-                  </div>
-                </div>
-                <div class="if-then-block"> 
-
-                  <div class="columns">
-                    <div class="column is-one-half">
-                      <p class="title is-5">If  <span class="tag">All</span></p>
-                      <div class="card">
-                        <table class="table">
-  <tr>
-    <th><icon name="PlaceOrPickUpObject">Picking Up Object</icon></th>
-    <td>Was the item placed?</td>
-  </tr>
-</table>
-                      </div>
-                      <div class="card">
-                        <table class="table">
-  <tr>
-    <th>District</th>
-    <td>
-      <div><span title="District: Main Roads" class="icon-text"><span class="icon"><i class="fas fa-map"></i></span><span class="reference">Main Roads</span></span></div>
-    </td>
-  </tr>
-  <tr>
-    <th>Requirements</th>
-    <td>InsideOne</td>
-  </tr>
-</table>
-                      </div>
-                    </div>
-
-                    <div class="column is-one-half">
-                      <p class="title is-5">Then</p>
-                      <div class="card">
-                        <table>
-	<tr>
-		<th colspan="2">Tax</th>
-	</tr>
-	<tr class="indented">
-		<th>Target</th>
-		<td><table class="table">
-  <tr>
-    <th><icon name="User">Citizen</icon></th>
-    <td>The citizen who performed the interaction.</td>
-  </tr>
-</table></td>
-	</tr>
-	<tr class="indented">
-		<th>Target Bank Account</th>
-		<td>
-
-	<span title="TreasuryBankAccount: Treasury Bank Account" class="icon-text"><span class="icon"><i class="fas undefined"></i></span><span class="reference">Treasury Bank Account</span></span>
-</td>
-	</tr>
-	<tr class="indented">
-		<th>Currency</th>
-		<td>
-
-	<span title="Currency: Government Currency" class="icon-text"><span class="icon"><i class="fas fa-coins"></i></span><span class="reference">Government Currency</span></span>
-</td>
-	</tr>
-	<tr class="indented">
-		<th>Amount</th>
-		<td>
-
-	Number: 0.75
-</td>
-	</tr>
-	<tr class="indented">
-		<th>Prevent If Unable To Pay</th>
-		<td>No</td>
-	</tr>
-	<tr class="indented">
-		<th>Infobox On Success</th>
-		<td>No</td>
-	</tr>
-
-</table>
-                      </div>
-                    </div>
-
-                  </div>
-                  <div>
-                  <a class="button is-text is-small" data-targetId="if-StoneRampIncentive-1" onclick="return json_toggle(event)">JSON</a><pre class="json-preview" id="if-StoneRampIncentive-1" style="display: none"><code>{
-  "type": "Eco.Gameplay.Civics.IfThenBlock",
-  "reference": false,
-  "properties": {
-    "If": {
-      "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
-      "properties": {
-        "List": [
-          {
-            "type": "GameValueContext",
-            "_name": "PickingUpObject",
-            "markedUpName": "<icon name=\"PlaceOrPickUpObject\">Picking Up Object</icon>",
-            "contextDescription": "Was the item placed?"
-          },
-          {
-            "type": "Eco.Gameplay.Civics.GameValues.Values.DistrictRequirements",
-            "properties": {
-              "Location": {
-                "type": "GameValueContext",
-                "_name": "Action Location",
-                "markedUpName": "<icon name=\"PlaceOrPickUpObject\">Action Location</icon>",
-                "contextDescription": "The position where the interaction took place."
-              },
-              "Districts": {
-                "type": "GamePickerList",
-                "mustDeriveType": {
-                  "type": "Type",
-                  "value": "Eco.Gameplay.LegislationSystem.District"
-                },
-                "requiredTag": null,
-                "internalDescription": "<link=\"view:3758:82253\"><icon name=\"District\"><color=#EAD94AFF>Main Roads</color></icon></link>",
-                "entries": [
-                  {
-                    "type": "Eco.Gameplay.LegislationSystem.District",
-                    "name": "Main Roads",
-                    "reference": true
-                  }
-                ]
-              },
-              "Requirements": "InsideOne"
-            }
-          }
-        ],
-        "Comparison": "All"
-      }
-    },
-    "Then": [
-      {
-        "type": "Eco.Gameplay.Civics.LegalActions.Tax_LegalAction",
-        "reference": false,
-        "properties": {
-          "TargetBankAccount": {
-            "type": "GameValueWrapper",
-            "value": {
-              "type": "Eco.Gameplay.Economy.TreasuryBankAccount",
-              "name": "Treasury Bank Account",
-              "reference": true
-            }
-          },
-          "Target": {
-            "type": "GameValueContext",
-            "_name": "Citizen",
-            "markedUpName": "<icon name=\"User\">Citizen</icon>",
-            "contextDescription": "The citizen who performed the interaction."
-          },
-          "Currency": {
-            "type": "GameValueWrapper",
-            "value": {
-              "type": "Eco.Gameplay.Economy.Currency",
-              "name": "Government Currency",
-              "reference": true
-            }
-          },
-          "Amount": {
-            "type": "GameValueWrapper",
-            "value": 0.75
-          },
-          "PreventIfUnableToPay": {
-            "type": "Eco.Gameplay.Civics.GameValues.No",
-            "properties": {}
-          },
-          "InfoboxOnSuccess": {
-            "type": "Eco.Gameplay.Civics.GameValues.No",
-            "properties": {}
-          }
-        }
-      }
-    ]
-  }
-}</code></pre>
-                  </div>
-                </div>
-
-
-              </div>
-
-
-            </div>
-        </div>
-        <div class="content">
-            <p class="title is-5">Section 9: Asphalt Concrete Incentive</p>
+            <p class="title is-5">Section 8: Asphalt Concrete Incentive</p>
             <p class="subtitle is-6">Encourage placing Asphalt Concrete in the Road district and discourage removing them
 
             <div class="columns">
@@ -2723,16 +2505,24 @@ PersonalBankAccount: <table class="table">
                     <table class="table">
                       <tr>
                         <th>Trigger</th>
-                        <td>DropOrPickupBlock</td>
+                        <td>ConstructOrDeconstruct</td>
                       </tr>
 
                         	<tr class="indented">
-		<th>Block Placed or Picked Up</th>
+		<th>Item Used</th>
 		<td>
+				Any
 
-				1 
-				BlockItem:
-					<span>AsphaltConcreteItem</span>
+
+		</td>
+	</tr>
+
+
+                        	<tr class="indented">
+		<th>Tool Used</th>
+		<td>
+				Any
+
 
 		</td>
 	</tr>
@@ -2748,29 +2538,42 @@ PersonalBankAccount: <table class="table">
   "properties": {
     "Trigger": {
       "type": "Type",
-      "value": "Eco.Gameplay.GameActions.DropOrPickupBlock"
+      "value": "Eco.Gameplay.GameActions.ConstructOrDeconstruct"
     },
     "Configs": [
       {
         "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
-        "typeToConfig": "Eco.Gameplay.GameActions.DropOrPickupBlock",
+        "typeToConfig": "Eco.Gameplay.GameActions.ConstructOrDeconstruct",
         "propNameBacker": "ItemUsed",
-        "propDisplayName": "Block Placed or Picked Up",
+        "propDisplayName": "Item Used",
         "properties": {
           "List": {
             "type": "GamePickerList",
             "mustDeriveType": {
               "type": "Type",
-              "value": "Eco.Gameplay.Items.BlockItem"
+              "value": "Eco.Gameplay.Items.Item"
             },
-            "requiredTag": null,
-            "internalDescription": "<link=\"Item:AsphaltConcreteItem\"><style=\"Item\"><icon name=\"AsphaltConcreteItem\">Asphalt Concrete</icon></style></link>",
-            "entries": [
-              {
-                "type": "Type",
-                "value": "Eco.Mods.TechTree.AsphaltConcreteItem"
-              }
-            ]
+            "requiredTag": "Constructable",
+            "internalDescription": "Any",
+            "entries": []
+          }
+        }
+      },
+      {
+        "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+        "typeToConfig": "Eco.Gameplay.GameActions.ConstructOrDeconstruct",
+        "propNameBacker": "ToolUsed",
+        "propDisplayName": "Tool Used",
+        "properties": {
+          "List": {
+            "type": "GamePickerList",
+            "mustDeriveType": {
+              "type": "Type",
+              "value": "Eco.Gameplay.Items.Item"
+            },
+            "requiredTag": "Construction",
+            "internalDescription": "Any",
+            "entries": []
           }
         }
       }
@@ -2791,8 +2594,8 @@ PersonalBankAccount: <table class="table">
                       <div class="card">
                         <table class="table">
   <tr>
-    <th><icon name="DropOrPickupBlock">Dropped</icon></th>
-    <td>Was the block dropped or picked up?</td>
+    <th><icon name="ConstructOrDeconstruct">Constructed</icon></th>
+    <td>Was the block constructed or deconstructed?</td>
   </tr>
 </table>
                       </div>
@@ -2884,9 +2687,9 @@ PersonalBankAccount: <table class="table">
         "List": [
           {
             "type": "GameValueContext",
-            "_name": "Dropped",
-            "markedUpName": "<icon name=\"DropOrPickupBlock\">Dropped</icon>",
-            "contextDescription": "Was the block dropped or picked up?"
+            "_name": "Constructed",
+            "markedUpName": "<icon name=\"ConstructOrDeconstruct\">Constructed</icon>",
+            "contextDescription": "Was the block constructed or deconstructed?"
           },
           {
             "type": "Eco.Gameplay.Civics.GameValues.Values.DistrictRequirements",
@@ -2985,8 +2788,8 @@ PersonalBankAccount: <table class="table">
                       <div class="card">
                         <table class="table">
   <tr>
-    <th><icon name="DropOrPickupBlock">Picked Up</icon></th>
-    <td>Was the block dropped or picked up?</td>
+    <th><icon name="ConstructOrDeconstruct">Deconstructed</icon></th>
+    <td>Was the block constructed or deconstructed?</td>
   </tr>
 </table>
                       </div>
@@ -3068,9 +2871,9 @@ PersonalBankAccount: <table class="table">
         "List": [
           {
             "type": "GameValueContext",
-            "_name": "PickedUp",
-            "markedUpName": "<icon name=\"DropOrPickupBlock\">Picked Up</icon>",
-            "contextDescription": "Was the block dropped or picked up?"
+            "_name": "Deconstructed",
+            "markedUpName": "<icon name=\"ConstructOrDeconstruct\">Deconstructed</icon>",
+            "contextDescription": "Was the block constructed or deconstructed?"
           },
           {
             "type": "Eco.Gameplay.Civics.GameValues.Values.DistrictRequirements",
@@ -3264,6 +3067,107 @@ PersonalBankAccount: <table class="table">
                     "type": "Eco.Gameplay.Civics.LegalActions.Prevent_LegalAction",
                     "reference": false,
                     "properties": {
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "GameValueContext",
+                        "_name": "UnclaimingLand",
+                        "markedUpName": "<icon name=\"ClaimOrUnclaimProperty\">Unclaiming Land</icon>",
+                        "contextDescription": "Was the property claimed or unclaimed?"
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.DistrictRequirements",
+                        "properties": {
+                          "Location": {
+                            "type": "GameValueContext",
+                            "_name": "Action Location",
+                            "markedUpName": "<icon name=\"ClaimOrUnclaimProperty\">Action Location</icon>",
+                            "contextDescription": "The position of the claim."
+                          },
+                          "Districts": {
+                            "type": "GamePickerList",
+                            "mustDeriveType": {
+                              "type": "Type",
+                              "value": "Eco.Gameplay.LegislationSystem.District"
+                            },
+                            "requiredTag": null,
+                            "internalDescription": "<link=\"view:3758:82253\"><icon name=\"District\"><color=#EAD94AFF>Main Roads</color></icon></link>",
+                            "entries": [
+                              {
+                                "type": "Eco.Gameplay.LegislationSystem.District",
+                                "name": "Main Roads",
+                                "reference": true
+                              }
+                            ]
+                          },
+                          "Requirements": "InsideOne"
+                        }
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.Pay_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "SourceBankAccount": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Economy.TreasuryBankAccount",
+                          "name": "Treasury Bank Account",
+                          "reference": true
+                        }
+                      },
+                      "TargetBankAccount": {
+                        "type": "Eco.Gameplay.Civics.GameValues.PersonalBankAccount_GameValue",
+                        "properties": {
+                          "User": {
+                            "type": "GameValueContext",
+                            "_name": "Citizen",
+                            "markedUpName": "<icon name=\"User\">Citizen</icon>",
+                            "contextDescription": "The citizen who claimed or unclaimed the land."
+                          }
+                        }
+                      },
+                      "Target": {
+                        "type": "GameValueContext",
+                        "_name": "Citizen",
+                        "markedUpName": "<icon name=\"User\">Citizen</icon>",
+                        "contextDescription": "The citizen who claimed or unclaimed the land."
+                      },
+                      "Currency": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Economy.Currency",
+                          "name": "Government Currency",
+                          "reference": true
+                        }
+                      },
+                      "Amount": {
+                        "type": "GameValueWrapper",
+                        "value": 20
+                      },
+                      "PreventIfUnableToPay": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      },
                       "InfoboxOnSuccess": {
                         "type": "Eco.Gameplay.Civics.GameValues.No",
                         "properties": {}
@@ -4132,7 +4036,7 @@ PersonalBankAccount: <table class="table">
         "reference": false,
         "properties": {
           "Title": "Stone Road Incentive",
-          "UserDescription": "Encourage placing Stone Road in the Road district and discourage removing it",
+          "UserDescription": "Encourage placing Stone Road and Stone Ramps in the Road district and discourage removing it",
           "Triggers": [
             {
               "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
@@ -4140,262 +4044,28 @@ PersonalBankAccount: <table class="table">
               "properties": {
                 "Trigger": {
                   "type": "Type",
-                  "value": "Eco.Gameplay.GameActions.DropOrPickupBlock"
+                  "value": "Eco.Gameplay.GameActions.ConstructOrDeconstruct"
                 },
                 "Configs": [
                   {
                     "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
-                    "typeToConfig": "Eco.Gameplay.GameActions.DropOrPickupBlock",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ConstructOrDeconstruct",
                     "propNameBacker": "ItemUsed",
-                    "propDisplayName": "Block Placed or Picked Up",
+                    "propDisplayName": "Item Used",
                     "properties": {
                       "List": {
                         "type": "GamePickerList",
                         "mustDeriveType": {
                           "type": "Type",
-                          "value": "Eco.Gameplay.Items.BlockItem"
+                          "value": "Eco.Gameplay.Items.Item"
                         },
-                        "requiredTag": null,
-                        "internalDescription": "<link=\"Item:StoneRoadItem\"><style=\"Item\"><icon name=\"StoneRoadItem\">Stone Road</icon></style></link>",
+                        "requiredTag": "Constructable",
+                        "internalDescription": "<link=\"Item:StoneRampItem\"><style=\"Item\"><icon name=\"StoneRampItem\">Stone Ramp</icon></style></link>  <link=\"Item:StoneRoadItem\"><style=\"Item\"><icon name=\"StoneRoadItem\">Stone Road</icon></style></link>",
                         "entries": [
                           {
                             "type": "Type",
                             "value": "Eco.Mods.TechTree.StoneRoadItem"
-                          }
-                        ]
-                      }
-                    }
-                  }
-                ]
-              }
-            }
-          ],
-          "IfThenBlocks": [
-            {
-              "type": "Eco.Gameplay.Civics.IfThenBlock",
-              "reference": false,
-              "properties": {
-                "If": {
-                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
-                  "properties": {
-                    "List": [
-                      {
-                        "type": "GameValueContext",
-                        "_name": "Dropped",
-                        "markedUpName": "<icon name=\"DropOrPickupBlock\">Dropped</icon>",
-                        "contextDescription": "Was the block dropped or picked up?"
-                      },
-                      {
-                        "type": "Eco.Gameplay.Civics.GameValues.Values.DistrictRequirements",
-                        "properties": {
-                          "Location": {
-                            "type": "GameValueContext",
-                            "_name": "Action Location",
-                            "markedUpName": "<icon name=\"DropOrPickupBlock\">Action Location</icon>",
-                            "contextDescription": "The position where the interaction took place."
                           },
-                          "Districts": {
-                            "type": "GamePickerList",
-                            "mustDeriveType": {
-                              "type": "Type",
-                              "value": "Eco.Gameplay.LegislationSystem.District"
-                            },
-                            "requiredTag": null,
-                            "internalDescription": "<link=\"view:3758:82253\"><icon name=\"District\"><color=#EAD94AFF>Main Roads</color></icon></link>",
-                            "entries": [
-                              {
-                                "type": "Eco.Gameplay.LegislationSystem.District",
-                                "name": "Main Roads",
-                                "reference": true
-                              }
-                            ]
-                          },
-                          "Requirements": "InsideOne"
-                        }
-                      }
-                    ],
-                    "Comparison": "All"
-                  }
-                },
-                "Then": [
-                  {
-                    "type": "Eco.Gameplay.Civics.LegalActions.Pay_LegalAction",
-                    "reference": false,
-                    "properties": {
-                      "SourceBankAccount": {
-                        "type": "GameValueWrapper",
-                        "value": {
-                          "type": "Eco.Gameplay.Economy.TreasuryBankAccount",
-                          "name": "Treasury Bank Account",
-                          "reference": true
-                        }
-                      },
-                      "TargetBankAccount": {
-                        "type": "Eco.Gameplay.Civics.GameValues.PersonalBankAccount_GameValue",
-                        "properties": {
-                          "User": {
-                            "type": "GameValueContext",
-                            "_name": "Citizen",
-                            "markedUpName": "<icon name=\"User\">Citizen</icon>",
-                            "contextDescription": "The citizen who performed the interaction."
-                          }
-                        }
-                      },
-                      "Target": {
-                        "type": "GameValueContext",
-                        "_name": "Citizen",
-                        "markedUpName": "<icon name=\"User\">Citizen</icon>",
-                        "contextDescription": "The citizen who performed the interaction."
-                      },
-                      "Currency": {
-                        "type": "GameValueWrapper",
-                        "value": {
-                          "type": "Eco.Gameplay.Economy.Currency",
-                          "name": "Government Currency",
-                          "reference": true
-                        }
-                      },
-                      "Amount": {
-                        "type": "GameValueWrapper",
-                        "value": 0.75
-                      },
-                      "PreventIfUnableToPay": {
-                        "type": "Eco.Gameplay.Civics.GameValues.No",
-                        "properties": {}
-                      },
-                      "InfoboxOnSuccess": {
-                        "type": "Eco.Gameplay.Civics.GameValues.No",
-                        "properties": {}
-                      }
-                    }
-                  }
-                ]
-              }
-            },
-            {
-              "type": "Eco.Gameplay.Civics.IfThenBlock",
-              "reference": false,
-              "properties": {
-                "If": {
-                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
-                  "properties": {
-                    "List": [
-                      {
-                        "type": "GameValueContext",
-                        "_name": "PickedUp",
-                        "markedUpName": "<icon name=\"DropOrPickupBlock\">Picked Up</icon>",
-                        "contextDescription": "Was the block dropped or picked up?"
-                      },
-                      {
-                        "type": "Eco.Gameplay.Civics.GameValues.Values.DistrictRequirements",
-                        "properties": {
-                          "Location": {
-                            "type": "GameValueContext",
-                            "_name": "Action Location",
-                            "markedUpName": "<icon name=\"DropOrPickupBlock\">Action Location</icon>",
-                            "contextDescription": "The position where the interaction took place."
-                          },
-                          "Districts": {
-                            "type": "GamePickerList",
-                            "mustDeriveType": {
-                              "type": "Type",
-                              "value": "Eco.Gameplay.LegislationSystem.District"
-                            },
-                            "requiredTag": null,
-                            "internalDescription": "<link=\"view:3758:82253\"><icon name=\"District\"><color=#EAD94AFF>Main Roads</color></icon></link>",
-                            "entries": [
-                              {
-                                "type": "Eco.Gameplay.LegislationSystem.District",
-                                "name": "Main Roads",
-                                "reference": true
-                              }
-                            ]
-                          },
-                          "Requirements": "InsideOne"
-                        }
-                      }
-                    ],
-                    "Comparison": "All"
-                  }
-                },
-                "Then": [
-                  {
-                    "type": "Eco.Gameplay.Civics.LegalActions.Tax_LegalAction",
-                    "reference": false,
-                    "properties": {
-                      "TargetBankAccount": {
-                        "type": "GameValueWrapper",
-                        "value": {
-                          "type": "Eco.Gameplay.Economy.TreasuryBankAccount",
-                          "name": "Treasury Bank Account",
-                          "reference": true
-                        }
-                      },
-                      "Target": {
-                        "type": "GameValueContext",
-                        "_name": "Citizen",
-                        "markedUpName": "<icon name=\"User\">Citizen</icon>",
-                        "contextDescription": "The citizen who performed the interaction."
-                      },
-                      "Currency": {
-                        "type": "GameValueWrapper",
-                        "value": {
-                          "type": "Eco.Gameplay.Economy.Currency",
-                          "name": "Government Currency",
-                          "reference": true
-                        }
-                      },
-                      "Amount": {
-                        "type": "GameValueWrapper",
-                        "value": 0.75
-                      },
-                      "PreventIfUnableToPay": {
-                        "type": "Eco.Gameplay.Civics.GameValues.No",
-                        "properties": {}
-                      },
-                      "InfoboxOnSuccess": {
-                        "type": "Eco.Gameplay.Civics.GameValues.No",
-                        "properties": {}
-                      }
-                    }
-                  }
-                ]
-              }
-            }
-          ]
-        }
-      },
-      {
-        "type": "Eco.Gameplay.Civics.Laws.LawSection",
-        "reference": false,
-        "properties": {
-          "Title": "Stone Ramp Incentive",
-          "UserDescription": "Encourage placing Stone Ramps in the Road district and discourage removing them",
-          "Triggers": [
-            {
-              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
-              "reference": false,
-              "properties": {
-                "Trigger": {
-                  "type": "Type",
-                  "value": "Eco.Gameplay.GameActions.PlaceOrPickUpObject"
-                },
-                "Configs": [
-                  {
-                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
-                    "typeToConfig": "Eco.Gameplay.GameActions.PlaceOrPickUpObject",
-                    "propNameBacker": "ItemUsed",
-                    "propDisplayName": "Item Placed or Picked Up",
-                    "properties": {
-                      "List": {
-                        "type": "GamePickerList",
-                        "mustDeriveType": {
-                          "type": "Type",
-                          "value": "Eco.Gameplay.Items.WorldObjectItem"
-                        },
-                        "requiredTag": null,
-                        "internalDescription": "<link=\"Item:StoneRampItem\"><style=\"Item\"><icon name=\"StoneRampItem\">Stone Ramp</icon></style></link>",
-                        "entries": [
                           {
                             "type": "Type",
                             "value": "StoneRampItem"
@@ -4403,6 +4073,24 @@ PersonalBankAccount: <table class="table">
                         ]
                       }
                     }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ConstructOrDeconstruct",
+                    "propNameBacker": "ToolUsed",
+                    "propDisplayName": "Tool Used",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Construction",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
                   }
                 ]
               }
@@ -4419,9 +4107,9 @@ PersonalBankAccount: <table class="table">
                     "List": [
                       {
                         "type": "GameValueContext",
-                        "_name": "PlacingObject",
-                        "markedUpName": "<icon name=\"PlaceOrPickUpObject\">Placing Object</icon>",
-                        "contextDescription": "Was the item placed?"
+                        "_name": "Constructed",
+                        "markedUpName": "<icon name=\"ConstructOrDeconstruct\">Constructed</icon>",
+                        "contextDescription": "Was the block constructed or deconstructed?"
                       },
                       {
                         "type": "Eco.Gameplay.Civics.GameValues.Values.DistrictRequirements",
@@ -4429,7 +4117,7 @@ PersonalBankAccount: <table class="table">
                           "Location": {
                             "type": "GameValueContext",
                             "_name": "Action Location",
-                            "markedUpName": "<icon name=\"PlaceOrPickUpObject\">Action Location</icon>",
+                            "markedUpName": "<icon name=\"DropOrPickupBlock\">Action Location</icon>",
                             "contextDescription": "The position where the interaction took place."
                           },
                           "Districts": {
@@ -4520,9 +4208,9 @@ PersonalBankAccount: <table class="table">
                     "List": [
                       {
                         "type": "GameValueContext",
-                        "_name": "PickingUpObject",
-                        "markedUpName": "<icon name=\"PlaceOrPickUpObject\">Picking Up Object</icon>",
-                        "contextDescription": "Was the item placed?"
+                        "_name": "Deconstructed",
+                        "markedUpName": "<icon name=\"ConstructOrDeconstruct\">Deconstructed</icon>",
+                        "contextDescription": "Was the block constructed or deconstructed?"
                       },
                       {
                         "type": "Eco.Gameplay.Civics.GameValues.Values.DistrictRequirements",
@@ -4530,7 +4218,7 @@ PersonalBankAccount: <table class="table">
                           "Location": {
                             "type": "GameValueContext",
                             "_name": "Action Location",
-                            "markedUpName": "<icon name=\"PlaceOrPickUpObject\">Action Location</icon>",
+                            "markedUpName": "<icon name=\"DropOrPickupBlock\">Action Location</icon>",
                             "contextDescription": "The position where the interaction took place."
                           },
                           "Districts": {
@@ -4616,29 +4304,42 @@ PersonalBankAccount: <table class="table">
               "properties": {
                 "Trigger": {
                   "type": "Type",
-                  "value": "Eco.Gameplay.GameActions.DropOrPickupBlock"
+                  "value": "Eco.Gameplay.GameActions.ConstructOrDeconstruct"
                 },
                 "Configs": [
                   {
                     "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
-                    "typeToConfig": "Eco.Gameplay.GameActions.DropOrPickupBlock",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ConstructOrDeconstruct",
                     "propNameBacker": "ItemUsed",
-                    "propDisplayName": "Block Placed or Picked Up",
+                    "propDisplayName": "Item Used",
                     "properties": {
                       "List": {
                         "type": "GamePickerList",
                         "mustDeriveType": {
                           "type": "Type",
-                          "value": "Eco.Gameplay.Items.BlockItem"
+                          "value": "Eco.Gameplay.Items.Item"
                         },
-                        "requiredTag": null,
-                        "internalDescription": "<link=\"Item:AsphaltConcreteItem\"><style=\"Item\"><icon name=\"AsphaltConcreteItem\">Asphalt Concrete</icon></style></link>",
-                        "entries": [
-                          {
-                            "type": "Type",
-                            "value": "Eco.Mods.TechTree.AsphaltConcreteItem"
-                          }
-                        ]
+                        "requiredTag": "Constructable",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ConstructOrDeconstruct",
+                    "propNameBacker": "ToolUsed",
+                    "propDisplayName": "Tool Used",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Construction",
+                        "internalDescription": "Any",
+                        "entries": []
                       }
                     }
                   }
@@ -4657,9 +4358,9 @@ PersonalBankAccount: <table class="table">
                     "List": [
                       {
                         "type": "GameValueContext",
-                        "_name": "Dropped",
-                        "markedUpName": "<icon name=\"DropOrPickupBlock\">Dropped</icon>",
-                        "contextDescription": "Was the block dropped or picked up?"
+                        "_name": "Constructed",
+                        "markedUpName": "<icon name=\"ConstructOrDeconstruct\">Constructed</icon>",
+                        "contextDescription": "Was the block constructed or deconstructed?"
                       },
                       {
                         "type": "Eco.Gameplay.Civics.GameValues.Values.DistrictRequirements",
@@ -4758,9 +4459,9 @@ PersonalBankAccount: <table class="table">
                     "List": [
                       {
                         "type": "GameValueContext",
-                        "_name": "PickedUp",
-                        "markedUpName": "<icon name=\"DropOrPickupBlock\">Picked Up</icon>",
-                        "contextDescription": "Was the block dropped or picked up?"
+                        "_name": "Deconstructed",
+                        "markedUpName": "<icon name=\"ConstructOrDeconstruct\">Deconstructed</icon>",
+                        "contextDescription": "Was the block constructed or deconstructed?"
                       },
                       {
                         "type": "Eco.Gameplay.Civics.GameValues.Values.DistrictRequirements",
