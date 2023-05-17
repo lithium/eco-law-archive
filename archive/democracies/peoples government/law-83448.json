@@ -749,17 +749,21 @@
                         "type": "Eco.Gameplay.Civics.GameValues.Compare",
                         "properties": {
                           "Left": {
-                            "type": "Eco.Gameplay.Civics.GameValues.Values.CitizenAgeInHours",
+                            "type": "Eco.Gameplay.Civics.GameValues.Values.HoursPlayed",
                             "properties": {
                               "Citizen": {
                                 "type": "GameValueContext",
                                 "_name": "Citizen",
                                 "markedUpName": "<icon name=\"User\">Citizen</icon>",
                                 "contextDescription": "The citizen who changed demographics."
+                              },
+                              "WithinLastNumberOfDays": {
+                                "type": "GameValueWrapper",
+                                "value": 7.0
                               }
                             }
                           },
-                          "Comparison": "GreaterThan",
+                          "Comparison": "EqualTo",
                           "Right": {
                             "type": "GameValueWrapper",
                             "value": 0.0
